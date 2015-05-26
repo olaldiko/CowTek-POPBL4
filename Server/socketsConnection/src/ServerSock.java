@@ -2,11 +2,9 @@
 import java.net.*;
 import java.io.*;
 
-import javax.swing.JOptionPane;
-
 public class ServerSock extends Thread{
 
-	final int puerto = 5000;
+	final int puerto = 6000;
 	ServerSocket sc;
 	Socket so;
 	String mensajeRecibido;
@@ -26,29 +24,34 @@ public class ServerSock extends Thread{
 			so = new Socket();
 			so = sc.accept();
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Creando sockets", JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog(null, e.getMessage(), "Creando sockets", JOptionPane.ERROR_MESSAGE);
+			System.out.println("Error creando sockets: " + e.getMessage());
 			try {
 				sc.close();
 				so.close();
 			} catch (IOException e1) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Cerrando sockets", JOptionPane.ERROR_MESSAGE);
+				//JOptionPane.showMessageDialog(null, e.getMessage(), "Cerrando sockets", JOptionPane.ERROR_MESSAGE);
+				System.out.println("Error cerrando sockets: " + e.getMessage());
 				return true;
 			}
 			return false;
 		}
 		
-		JOptionPane.showMessageDialog (null, "Un cliente se ha conectado", "Cliente", JOptionPane.INFORMATION_MESSAGE);
+		//JOptionPane.showMessageDialog (null, "Un cliente se ha conectado", "Cliente", JOptionPane.INFORMATION_MESSAGE);
+		System.out.println("Un cliente se ha conectado");
 		
 		try {
 			entrada = new DataInputStream(so.getInputStream());
 			salida = new DataOutputStream(so.getOutputStream());
 			entradaBuffered = new BufferedReader(new InputStreamReader(so.getInputStream()));
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Creando entradas y salidas", JOptionPane.ERROR);
+			//JOptionPane.showMessageDialog(null, e.getMessage(), "Creando entradas y salidas", JOptionPane.ERROR);
+			System.out.println("Error creando entradas y salidas: " + e.getMessage());
 			try {
 				entradaBuffered.close();
 			} catch (IOException e1) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Cerrando entrada", JOptionPane.ERROR_MESSAGE);
+				//JOptionPane.showMessageDialog(null, e.getMessage(), "Cerrando entrada", JOptionPane.ERROR_MESSAGE);
+				System.out.println("Error cerrando entrada: " + e.getMessage());
 				return true;
 			}
 			return false;
@@ -71,7 +74,8 @@ public class ServerSock extends Thread{
 				}
 				
 			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Recibiendo data", JOptionPane.ERROR);
+				//JOptionPane.showMessageDialog(null, e.getMessage(), "Recibiendo data", JOptionPane.ERROR);
+				System.out.println("Error recibiendo data: " + e.getMessage());
 			}
 		} while(ok);
 		
@@ -82,15 +86,17 @@ public class ServerSock extends Thread{
 		try {
 			sc.close();
 			so.close();
-		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(null, e1.getMessage(), "Cerrando sockets", JOptionPane.ERROR_MESSAGE);
+		} catch (IOException e) {
+			//JOptionPane.showMessageDialog(null, e.getMessage(), "Cerrando sockets", JOptionPane.ERROR_MESSAGE);
+			System.out.println("Error cerrando sockets: " + e.getMessage());
 			return false;
 		}
 		
 		try {
 			entradaBuffered.close();
-		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(null, e1.getMessage(), "Cerrando entrada", JOptionPane.ERROR_MESSAGE);
+		} catch (IOException e) {
+			//JOptionPane.showMessageDialog(null, e.getMessage(), "Cerrando entrada", JOptionPane.ERROR_MESSAGE);
+			System.out.println("Error cerrando entrada: " + e.getMessage());
 			return false;
 		}
 		return true;
