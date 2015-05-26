@@ -1,0 +1,392 @@
+\hypertarget{_u_s_a_r_t___a_p_i_8h}{}\section{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h File Reference}
+\label{_u_s_a_r_t___a_p_i_8h}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+{\ttfamily \#include $<$stm32f4xx.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a469925e4f7fa9b2d5bc4c3c6c2fa2a2d}{A\+F\+\_\+\+S\+I\+Z\+E}~4
+\begin{DoxyCompactList}\small\item\em Size of each pin inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_ae8c36af995ebf1d022a55650438ebfa4}{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3}~7
+\begin{DoxyCompactList}\small\item\em Alternate function corresponding to the U\+S\+A\+R\+T3. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_afff22464fef7d7d0c7acce79d245df19}{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6}~8
+\begin{DoxyCompactList}\small\item\em Alternate function corresponding to the U\+S\+A\+R\+T6. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a5a0c693411f19b22f94fa6faa551bc6c}{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X}~2
+\begin{DoxyCompactList}\small\item\em The position of the U\+S\+A\+R\+T3 T\+X pin inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a1c6fa4372b2a6d49c2cd7245fa4cd32e}{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X}~3
+\begin{DoxyCompactList}\small\item\em The position of the U\+S\+A\+R\+T3 R\+X pin inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_aa3939a4a0f90cce9739b9fd24a3c8ba0}{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X}~0
+\begin{DoxyCompactList}\small\item\em The position of the U\+S\+A\+R\+T3 T\+X pin for R\+S232 port inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_aca92d639194d0debe704ea855e41a264}{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X}~1
+\begin{DoxyCompactList}\small\item\em The position of the U\+S\+A\+R\+T3 R\+X pin for R\+S232 port inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_afd43897c99106588306ad90bab996901}{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X}~6
+\begin{DoxyCompactList}\small\item\em The position of the U\+S\+A\+R\+T6 T\+X pin inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_ae72dcd15cc9c2a6dd8ef1d4b9a5c9634}{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X}~1
+\begin{DoxyCompactList}\small\item\em The position of the U\+S\+A\+R\+T6 R\+X pin inside the Alternate Function register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_abe8726d641be145be3f6cd8a5f5a211b}{M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E}~2
+\begin{DoxyCompactList}\small\item\em Size of each pin inside of the M\+O\+D\+E\+R register of the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a596996163a8348f69acff6c652384bd1}{G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E}~2
+\begin{DoxyCompactList}\small\item\em Set the pin in Alternate function mode in the M\+O\+D\+E\+R register. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_ae287c6330215b41550d8c05f48bee9f2}{U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N}~6
+\begin{DoxyCompactList}\small\item\em P\+I\+N of the U\+S\+A\+R\+T6 T\+X on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a7c122cde5b9387b5378ae456f4379bb6}{U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N}~9
+\begin{DoxyCompactList}\small\item\em P\+I\+N of the U\+S\+A\+R\+T6 R\+X on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a4947cd21a856b2f3f9ff3811da10e9b7}{U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N}~11
+\begin{DoxyCompactList}\small\item\em P\+I\+N of the U\+S\+A\+R\+T3 T\+X on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_acf6c7e81aef90b62cd81dce816327423}{U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N}~10
+\begin{DoxyCompactList}\small\item\em P\+I\+N of the U\+S\+A\+R\+T3 R\+X on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a023f7ed14965c74a040db14a7967f383}{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N}~8
+\begin{DoxyCompactList}\small\item\em P\+I\+N of the U\+S\+A\+R\+T3 T\+X for the R\+S232 port on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_a476c2521ae20bf4c84f3c96fcc8d3920}{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N}~9
+\begin{DoxyCompactList}\small\item\em P\+I\+N of the U\+S\+A\+R\+T3 R\+X for the R\+S232 port on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8h_ac3146f1e9227301bb4aa518f4d336cee}{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}~80
+\begin{DoxyCompactList}\small\item\em Size of the buffer for the received data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}{func\+\_\+address\+\_\+t}) (void)
+\begin{DoxyCompactList}\small\item\em Void function pointer type\+Def. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a5156495834fc07fcf77f5c97589481ba}{init\+U\+S\+A\+R\+T3} (uint16\+\_\+t speed)
+\begin{DoxyCompactList}\small\item\em Initializes U\+S\+A\+R\+T3. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a25c29f5812bb2cf8f0cab80e4c64cb11}{init\+U\+S\+A\+R\+T6} (uint16\+\_\+t speed)
+\begin{DoxyCompactList}\small\item\em The function pointer to the function to be executed inside the U\+S\+A\+R\+T6 I\+R\+Q. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_ad009d28ef5bd7c8f600cfe1d4095f0e9}{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart)
+\begin{DoxyCompactList}\small\item\em Enables the U\+S\+A\+R\+T clock on the R\+C\+C device. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a32c7b52bfbe142d2a35e9428681b1ae6}{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$gpio)
+\begin{DoxyCompactList}\small\item\em Enables the G\+P\+I\+Ox clock on the R\+C\+C device. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_af5f9c4a68188d559e640c8e5e2b2b3e8}{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart)
+\begin{DoxyCompactList}\small\item\em Configures the U\+S\+A\+R\+T on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a2e22611cac4d8f9f646d9ca6b9675fe7}{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port} ()
+\begin{DoxyCompactList}\small\item\em Enables the R\+S232\+\_\+2 port connected to the U\+S\+A\+R\+T3. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a4e18de974d05670896717c24f29acc11}{conf\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart, uint16\+\_\+t speed)
+\begin{DoxyCompactList}\small\item\em Configures U\+S\+A\+R\+T3 or 6 with the desired speed, 8 data bits, 1 stop bit, no parity and in T\+X and R\+X mode. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a00098b8ca8ffc38855c2c9db80e716e3}{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart)
+\begin{DoxyCompactList}\small\item\em Configure usart to generate Interrupts on R\+X events. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a3ac7229e7d9060c035f99e29b75d2002}{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart, \hyperlink{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}{func\+\_\+address\+\_\+t} func)
+\begin{DoxyCompactList}\small\item\em Set function to execute on U\+S\+A\+R\+T3 or 6 I\+R\+Qs. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8h_a36a705afe8cc35d466da26bc3d959849}{transmit\+String\+\_\+\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart, uint8\+\_\+t $\ast$data, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends a string or uint8 array through the U\+A\+R\+T. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a469925e4f7fa9b2d5bc4c3c6c2fa2a2d}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+S\+I\+Z\+E@{A\+F\+\_\+\+S\+I\+Z\+E}}
+\index{A\+F\+\_\+\+S\+I\+Z\+E@{A\+F\+\_\+\+S\+I\+Z\+E}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+S\+I\+Z\+E~4}\label{_u_s_a_r_t___a_p_i_8h_a469925e4f7fa9b2d5bc4c3c6c2fa2a2d}
+
+
+Size of each pin inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_aca92d639194d0debe704ea855e41a264}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X}}
+\index{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X~1}\label{_u_s_a_r_t___a_p_i_8h_aca92d639194d0debe704ea855e41a264}
+
+
+The position of the U\+S\+A\+R\+T3 R\+X pin for R\+S232 port inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_aa3939a4a0f90cce9739b9fd24a3c8ba0}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X}}
+\index{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X~0}\label{_u_s_a_r_t___a_p_i_8h_aa3939a4a0f90cce9739b9fd24a3c8ba0}
+
+
+The position of the U\+S\+A\+R\+T3 T\+X pin for R\+S232 port inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a1c6fa4372b2a6d49c2cd7245fa4cd32e}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X}}
+\index{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+R\+X~3}\label{_u_s_a_r_t___a_p_i_8h_a1c6fa4372b2a6d49c2cd7245fa4cd32e}
+
+
+The position of the U\+S\+A\+R\+T3 R\+X pin inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a5a0c693411f19b22f94fa6faa551bc6c}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X}}
+\index{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+T\+X~2}\label{_u_s_a_r_t___a_p_i_8h_a5a0c693411f19b22f94fa6faa551bc6c}
+
+
+The position of the U\+S\+A\+R\+T3 T\+X pin inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_ae72dcd15cc9c2a6dd8ef1d4b9a5c9634}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X}}
+\index{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+R\+X~1}\label{_u_s_a_r_t___a_p_i_8h_ae72dcd15cc9c2a6dd8ef1d4b9a5c9634}
+
+
+The position of the U\+S\+A\+R\+T6 R\+X pin inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_afd43897c99106588306ad90bab996901}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X}}
+\index{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X@{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+T\+X~6}\label{_u_s_a_r_t___a_p_i_8h_afd43897c99106588306ad90bab996901}
+
+
+The position of the U\+S\+A\+R\+T6 T\+X pin inside the Alternate Function register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_ae8c36af995ebf1d022a55650438ebfa4}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3@{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3}}
+\index{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3@{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T3~7}\label{_u_s_a_r_t___a_p_i_8h_ae8c36af995ebf1d022a55650438ebfa4}
+
+
+Alternate function corresponding to the U\+S\+A\+R\+T3. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_afff22464fef7d7d0c7acce79d245df19}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6@{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6}}
+\index{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6@{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+U\+S\+A\+R\+T6~8}\label{_u_s_a_r_t___a_p_i_8h_afff22464fef7d7d0c7acce79d245df19}
+
+
+Alternate function corresponding to the U\+S\+A\+R\+T6. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_ac3146f1e9227301bb4aa518f4d336cee}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!B\+U\+F\+F\+E\+R\+S\+I\+Z\+E@{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}}
+\index{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E@{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+F\+F\+E\+R\+S\+I\+Z\+E~80}\label{_u_s_a_r_t___a_p_i_8h_ac3146f1e9227301bb4aa518f4d336cee}
+
+
+Size of the buffer for the received data. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a596996163a8348f69acff6c652384bd1}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E@{G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E}}
+\index{G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E@{G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+I\+O\+\_\+\+M\+O\+D\+E\+R\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E~2}\label{_u_s_a_r_t___a_p_i_8h_a596996163a8348f69acff6c652384bd1}
+
+
+Set the pin in Alternate function mode in the M\+O\+D\+E\+R register. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_abe8726d641be145be3f6cd8a5f5a211b}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+O\+D\+E\+R\+\_\+\+S\+I\+Z\+E~2}\label{_u_s_a_r_t___a_p_i_8h_abe8726d641be145be3f6cd8a5f5a211b}
+
+
+Size of each pin inside of the M\+O\+D\+E\+R register of the G\+P\+I\+O. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a476c2521ae20bf4c84f3c96fcc8d3920}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N}}
+\index{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+R\+X\+\_\+\+P\+I\+N~9}\label{_u_s_a_r_t___a_p_i_8h_a476c2521ae20bf4c84f3c96fcc8d3920}
+
+
+P\+I\+N of the U\+S\+A\+R\+T3 R\+X for the R\+S232 port on the G\+P\+I\+O. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a023f7ed14965c74a040db14a7967f383}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N}}
+\index{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T3\+\_\+\+R\+S232\+\_\+\+T\+X\+\_\+\+P\+I\+N~8}\label{_u_s_a_r_t___a_p_i_8h_a023f7ed14965c74a040db14a7967f383}
+
+
+P\+I\+N of the U\+S\+A\+R\+T3 T\+X for the R\+S232 port on the G\+P\+I\+O. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a4947cd21a856b2f3f9ff3811da10e9b7}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N}}
+\index{U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T3\+\_\+\+R\+X\+\_\+\+P\+I\+N~11}\label{_u_s_a_r_t___a_p_i_8h_a4947cd21a856b2f3f9ff3811da10e9b7}
+
+
+P\+I\+N of the U\+S\+A\+R\+T3 T\+X on the G\+P\+I\+O. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_acf6c7e81aef90b62cd81dce816327423}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N}}
+\index{U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T3\+\_\+\+T\+X\+\_\+\+P\+I\+N~10}\label{_u_s_a_r_t___a_p_i_8h_acf6c7e81aef90b62cd81dce816327423}
+
+
+P\+I\+N of the U\+S\+A\+R\+T3 R\+X on the G\+P\+I\+O. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a7c122cde5b9387b5378ae456f4379bb6}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N}}
+\index{U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T6\+\_\+\+R\+X\+\_\+\+P\+I\+N~9}\label{_u_s_a_r_t___a_p_i_8h_a7c122cde5b9387b5378ae456f4379bb6}
+
+
+P\+I\+N of the U\+S\+A\+R\+T6 R\+X on the G\+P\+I\+O. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8h_ae287c6330215b41550d8c05f48bee9f2}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N}}
+\index{U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N@{U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T6\+\_\+\+T\+X\+\_\+\+P\+I\+N~6}\label{_u_s_a_r_t___a_p_i_8h_ae287c6330215b41550d8c05f48bee9f2}
+
+
+P\+I\+N of the U\+S\+A\+R\+T6 T\+X on the G\+P\+I\+O. 
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!func\+\_\+address\+\_\+t@{func\+\_\+address\+\_\+t}}
+\index{func\+\_\+address\+\_\+t@{func\+\_\+address\+\_\+t}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{func\+\_\+address\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ func\+\_\+address\+\_\+t) (void)}\label{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}
+
+
+Void function pointer type\+Def. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_af5f9c4a68188d559e640c8e5e2b2b3e8}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T@{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T}}
+\index{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T@{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_af5f9c4a68188d559e640c8e5e2b2b3e8}
+
+
+Configures the U\+S\+A\+R\+T on the G\+P\+I\+O. 
+
+Configures the U\+S\+A\+R\+T on the G\+P\+I\+O ports, setting the outputs and their mode.
+\begin{DoxyItemize}
+\item U\+S\+A\+R\+T3 Port and Pins\+:
+\begin{DoxyItemize}
+\item T\+X\+: P\+C10 -\/ U\+E\+X\+T Connector Pin 9
+\item R\+X\+: P\+C11 -\/ U\+E\+X\+T Connector Pin 7
+\end{DoxyItemize}
+\item U\+S\+A\+R\+T6 Port and Pins\+:
+\begin{DoxyItemize}
+\item T\+X\+: P\+C6 -\/ U\+E\+X\+T Connector Pin 3
+\item R\+X\+: P\+G9 -\/ U\+E\+X\+T Connector Pin 4 
+\begin{DoxyParams}{Parameters}
+{\em usart} & The U\+S\+A\+R\+T to configure. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{_u_s_a_r_t___a_p_i_8h_a4e18de974d05670896717c24f29acc11}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!conf\+U\+S\+A\+R\+T@{conf\+U\+S\+A\+R\+T}}
+\index{conf\+U\+S\+A\+R\+T@{conf\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{conf\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void conf\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart, }
+\item[{uint16\+\_\+t}]{speed}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a4e18de974d05670896717c24f29acc11}
+
+
+Configures U\+S\+A\+R\+T3 or 6 with the desired speed, 8 data bits, 1 stop bit, no parity and in T\+X and R\+X mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to configure. \\
+\hline
+{\em speed} & The baud rate of the port. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a00098b8ca8ffc38855c2c9db80e716e3}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X@{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X}}
+\index{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X@{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X}]{\setlength{\rightskip}{0pt plus 5cm}void conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a00098b8ca8ffc38855c2c9db80e716e3}
+
+
+Configure usart to generate Interrupts on R\+X events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to configure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a32c7b52bfbe142d2a35e9428681b1ae6}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!enable\+G\+P\+I\+O\+\_\+\+R\+C\+C@{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C}}
+\index{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C@{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}void enable\+G\+P\+I\+O\+\_\+\+R\+C\+C (
+\begin{DoxyParamCaption}
+\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{gpio}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a32c7b52bfbe142d2a35e9428681b1ae6}
+
+
+Enables the G\+P\+I\+Ox clock on the R\+C\+C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio} & The G\+P\+I\+O to enable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a2e22611cac4d8f9f646d9ca6b9675fe7}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port@{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port}}
+\index{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port@{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port}]{\setlength{\rightskip}{0pt plus 5cm}void enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a2e22611cac4d8f9f646d9ca6b9675fe7}
+
+
+Enables the R\+S232\+\_\+2 port connected to the U\+S\+A\+R\+T3. 
+
+Configures the board to send and receive data(no flow control) through the R\+S232\+\_\+port from U\+S\+A\+R\+T3. \hypertarget{_u_s_a_r_t___a_p_i_8h_ad009d28ef5bd7c8f600cfe1d4095f0e9}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C@{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C}}
+\index{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C@{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}void enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_ad009d28ef5bd7c8f600cfe1d4095f0e9}
+
+
+Enables the U\+S\+A\+R\+T clock on the R\+C\+C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to enable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a5156495834fc07fcf77f5c97589481ba}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!init\+U\+S\+A\+R\+T3@{init\+U\+S\+A\+R\+T3}}
+\index{init\+U\+S\+A\+R\+T3@{init\+U\+S\+A\+R\+T3}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{init\+U\+S\+A\+R\+T3}]{\setlength{\rightskip}{0pt plus 5cm}void init\+U\+S\+A\+R\+T3 (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{speed}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a5156495834fc07fcf77f5c97589481ba}
+
+
+Initializes U\+S\+A\+R\+T3. 
+
+Initializes U\+S\+A\+R\+T3 with default settings and desired speed. 
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed in bauds; \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a25c29f5812bb2cf8f0cab80e4c64cb11}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!init\+U\+S\+A\+R\+T6@{init\+U\+S\+A\+R\+T6}}
+\index{init\+U\+S\+A\+R\+T6@{init\+U\+S\+A\+R\+T6}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{init\+U\+S\+A\+R\+T6}]{\setlength{\rightskip}{0pt plus 5cm}void init\+U\+S\+A\+R\+T6 (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{speed}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a25c29f5812bb2cf8f0cab80e4c64cb11}
+
+
+The function pointer to the function to be executed inside the U\+S\+A\+R\+T6 I\+R\+Q. 
+
+Initializes U\+S\+A\+R\+T6. Initializes U\+S\+A\+R\+T6 with default settings and desired speed. 
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed in bauds; \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a3ac7229e7d9060c035f99e29b75d2002}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T@{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T}}
+\index{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T@{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart, }
+\item[{{\bf func\+\_\+address\+\_\+t}}]{func}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a3ac7229e7d9060c035f99e29b75d2002}
+
+
+Set function to execute on U\+S\+A\+R\+T3 or 6 I\+R\+Qs. 
+
+Sets the function that will be called inside the U\+S\+A\+R\+T I\+R\+Q Handler. 
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port where the function will be set. \\
+\hline
+{\em func} & The function that will be assigned to the I\+R\+Q. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8h_a36a705afe8cc35d466da26bc3d959849}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}!transmit\+String\+\_\+\+U\+S\+A\+R\+T@{transmit\+String\+\_\+\+U\+S\+A\+R\+T}}
+\index{transmit\+String\+\_\+\+U\+S\+A\+R\+T@{transmit\+String\+\_\+\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{transmit\+String\+\_\+\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void transmit\+String\+\_\+\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint8\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8h_a36a705afe8cc35d466da26bc3d959849}
+
+
+Sends a string or uint8 array through the U\+A\+R\+T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to use. \\
+\hline
+{\em data} & The address of the array of data to send. \\
+\hline
+{\em size} & The size of the array or the number of characters to send. \\
+\hline
+\end{DoxyParams}

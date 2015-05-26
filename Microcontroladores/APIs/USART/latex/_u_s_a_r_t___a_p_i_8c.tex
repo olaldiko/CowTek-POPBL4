@@ -1,0 +1,302 @@
+\hypertarget{_u_s_a_r_t___a_p_i_8c}{}\section{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c File Reference}
+\label{_u_s_a_r_t___a_p_i_8c}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+{\ttfamily \#include \char`\"{}U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_u_s_a_r_t___a_p_i_8c_a6e95d702b13913028194fafabeabf838}{U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a25c29f5812bb2cf8f0cab80e4c64cb11}{init\+U\+S\+A\+R\+T6} (uint16\+\_\+t speed)
+\begin{DoxyCompactList}\small\item\em The function pointer to the function to be executed inside the U\+S\+A\+R\+T6 I\+R\+Q. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a5156495834fc07fcf77f5c97589481ba}{init\+U\+S\+A\+R\+T3} (uint16\+\_\+t speed)
+\begin{DoxyCompactList}\small\item\em Initializes U\+S\+A\+R\+T3. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_ad009d28ef5bd7c8f600cfe1d4095f0e9}{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart)
+\begin{DoxyCompactList}\small\item\em Enables the U\+S\+A\+R\+T clock on the R\+C\+C device. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a32c7b52bfbe142d2a35e9428681b1ae6}{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$gpio)
+\begin{DoxyCompactList}\small\item\em Enables the G\+P\+I\+Ox clock on the R\+C\+C device. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_af5f9c4a68188d559e640c8e5e2b2b3e8}{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart)
+\begin{DoxyCompactList}\small\item\em Configures the U\+S\+A\+R\+T on the G\+P\+I\+O. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a2e22611cac4d8f9f646d9ca6b9675fe7}{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port} ()
+\begin{DoxyCompactList}\small\item\em Enables the R\+S232\+\_\+2 port connected to the U\+S\+A\+R\+T3. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a4e18de974d05670896717c24f29acc11}{conf\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart, uint16\+\_\+t speed)
+\begin{DoxyCompactList}\small\item\em Configures U\+S\+A\+R\+T3 or 6 with the desired speed, 8 data bits, 1 stop bit, no parity and in T\+X and R\+X mode. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a36a705afe8cc35d466da26bc3d959849}{transmit\+String\+\_\+\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart, uint8\+\_\+t $\ast$data, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends a string or uint8 array through the U\+A\+R\+T. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a00098b8ca8ffc38855c2c9db80e716e3}{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart)
+\begin{DoxyCompactList}\small\item\em Configure usart to generate Interrupts on R\+X events. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a3ac7229e7d9060c035f99e29b75d2002}{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$usart, \hyperlink{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}{func\+\_\+address\+\_\+t} func)
+\begin{DoxyCompactList}\small\item\em Set function to execute on U\+S\+A\+R\+T3 or 6 I\+R\+Qs. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a9e20e4eb45c71ba81845ebfa564ecca4}{U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler} ()
+\begin{DoxyCompactList}\small\item\em The U\+S\+A\+R\+T6 I\+R\+Q Handler. \end{DoxyCompactList}\item 
+void \hyperlink{_u_s_a_r_t___a_p_i_8c_a7ef0c8dc631c3684df826336b678dda0}{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler} ()
+\begin{DoxyCompactList}\small\item\em The U\+S\+A\+R\+T3 I\+R\+Q Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{_u_s_a_r_t___a_p_i_8c_a80f048590e62b2a5b03a6070b01c1d51}{usart3\+\_\+buffer} \mbox{[}\hyperlink{_u_s_a_r_t___a_p_i_8h_ac3146f1e9227301bb4aa518f4d336cee}{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{_u_s_a_r_t___a_p_i_8c_a66569096e25af4975304d54b1435f091}{usart6\+\_\+buffer} \mbox{[}\hyperlink{_u_s_a_r_t___a_p_i_8h_ac3146f1e9227301bb4aa518f4d336cee}{B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The buffer of the U\+S\+A\+R\+T3. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_u_s_a_r_t___a_p_i_8c_af1b5016a8ff5d96e0a67b31ed10be529}{bufflen3} = 0
+\begin{DoxyCompactList}\small\item\em The buffer of the U\+S\+A\+R\+T6. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_u_s_a_r_t___a_p_i_8c_ae0298f4793cf4964d236edbe3591e58e}{bufflen6} = 0
+\begin{DoxyCompactList}\small\item\em The lenght of the U\+S\+A\+R\+T3 buffer. \end{DoxyCompactList}\item 
+\hyperlink{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}{func\+\_\+address\+\_\+t} \hyperlink{_u_s_a_r_t___a_p_i_8c_aa738e4aa3c73a94a954305a7e8c21df2}{irq\+U\+S\+A\+R\+T3}
+\begin{DoxyCompactList}\small\item\em The lenght of the U\+S\+A\+R\+T3 buffer. \end{DoxyCompactList}\item 
+\hyperlink{_u_s_a_r_t___a_p_i_8h_ae0bbe02593a36decf6d74ce78f2ddace}{func\+\_\+address\+\_\+t} \hyperlink{_u_s_a_r_t___a_p_i_8c_ad626c517132ba2d27ebc821dc7b0ff14}{irq\+U\+S\+A\+R\+T6}
+\begin{DoxyCompactList}\small\item\em The function pointer to the function to be executed inside the U\+S\+A\+R\+T3 I\+R\+Q. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a6e95d702b13913028194fafabeabf838}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C}}
+\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+A\+R\+T\+\_\+\+A\+P\+I\+\_\+\+C}\label{_u_s_a_r_t___a_p_i_8c_a6e95d702b13913028194fafabeabf838}
+
+
+\subsection{Function Documentation}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_af5f9c4a68188d559e640c8e5e2b2b3e8}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T@{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T}}
+\index{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T@{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void conf\+G\+P\+I\+O\+\_\+\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_af5f9c4a68188d559e640c8e5e2b2b3e8}
+
+
+Configures the U\+S\+A\+R\+T on the G\+P\+I\+O. 
+
+Configures the U\+S\+A\+R\+T on the G\+P\+I\+O ports, setting the outputs and their mode.
+\begin{DoxyItemize}
+\item U\+S\+A\+R\+T3 Port and Pins\+:
+\begin{DoxyItemize}
+\item T\+X\+: P\+C10 -\/ U\+E\+X\+T Connector Pin 9
+\item R\+X\+: P\+C11 -\/ U\+E\+X\+T Connector Pin 7
+\end{DoxyItemize}
+\item U\+S\+A\+R\+T6 Port and Pins\+:
+\begin{DoxyItemize}
+\item T\+X\+: P\+C6 -\/ U\+E\+X\+T Connector Pin 3
+\item R\+X\+: P\+G9 -\/ U\+E\+X\+T Connector Pin 4 
+\begin{DoxyParams}{Parameters}
+{\em usart} & The U\+S\+A\+R\+T to configure. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{_u_s_a_r_t___a_p_i_8c_a4e18de974d05670896717c24f29acc11}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!conf\+U\+S\+A\+R\+T@{conf\+U\+S\+A\+R\+T}}
+\index{conf\+U\+S\+A\+R\+T@{conf\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{conf\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void conf\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart, }
+\item[{uint16\+\_\+t}]{speed}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a4e18de974d05670896717c24f29acc11}
+
+
+Configures U\+S\+A\+R\+T3 or 6 with the desired speed, 8 data bits, 1 stop bit, no parity and in T\+X and R\+X mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to configure. \\
+\hline
+{\em speed} & The baud rate of the port. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a00098b8ca8ffc38855c2c9db80e716e3}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X@{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X}}
+\index{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X@{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X}]{\setlength{\rightskip}{0pt plus 5cm}void conf\+U\+S\+A\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+R\+X (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a00098b8ca8ffc38855c2c9db80e716e3}
+
+
+Configure usart to generate Interrupts on R\+X events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to configure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a32c7b52bfbe142d2a35e9428681b1ae6}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!enable\+G\+P\+I\+O\+\_\+\+R\+C\+C@{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C}}
+\index{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C@{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{enable\+G\+P\+I\+O\+\_\+\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}void enable\+G\+P\+I\+O\+\_\+\+R\+C\+C (
+\begin{DoxyParamCaption}
+\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{gpio}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a32c7b52bfbe142d2a35e9428681b1ae6}
+
+
+Enables the G\+P\+I\+Ox clock on the R\+C\+C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio} & The G\+P\+I\+O to enable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a2e22611cac4d8f9f646d9ca6b9675fe7}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port@{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port}}
+\index{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port@{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port}]{\setlength{\rightskip}{0pt plus 5cm}void enable\+U\+S\+A\+R\+T3\+\_\+\+R\+S232\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a2e22611cac4d8f9f646d9ca6b9675fe7}
+
+
+Enables the R\+S232\+\_\+2 port connected to the U\+S\+A\+R\+T3. 
+
+Configures the board to send and receive data(no flow control) through the R\+S232\+\_\+port from U\+S\+A\+R\+T3. \hypertarget{_u_s_a_r_t___a_p_i_8c_ad009d28ef5bd7c8f600cfe1d4095f0e9}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C@{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C}}
+\index{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C@{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}void enable\+U\+S\+A\+R\+T\+\_\+\+R\+C\+C (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_ad009d28ef5bd7c8f600cfe1d4095f0e9}
+
+
+Enables the U\+S\+A\+R\+T clock on the R\+C\+C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to enable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a5156495834fc07fcf77f5c97589481ba}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!init\+U\+S\+A\+R\+T3@{init\+U\+S\+A\+R\+T3}}
+\index{init\+U\+S\+A\+R\+T3@{init\+U\+S\+A\+R\+T3}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{init\+U\+S\+A\+R\+T3}]{\setlength{\rightskip}{0pt plus 5cm}void init\+U\+S\+A\+R\+T3 (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{speed}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a5156495834fc07fcf77f5c97589481ba}
+
+
+Initializes U\+S\+A\+R\+T3. 
+
+Initializes U\+S\+A\+R\+T3 with default settings and desired speed. 
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed in bauds; \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a25c29f5812bb2cf8f0cab80e4c64cb11}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!init\+U\+S\+A\+R\+T6@{init\+U\+S\+A\+R\+T6}}
+\index{init\+U\+S\+A\+R\+T6@{init\+U\+S\+A\+R\+T6}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{init\+U\+S\+A\+R\+T6}]{\setlength{\rightskip}{0pt plus 5cm}void init\+U\+S\+A\+R\+T6 (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{speed}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a25c29f5812bb2cf8f0cab80e4c64cb11}
+
+
+The function pointer to the function to be executed inside the U\+S\+A\+R\+T6 I\+R\+Q. 
+
+Initializes U\+S\+A\+R\+T6. Initializes U\+S\+A\+R\+T6 with default settings and desired speed. 
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed in bauds; \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a3ac7229e7d9060c035f99e29b75d2002}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T@{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T}}
+\index{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T@{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart, }
+\item[{{\bf func\+\_\+address\+\_\+t}}]{func}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a3ac7229e7d9060c035f99e29b75d2002}
+
+
+Set function to execute on U\+S\+A\+R\+T3 or 6 I\+R\+Qs. 
+
+Sets the function that will be called inside the U\+S\+A\+R\+T I\+R\+Q Handler. 
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port where the function will be set. \\
+\hline
+{\em func} & The function that will be assigned to the I\+R\+Q. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a36a705afe8cc35d466da26bc3d959849}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!transmit\+String\+\_\+\+U\+S\+A\+R\+T@{transmit\+String\+\_\+\+U\+S\+A\+R\+T}}
+\index{transmit\+String\+\_\+\+U\+S\+A\+R\+T@{transmit\+String\+\_\+\+U\+S\+A\+R\+T}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{transmit\+String\+\_\+\+U\+S\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void transmit\+String\+\_\+\+U\+S\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{usart, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint8\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a36a705afe8cc35d466da26bc3d959849}
+
+
+Sends a string or uint8 array through the U\+A\+R\+T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usart} & The port to use. \\
+\hline
+{\em data} & The address of the array of data to send. \\
+\hline
+{\em size} & The size of the array or the number of characters to send. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a7ef0c8dc631c3684df826336b678dda0}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a7ef0c8dc631c3684df826336b678dda0}
+
+
+The U\+S\+A\+R\+T3 I\+R\+Q Handler. 
+
+This function is called when an interrupt occurs on the U\+S\+A\+R\+T3. Saves the received data into a buffer for later use, and calls the function that was previously set with set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T function. \hypertarget{_u_s_a_r_t___a_p_i_8c_a9e20e4eb45c71ba81845ebfa564ecca4}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_u_s_a_r_t___a_p_i_8c_a9e20e4eb45c71ba81845ebfa564ecca4}
+
+
+The U\+S\+A\+R\+T6 I\+R\+Q Handler. 
+
+This function is called when an interrupt occurs on the U\+S\+A\+R\+T6. Saves the received data into a buffer for later use, and calls the function that was previously set with set\+I\+R\+Q\+\_\+\+U\+S\+A\+R\+T function. 
+
+\subsection{Variable Documentation}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_af1b5016a8ff5d96e0a67b31ed10be529}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!bufflen3@{bufflen3}}
+\index{bufflen3@{bufflen3}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{bufflen3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t bufflen3 = 0}\label{_u_s_a_r_t___a_p_i_8c_af1b5016a8ff5d96e0a67b31ed10be529}
+
+
+The buffer of the U\+S\+A\+R\+T6. 
+
+The data received from the U\+S\+A\+R\+T6 will be saved here. \hypertarget{_u_s_a_r_t___a_p_i_8c_ae0298f4793cf4964d236edbe3591e58e}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!bufflen6@{bufflen6}}
+\index{bufflen6@{bufflen6}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{bufflen6}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t bufflen6 = 0}\label{_u_s_a_r_t___a_p_i_8c_ae0298f4793cf4964d236edbe3591e58e}
+
+
+The lenght of the U\+S\+A\+R\+T3 buffer. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8c_aa738e4aa3c73a94a954305a7e8c21df2}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!irq\+U\+S\+A\+R\+T3@{irq\+U\+S\+A\+R\+T3}}
+\index{irq\+U\+S\+A\+R\+T3@{irq\+U\+S\+A\+R\+T3}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{irq\+U\+S\+A\+R\+T3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf func\+\_\+address\+\_\+t} irq\+U\+S\+A\+R\+T3}\label{_u_s_a_r_t___a_p_i_8c_aa738e4aa3c73a94a954305a7e8c21df2}
+
+
+The lenght of the U\+S\+A\+R\+T3 buffer. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8c_ad626c517132ba2d27ebc821dc7b0ff14}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!irq\+U\+S\+A\+R\+T6@{irq\+U\+S\+A\+R\+T6}}
+\index{irq\+U\+S\+A\+R\+T6@{irq\+U\+S\+A\+R\+T6}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{irq\+U\+S\+A\+R\+T6}]{\setlength{\rightskip}{0pt plus 5cm}{\bf func\+\_\+address\+\_\+t} irq\+U\+S\+A\+R\+T6}\label{_u_s_a_r_t___a_p_i_8c_ad626c517132ba2d27ebc821dc7b0ff14}
+
+
+The function pointer to the function to be executed inside the U\+S\+A\+R\+T3 I\+R\+Q. 
+
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a80f048590e62b2a5b03a6070b01c1d51}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!usart3\+\_\+buffer@{usart3\+\_\+buffer}}
+\index{usart3\+\_\+buffer@{usart3\+\_\+buffer}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{usart3\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t usart3\+\_\+buffer\mbox{[}{\bf B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}\mbox{]}}\label{_u_s_a_r_t___a_p_i_8c_a80f048590e62b2a5b03a6070b01c1d51}
+\hypertarget{_u_s_a_r_t___a_p_i_8c_a66569096e25af4975304d54b1435f091}{}\index{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}!usart6\+\_\+buffer@{usart6\+\_\+buffer}}
+\index{usart6\+\_\+buffer@{usart6\+\_\+buffer}!U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c@{U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{usart6\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t usart6\+\_\+buffer\mbox{[}{\bf B\+U\+F\+F\+E\+R\+S\+I\+Z\+E}\mbox{]}}\label{_u_s_a_r_t___a_p_i_8c_a66569096e25af4975304d54b1435f091}
+
+
+The buffer of the U\+S\+A\+R\+T3. 
+
+The data received from the U\+S\+A\+R\+T3 will be saved here. 
