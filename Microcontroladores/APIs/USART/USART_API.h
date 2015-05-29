@@ -37,7 +37,7 @@ void enableGPIO_RCC(GPIO_TypeDef *gpio);
 
 
 void confGPIO_USART(USART_TypeDef *usart);
-void enableUSART3_RS232Port();
+void enableUSART3_RS232Port(void);
 
 void confUSART(USART_TypeDef *usart, uint16_t speed);
 void confUSART_IRQ_RX(USART_TypeDef *usart);
