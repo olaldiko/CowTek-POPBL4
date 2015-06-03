@@ -15,12 +15,21 @@ public class Fabricante{
 		this.fechaCreacion = fechaCreacion;
 	}
 	
+	public Fabricante(int fabricanteID, String nombre, String descripcion,
+			Date fechaCreacion) {
+		this.fabricanteID = fabricanteID;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.fechaCreacion = fechaCreacion;
+	}
+
+
 	public int intoducirEnBD(){
 		int rowsAffected = 0;
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ("gorkaram","narvaja");
 
-		String sql = "INSERT INTO FABRICANTE(NOMBRE, DESCRIPCION, FECHACREACION) " +
-				 "VALUES ('"+nombre+"', '"+descripcion+"', '"+fechaCreacion+"');";
+		String sql = "INSERT INTO fabricante(Nombre, Descripcion, FechaCreacion) " +
+				 "VALUES ('"+nombre+"', '"+descripcion+"', NOW());";
 	
 		rowsAffected=dbConnection.ejecutarUpdate(sql);
 		System.out.println("FilasAfectadas: "+rowsAffected);
@@ -28,5 +37,11 @@ public class Fabricante{
 		return rowsAffected;
 		
 	}	
+	@Override
+	public String toString() {
+		return "Fabricante [fabricanteID=" + fabricanteID + ", nombre="
+				+ nombre + ", descripcion=" + descripcion + ", fechaCreacion="
+				+ fechaCreacion + "]";
+	}
 	
 }

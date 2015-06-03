@@ -15,6 +15,14 @@ public class Vaca{
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
+	public Vaca(int vacaID, String nombre, String raza,
+			Date fechaNacimiento) {
+		this.vacaID = vacaID;
+		this.nombre = nombre;
+		this.raza = raza;
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
 	public int intoducirEnBD(){
 		int rowsAffected = 0;
 		JDBC dbConnection = new JDBC ("root","");
@@ -28,7 +36,7 @@ public class Vaca{
 		
 	}
 	
-	
+
 	public int getVacaID() {
 		return vacaID;
 	}
@@ -55,5 +63,9 @@ public class Vaca{
 	}
 	
 	
-
+	@Override
+	public String toString() {
+		return "Vaca [vacaID=" + vacaID + ", nombre=" + nombre + ", raza="
+				+ raza + ", fechaNacimiento=" + fechaNacimiento + "]";
+	}
 }
