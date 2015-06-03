@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'dht11' 
+ * Project: 'DHT11v2' 
  * Target:  'Target 1' 
  */
 

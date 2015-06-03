@@ -1,10 +1,10 @@
-#include "dht11.h"
+#include "DHT11.h"
 
-int main(){
-	DHT_DATA data;
-	initDHT();
+int main(void){
+	DHT_DATA values;
+	DHT11_init();
 	while(1){
-		data=getData();
-		delay(60000);
+		values = DHT11_readSensor();
+		delay(1000);
 	}
 }

@@ -30,7 +30,7 @@ void itzalipinout(int portua, int pina){
 		GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
 	if((portua >= 0)&&(portua <= 10)){
 		if((pina >= 0)&&(pina <=15)){
-			gpio->BSRRL |= (1 <<pina); 
+			gpio->BSRRH |= (1 <<pina); 
 		}
 	}
 }
@@ -38,7 +38,7 @@ void piztupinout(int portua, int pina){
 		GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
 	if((portua >= 0)&&(portua <= 10)){
 		if((pina >= 0)&&(pina <=15)){
-			gpio->BSRRH |= (1 <<(pina)); 
+			gpio->BSRRL |= (1 <<(pina)); 
 		}
 	}
 }
@@ -100,11 +100,10 @@ void setResistorMode(int portua, int pina, int modua){
 }
 uint32_t irakurripin(int portua, int pina){
 			GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-			uint32_t erregistroa = gpio->IDR;
+			//uint32_t erregistroa = gpio->IDR;
 	if((portua >= 0)&&(portua <= 10)){
-		if((pina >= 0)&&(pina <=	15)){
-				erregistroa &= (1<<portua);
-				if(erregistroa > 0 ){
+		if((pina >= 0)&&(pina <= 15)){
+				if((gpio->IDR & (1<<pina)) > 0 ){
 						return 1;
 				}else{
 						return 0;
@@ -113,6 +112,16 @@ uint32_t irakurripin(int portua, int pina){
 	}
 	return 0;
 }
-
+void setOutputMode(uint8_t port, uint8_t pin, uint8_t mode){
+	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(port*0x400)));
+	if((port >= 0)&&(port <= 10)){
+		if((pin >= 0)&&(pin <= 15)){
+			switch(mode){
+				case 0: gpio->OTYPER &= ~(1<<pin); break;
+				case 1: gpio->OTYPER |= (1<<pin); break;
+			}
+		}
+	}
+}
 
 #endif

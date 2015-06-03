@@ -418,6 +418,11 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>GPS_API.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPS_API.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

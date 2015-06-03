@@ -1,37 +1,27 @@
-#ifndef dht11_h
-#define dht11_h
-
+#ifndef DHT11_H
+#define DHT11_H
 #include <stdint.h>
-#include <time.h>
-#include "stm32f4xx.h"
-#include "RTE_Components.h" 
-#include "stm32f4xx.h"
-#include "TIMERAPI.H"
-#include "GPIOAPI.H"
+#include "GPIOAPI.h"
+#include "TIMERAPI.h"
 
-#define PORTPIN 5 //Indicamos el puerto al que conectamos el sensor
-#define DHTPIN 2 // Indicamos el pin donde conectamos el sensor
-#define PRESC 15
-#define ARR 0xFFFF
+#define PRESC 16
+#define ARR_VAL 60000
+#define DHTPIN 10
+#define DHTPORT 4
 
 typedef struct{
-	uint8_t t;
-	uint8_t h;
+	float temp;
+	float humd;
 }DHT_DATA;
 
-//Sentsorea konektatuko den gpioa hasieratu
-void initGPIO(void);
-//Timerra hasieratu
-void initTimer(void);
-//Hasierako konfigurazioa
-void initDHT(void);
-//Funtzio nagusia
-DHT_DATA getData(void);
-//Sentsoretik datuak irakurri
-void ReadDHT(void);
-//bitak bytetara pasatzeko funtzioa
-uint8_t read_data(void);
-//Delay funtzioa
-void delay(uint16_t dTime);
+void DHT11_init(void);
+void DHT11_initTimer(void);
+void DHT11_initGPIO(void);
+void DHT11_sendPreamble(void);
+void DHT11_readDHTData(uint8_t data[]);
+int DHT11_readBit(void);
+DHT_DATA DHT11_readSensor(void);
+
+
 
 #endif
