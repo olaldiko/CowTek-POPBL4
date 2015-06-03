@@ -19,18 +19,87 @@ public class Modelo{
 		this.fabricanteID = fabricanteID;
 	}
 	
+	public Modelo(int modeloID, String nombre, String descripcion,
+			float precio, Date fechaCreacion, int fabricanteID) {
+			this.modeloID = this.modeloID;
+			this.nombre = nombre;
+			this.descripcion = descripcion;
+			this.precio = precio;
+			this.fechaCreacion = fechaCreacion;
+			this.fabricanteID = fabricanteID;
+	}
+
+	
 	public int intoducirEnBD(){
 		int rowsAffected = 0;
 		JDBC dbConnection = new JDBC ("root","");
 
-		String sql = "INSERT INTO FABRICANTE(NOMBRE, DESCRIPCION, FECHACREACION) " +
-				 "VALUES ('"+nombre+"', '"+descripcion+"', '"+fechaCreacion+"');";
+		String sql = "INSERT INTO MODELO(NOMBRE, DESCRIPCION, PRECIO, FECHACREACION, FABRICANTEID) " +
+				 "VALUES ('"+nombre+"', '"+descripcion+"', '"+precio+"',"
+				 		+ "'"+fechaCreacion+"', '"+fabricanteID+"');";
 	
 		rowsAffected=dbConnection.ejecutarUpdate(sql);
 		System.out.println("FilasAfectadas: "+rowsAffected);
 		
 		return rowsAffected;
 		
+	}
+
+	
+	public int getModeloID() {
+		return modeloID;
+	}
+
+	public void setModeloID(int modeloID) {
+		this.modeloID = modeloID;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public float getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public int getFabricanteID() {
+		return fabricanteID;
+	}
+
+	public void setFabricanteID(int fabricanteID) {
+		this.fabricanteID = fabricanteID;
 	}	
+	@Override
+	public String toString() {
+		return "Modelo [modeloID=" + modeloID + ", nombre=" + nombre
+				+ ", descripcion=" + descripcion + ", precio=" + precio
+				+ ", fechaCreacion=" + fechaCreacion + ", fabricanteID="
+				+ fabricanteID + "]";
+	}
+
 	
 }

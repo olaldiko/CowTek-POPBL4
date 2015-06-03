@@ -6,51 +6,39 @@ import java.sql.Date;
 public class Placa{
 	int placaID;
 	Date fechaCompra;
-	int modeloID ;
+	int tipoPlacaID;
 	
-	public Placa(int placaID, Date fechaCompra, int modeloID){
-		this.placaID = placaID;
+	public Placa(Date fechaCompra, int tipoPlacaID){
 		this.fechaCompra = fechaCompra;
-		this.modeloID = modeloID;
+		this.tipoPlacaID = tipoPlacaID;
 	}
 	
+	public Placa(int placaID, Date fechaCompra, int tipoPlacaID) {
+		this.placaID = placaID;
+		this.fechaCompra = fechaCompra;
+		this.tipoPlacaID = tipoPlacaID;
+	}
 	public int intoducirEnBD(){
 		int rowsAffected = 0;
 		JDBC dbConnection = new JDBC ("root","");
 		
-		String sql = "INSERT INTO VACA " + // (PlacaID, FechaCompra, TipoPlacaID)
-				 "VALUES ('"+placaID+"', '"+fechaCompra+"', '"+modeloID+"');";
+		String sql = "INSERT INTO PLACA (FechaCompra, TipoPlacaID)"+
+				 "VALUES ('"+fechaCompra+"', '"+tipoPlacaID+"');";
+
+		
 		System.out.println(sql);
+		
 		rowsAffected=dbConnection.ejecutarUpdate(sql);
 		System.out.println("FilasAfectadas: "+rowsAffected);
 		
 		return rowsAffected;
 		
-	}
+	}	
 
-	public int getPlacaID() {
-		return placaID;
+	@Override
+	public String toString() {
+		return "Placa [placaID=" + placaID + ", fechaCompra=" + fechaCompra
+				+ ", tipoPlacaID=" + tipoPlacaID + "]";
 	}
-
-	public void setPlacaID(int placaID) {
-		this.placaID = placaID;
-	}
-
-	public Date getFechaCompra() {
-		return fechaCompra;
-	}
-
-	public void setFechaCompra(Date fechaCompra) {
-		this.fechaCompra = fechaCompra;
-	}
-
-	public int getModeloID() {
-		return modeloID;
-	}
-
-	public void setModeloID(int modeloID) {
-		this.modeloID = modeloID;
-	}
-	
 
 }
