@@ -42,6 +42,33 @@ public class AnalisisIngesta extends AnalisisDatos {
 		b = ((sumUV/datos.size())-(medU*medV))/((sumUU/datos.size())-(medU*medU));
 		float A = medV - b*medU;
 		a = (float) Math.exp(A);
+		//y = a*x^b
 	}
+
+	public ArrayList<Dato> getDatos() {
+		return datos;
+	}
+
+	public void setDatos(ArrayList<Dato> datos) {
+		this.datos = datos;
+	}
+
+	public float getA() {
+		return a;
+	}
+
+	public void setA(float a) {
+		this.a = a;
+	}
+
+	public float getB() {
+		return b;
+	}
+
+	public void setB(float b) {
+		this.b = b;
+	}
+	
+	
 	
 }

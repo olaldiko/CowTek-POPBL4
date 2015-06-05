@@ -12,6 +12,8 @@ import Jama.Matrix;
 public class AnalisisTemperatura {
 
 	ArrayList<Dato> datos;
+	String ecuacion;
+	String dEcuacion;
 
 	public AnalisisTemperatura(ArrayList<Dato> datos) {
 		super();
@@ -48,9 +50,10 @@ public class AnalisisTemperatura {
 		
 		Matrix x = A.solve(b);
 		
-		String ecuacion = "y = " + x.get(0, 0) + " + " + x.get(1, 0) + "*x + " + x.get(2, 0) + "*x^2";
+		ecuacion = "y = " + x.get(0, 0) + " + " + x.get(1, 0) + "*x + " + x.get(2, 0) + "*x^2";
 		
-		String derivada = derivada(ecuacion);
+		dEcuacion = derivada(ecuacion);
+		
 	}
 	
 	public String derivada(String funcion){
@@ -89,5 +92,31 @@ public class AnalisisTemperatura {
 		
 		return derivada;
 	}
+
+	public ArrayList<Dato> getDatos() {
+		return datos;
+	}
+
+	public void setDatos(ArrayList<Dato> datos) {
+		this.datos = datos;
+	}
+
+	public String getEcuacion() {
+		return ecuacion;
+	}
+
+	public void setEcuacion(String ecuacion) {
+		this.ecuacion = ecuacion;
+	}
+
+	public String getdEcuacion() {
+		return dEcuacion;
+	}
+
+	public void setdEcuacion(String dEcuacion) {
+		this.dEcuacion = dEcuacion;
+	}
+	
+	
 
 }
