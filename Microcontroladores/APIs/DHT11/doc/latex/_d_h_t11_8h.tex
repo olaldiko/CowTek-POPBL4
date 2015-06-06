@@ -1,0 +1,144 @@
+\hypertarget{_d_h_t11_8h}{}\section{D\+H\+T11.\+h File Reference}
+\label{_d_h_t11_8h}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+A\+P\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+I\+M\+E\+R\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_d_h_t___d_a_t_a}{D\+H\+T\+\_\+\+D\+A\+T\+A}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_h_t11_8h_a9c168a1dca42d6d9da6d435ef7e4d7f1}{P\+R\+E\+S\+C}~16
+\item 
+\#define \hyperlink{_d_h_t11_8h_a120bda9ad90f946931e75596c67408e0}{A\+R\+R\+\_\+\+V\+A\+L}~60000
+\item 
+\#define \hyperlink{_d_h_t11_8h_a757bb4e2bff6148de6ef3989b32a0126}{D\+H\+T\+P\+I\+N}~10
+\item 
+\#define \hyperlink{_d_h_t11_8h_a3d43d5d575cd8b4297faf23cae8a467f}{D\+H\+T\+P\+O\+R\+T}~4
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_d_h_t11_8h_a0ce4086604b19bdc96d3cb5b38dabb34}{D\+H\+T11\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Sensor initialization function. \end{DoxyCompactList}\item 
+void \hyperlink{_d_h_t11_8h_ab091c4d6209a6a324f86f12ae5b8076f}{D\+H\+T11\+\_\+init\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the timer with the propper setup for the sensor. \end{DoxyCompactList}\item 
+void \hyperlink{_d_h_t11_8h_a47487063fe6e490915a67278f540708d}{D\+H\+T11\+\_\+init\+G\+P\+I\+O} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the G\+P\+I\+O with the propper setup for the sensor. \end{DoxyCompactList}\item 
+void \hyperlink{_d_h_t11_8h_a5514087bc81d8b10ce9ca0e5f5c2a4b0}{D\+H\+T11\+\_\+send\+Preamble} (void)
+\begin{DoxyCompactList}\small\item\em Sends preamble to read sensor. \end{DoxyCompactList}\item 
+void \hyperlink{_d_h_t11_8h_a568388ce3c9997374312285f90b5f6c7}{D\+H\+T11\+\_\+read\+D\+H\+T\+Data} (uint8\+\_\+t data\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Reads the raw data from the sensor. \end{DoxyCompactList}\item 
+int \hyperlink{_d_h_t11_8h_a355662153a0c75180970d2243a29cd64}{D\+H\+T11\+\_\+read\+Bit} (void)
+\begin{DoxyCompactList}\small\item\em Reads a single bit from the sensor. \end{DoxyCompactList}\item 
+\hyperlink{struct_d_h_t___d_a_t_a}{D\+H\+T\+\_\+\+D\+A\+T\+A} \hyperlink{_d_h_t11_8h_a203d6df32bd9984da5495d49fd1b2ec1}{D\+H\+T11\+\_\+read\+Sensor} (void)
+\begin{DoxyCompactList}\small\item\em Reads the temperature and the humidity from the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_d_h_t11_8h_a120bda9ad90f946931e75596c67408e0}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!A\+R\+R\+\_\+\+V\+A\+L@{A\+R\+R\+\_\+\+V\+A\+L}}
+\index{A\+R\+R\+\_\+\+V\+A\+L@{A\+R\+R\+\_\+\+V\+A\+L}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{A\+R\+R\+\_\+\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+R\+\_\+\+V\+A\+L~60000}\label{_d_h_t11_8h_a120bda9ad90f946931e75596c67408e0}
+\hypertarget{_d_h_t11_8h_a757bb4e2bff6148de6ef3989b32a0126}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T\+P\+I\+N@{D\+H\+T\+P\+I\+N}}
+\index{D\+H\+T\+P\+I\+N@{D\+H\+T\+P\+I\+N}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+P\+I\+N~10}\label{_d_h_t11_8h_a757bb4e2bff6148de6ef3989b32a0126}
+\hypertarget{_d_h_t11_8h_a3d43d5d575cd8b4297faf23cae8a467f}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T\+P\+O\+R\+T@{D\+H\+T\+P\+O\+R\+T}}
+\index{D\+H\+T\+P\+O\+R\+T@{D\+H\+T\+P\+O\+R\+T}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+P\+O\+R\+T~4}\label{_d_h_t11_8h_a3d43d5d575cd8b4297faf23cae8a467f}
+\hypertarget{_d_h_t11_8h_a9c168a1dca42d6d9da6d435ef7e4d7f1}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!P\+R\+E\+S\+C@{P\+R\+E\+S\+C}}
+\index{P\+R\+E\+S\+C@{P\+R\+E\+S\+C}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{P\+R\+E\+S\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+E\+S\+C~16}\label{_d_h_t11_8h_a9c168a1dca42d6d9da6d435ef7e4d7f1}
+
+
+\subsection{Function Documentation}
+\hypertarget{_d_h_t11_8h_a0ce4086604b19bdc96d3cb5b38dabb34}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+init@{D\+H\+T11\+\_\+init}}
+\index{D\+H\+T11\+\_\+init@{D\+H\+T11\+\_\+init}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void D\+H\+T11\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_a0ce4086604b19bdc96d3cb5b38dabb34}
+
+
+Sensor initialization function. 
+
+Initializes the T\+I\+M and G\+P\+I\+Os and waits the recommended time to start reading the sensor. \hypertarget{_d_h_t11_8h_a47487063fe6e490915a67278f540708d}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+init\+G\+P\+I\+O@{D\+H\+T11\+\_\+init\+G\+P\+I\+O}}
+\index{D\+H\+T11\+\_\+init\+G\+P\+I\+O@{D\+H\+T11\+\_\+init\+G\+P\+I\+O}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+init\+G\+P\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}void D\+H\+T11\+\_\+init\+G\+P\+I\+O (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_a47487063fe6e490915a67278f540708d}
+
+
+Initializes the G\+P\+I\+O with the propper setup for the sensor. 
+
+\hypertarget{_d_h_t11_8h_ab091c4d6209a6a324f86f12ae5b8076f}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+init\+Timer@{D\+H\+T11\+\_\+init\+Timer}}
+\index{D\+H\+T11\+\_\+init\+Timer@{D\+H\+T11\+\_\+init\+Timer}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+init\+Timer}]{\setlength{\rightskip}{0pt plus 5cm}void D\+H\+T11\+\_\+init\+Timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_ab091c4d6209a6a324f86f12ae5b8076f}
+
+
+Initializes the timer with the propper setup for the sensor. 
+
+\hypertarget{_d_h_t11_8h_a355662153a0c75180970d2243a29cd64}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+read\+Bit@{D\+H\+T11\+\_\+read\+Bit}}
+\index{D\+H\+T11\+\_\+read\+Bit@{D\+H\+T11\+\_\+read\+Bit}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+read\+Bit}]{\setlength{\rightskip}{0pt plus 5cm}int D\+H\+T11\+\_\+read\+Bit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_a355662153a0c75180970d2243a29cd64}
+
+
+Reads a single bit from the sensor. 
+
+\begin{DoxyReturn}{Returns}
+The bit. 
+\end{DoxyReturn}
+\hypertarget{_d_h_t11_8h_a568388ce3c9997374312285f90b5f6c7}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+read\+D\+H\+T\+Data@{D\+H\+T11\+\_\+read\+D\+H\+T\+Data}}
+\index{D\+H\+T11\+\_\+read\+D\+H\+T\+Data@{D\+H\+T11\+\_\+read\+D\+H\+T\+Data}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+read\+D\+H\+T\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void D\+H\+T11\+\_\+read\+D\+H\+T\+Data (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{data\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_a568388ce3c9997374312285f90b5f6c7}
+
+
+Reads the raw data from the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array where the data will be written. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_d_h_t11_8h_a203d6df32bd9984da5495d49fd1b2ec1}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+read\+Sensor@{D\+H\+T11\+\_\+read\+Sensor}}
+\index{D\+H\+T11\+\_\+read\+Sensor@{D\+H\+T11\+\_\+read\+Sensor}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+read\+Sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+H\+T\+\_\+\+D\+A\+T\+A} D\+H\+T11\+\_\+read\+Sensor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_a203d6df32bd9984da5495d49fd1b2ec1}
+
+
+Reads the temperature and the humidity from the sensor. 
+
+\begin{DoxyReturn}{Returns}
+The struct that contains the values. 
+\end{DoxyReturn}
+\hypertarget{_d_h_t11_8h_a5514087bc81d8b10ce9ca0e5f5c2a4b0}{}\index{D\+H\+T11.\+h@{D\+H\+T11.\+h}!D\+H\+T11\+\_\+send\+Preamble@{D\+H\+T11\+\_\+send\+Preamble}}
+\index{D\+H\+T11\+\_\+send\+Preamble@{D\+H\+T11\+\_\+send\+Preamble}!D\+H\+T11.\+h@{D\+H\+T11.\+h}}
+\subsubsection[{D\+H\+T11\+\_\+send\+Preamble}]{\setlength{\rightskip}{0pt plus 5cm}void D\+H\+T11\+\_\+send\+Preamble (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_h_t11_8h_a5514087bc81d8b10ce9ca0e5f5c2a4b0}
+
+
+Sends preamble to read sensor. 
+
