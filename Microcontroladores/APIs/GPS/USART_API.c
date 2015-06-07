@@ -3,6 +3,7 @@
 #define USART_API_C
 #include "USART_API.h"
 
+
 uint8_t usart3_buffer[BUFFERSIZE]; /** The buffer of the USART3. The data received from the USART3 will be saved here. */
 uint8_t usart6_buffer[BUFFERSIZE]; /** The buffer of the USART6. The data received from the USART6 will be saved here. */
 uint8_t bufflen3 = 0; /** The lenght of the USART3 buffer */
@@ -133,6 +134,7 @@ void confUSART(USART_TypeDef *usart, uint16_t speed) {
 		case 1200: usart->BRR = 0x3415; break; //1200 bps @PCLK 16Mhz
 		case 4800: usart->BRR = 0x222E; break; //4800 bps @PCLK 16Mhz
 		case 9600: usart->BRR = 0x683; break;  //9600 bps @PCLK 16Mhz
+		case 38400: usart->BRR = 0x1A1; break; //36400 bps @PCLK 16Mhz
 	}
 	usart->CR1 = USART_CR1_UE | USART_CR1_TE | USART_CR1_RE;
 }
@@ -187,7 +189,6 @@ void setIRQ_USART(USART_TypeDef *usart, func_address_t func) {
 *
 ********************************************/
 void USART6_IRQHandler() {
-	int i = 0;
 	if(bufflen6 < BUFFERSIZE) {
 	usart6_buffer[bufflen6++] = USART6->DR;
 	irqUSART6();
@@ -203,7 +204,6 @@ void USART6_IRQHandler() {
 *
 ********************************************/
 void USART3_IRQHandler() {
-	int i = 0;
 	if(bufflen3 < BUFFERSIZE) {
 	usart3_buffer[bufflen3++] = USART3->DR;
 	irqUSART3();

@@ -25,8 +25,13 @@
 #define USART3_RS232_TX_PIN 8 /**< PIN of the USART3 TX for the RS232 port on the GPIO. */
 #define USART3_RS232_RX_PIN 9 /**< PIN of the USART3 RX for the RS232 port on the GPIO. */
 
-#define BUFFERSIZE 80 /**< Size of the buffer for the received data. */
+#define BUFFERSIZE 300 /**< Size of the buffer for the received data. */
 
+
+extern uint8_t usart3_buffer[BUFFERSIZE]; /** The buffer of the USART3. The data received from the USART3 will be saved here. */
+extern uint8_t usart6_buffer[BUFFERSIZE]; /** The buffer of the USART6. The data received from the USART6 will be saved here. */
+extern uint8_t bufflen3; /** The lenght of the USART3 buffer */
+extern uint8_t bufflen6; /** The lenght of the USART3 buffer */ 
 
 typedef void (*func_address_t)(void); /**< Void function pointer typeDef */
 
