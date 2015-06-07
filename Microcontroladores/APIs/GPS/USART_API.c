@@ -6,8 +6,8 @@
 
 uint8_t usart3_buffer[BUFFERSIZE]; /** The buffer of the USART3. The data received from the USART3 will be saved here. */
 uint8_t usart6_buffer[BUFFERSIZE]; /** The buffer of the USART6. The data received from the USART6 will be saved here. */
-uint8_t bufflen3 = 0; /** The lenght of the USART3 buffer */
-uint8_t bufflen6 = 0; /** The lenght of the USART3 buffer */
+uint16_t bufflen3 = 0; /** The lenght of the USART3 buffer */
+uint16_t bufflen6 = 0; /** The lenght of the USART3 buffer */
 
 func_address_t irqUSART3; /** The function pointer to the function to be executed inside the USART3 IRQ. */
 func_address_t irqUSART6; /** The function pointer to the function to be executed inside the USART6 IRQ. */
@@ -17,13 +17,13 @@ func_address_t irqUSART6; /** The function pointer to the function to be execute
 *@param speed The speed in bauds;
 *
 ********************************************/
-void initUSART6(uint16_t speed) {
+void USART6_Init(uint16_t speed) {
 	enableGPIO_RCC(GPIOC);
 	enableGPIO_RCC(GPIOG);
-	enableUSART_RCC(USART6);
-	confGPIO_USART(USART6);
-	confUSART(USART6, speed);
-	confUSART_IRQ_RX(USART6);
+	USART_Enable_RCC(USART6);
+	USART_ConfGPIO(USART6);
+	USART_Conf(USART6, speed);
+	USART_ConfIRQ_RX(USART6);
 }
 
 /******************************************//**
@@ -31,13 +31,12 @@ void initUSART6(uint16_t speed) {
 *@param speed The speed in bauds;
 *
 ********************************************/
-void initUSART3(uint16_t speed) {
+void USART3_Init(uint16_t speed) {
 	enableGPIO_RCC(GPIOC);
-	enableUSART_RCC(USART3);
-	confGPIO_USART(USART3);
-	confUSART(USART3, speed);
-	confUSART_IRQ_RX(USART3);
-	
+	USART_Enable_RCC(USART3);
+	USART_ConfGPIO(USART3);
+	USART_Conf(USART3, speed);
+	USART_ConfIRQ_RX(USART3);
 }
 
 /******************************************//**
@@ -45,7 +44,7 @@ void initUSART3(uint16_t speed) {
 *@param usart The port to enable.
 *
 ********************************************/
-void enableUSART_RCC(USART_TypeDef *usart) {
+void USART_Enable_RCC(USART_TypeDef *usart) {
 	
 	if(usart == USART6) {
 		RCC->APB2ENR |= RCC_APB2ENR_USART6EN;
@@ -93,7 +92,7 @@ void enableGPIO_RCC(GPIO_TypeDef *gpio) {
 *@param usart The USART to configure.
 *
 ********************************************/
-void confGPIO_USART(USART_TypeDef *usart) {
+void USART_ConfGPIO(USART_TypeDef *usart) {
 	if(usart == USART3) {
 		GPIOC->MODER |= (GPIO_MODER_ALTERNATE << (USART3_TX_PIN * MODER_SIZE));
 		GPIOC->MODER |= (GPIO_MODER_ALTERNATE << (USART3_RX_PIN * MODER_SIZE));
@@ -113,7 +112,7 @@ void confGPIO_USART(USART_TypeDef *usart) {
 *
 *
 ********************************************/
-void enableUSART3_RS232Port() {
+void USART3_EnableRS232Port() {
 		enableGPIO_RCC(GPIOD);
 		
 		GPIOD->MODER |= (GPIO_MODER_ALTERNATE << (USART3_RS232_TX_PIN * MODER_SIZE));
@@ -129,7 +128,7 @@ void enableUSART3_RS232Port() {
 *@param speed The baud rate of the port.
 *
 ********************************************/
-void confUSART(USART_TypeDef *usart, uint16_t speed) {
+void USART_Conf(USART_TypeDef *usart, uint16_t speed) {
 	switch(speed) {
 		case 1200: usart->BRR = 0x3415; break; //1200 bps @PCLK 16Mhz
 		case 4800: usart->BRR = 0x222E; break; //4800 bps @PCLK 16Mhz
@@ -145,7 +144,7 @@ void confUSART(USART_TypeDef *usart, uint16_t speed) {
 *@param data The address of the array of data to send.
 *@param size The size of the array or the number of characters to send.
 ********************************************/
-void transmitString_USART(USART_TypeDef *usart, uint8_t *data, uint8_t size) {
+void USART_transmitString(USART_TypeDef *usart, uint8_t *data, uint8_t size) {
 	int i = 0;
 	while(i < size) {
 		while(( usart->SR & USART_SR_TXE ) == 0 );
@@ -158,7 +157,7 @@ void transmitString_USART(USART_TypeDef *usart, uint8_t *data, uint8_t size) {
 *@param usart The port to configure.
 *
 ********************************************/
-void confUSART_IRQ_RX(USART_TypeDef *usart) {
+void USART_ConfIRQ_RX(USART_TypeDef *usart) {
 	if(usart == USART3) {
 		USART3->CR1 |= USART_CR1_RXNEIE;
 		NVIC_EnableIRQ(USART3_IRQn);
@@ -174,7 +173,7 @@ void confUSART_IRQ_RX(USART_TypeDef *usart) {
 *@param func The function that will be assigned to the IRQ.
 *
 ********************************************/
-void setIRQ_USART(USART_TypeDef *usart, func_address_t func) {
+void USART_setIRQ(USART_TypeDef *usart, func_address_t func) {
 	if(usart == USART3) {
 		irqUSART3 = func;
 	} else if(usart == USART6) {

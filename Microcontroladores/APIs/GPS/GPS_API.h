@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include "USART_API.h"
 
+#define MSG_SIZE 150
+
 typedef struct{
 	char time[10];
 	char lat[10];
@@ -27,16 +29,16 @@ typedef struct{
 	int altitude;
 }GPS_Pos;
 
-extern uint8_t gpsMsg[MSG_SIZE];
-extern uint8_t gps_MsgLenght = 0;
+extern uint8_t gpsMsg[];
+extern uint8_t gps_MsgLenght;
 extern uint8_t *gps_usart_buffer;
-extern uint8_t *gps_usart_bufflen;
+extern uint16_t *gps_usart_bufflen;
 extern GPS_DATA_TypeDef gpsData;
 
 
-void GPS_setBuffer(uint8_t *gps_buffer, uint8_t *gps_buffer_length);
-void getMsg_GPS(void);
-void parseData_GPS(void);
-GPS_Pos getLocation_GPS(void);
+void GPS_setBuffer(uint8_t *gps_buffer, uint16_t *gps_buffer_length);
+void GPS_getMsg(void);
+void GPS_parseData(void);
+GPS_Pos GPS_getLocation(void);
 
 #endif

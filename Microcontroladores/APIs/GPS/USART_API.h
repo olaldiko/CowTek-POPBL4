@@ -30,26 +30,26 @@
 
 extern uint8_t usart3_buffer[BUFFERSIZE]; /** The buffer of the USART3. The data received from the USART3 will be saved here. */
 extern uint8_t usart6_buffer[BUFFERSIZE]; /** The buffer of the USART6. The data received from the USART6 will be saved here. */
-extern uint8_t bufflen3; /** The lenght of the USART3 buffer */
-extern uint8_t bufflen6; /** The lenght of the USART3 buffer */ 
+extern uint16_t bufflen3; /** The lenght of the USART3 buffer */
+extern uint16_t bufflen6; /** The lenght of the USART3 buffer */ 
 
 typedef void (*func_address_t)(void); /**< Void function pointer typeDef */
 
-void initUSART3(uint16_t speed);
-void initUSART6(uint16_t speed);
-void enableUSART_RCC(USART_TypeDef *usart);
+void USART3_Init(uint16_t speed);
+void USART6_Init(uint16_t speed);
+void USART_Enable_RCC(USART_TypeDef *usart);
 void enableGPIO_RCC(GPIO_TypeDef *gpio);
 
 
-void confGPIO_USART(USART_TypeDef *usart);
-void enableUSART3_RS232Port(void);
+void USART_ConfGPIO(USART_TypeDef *usart);
+void USART3_EnableRS232Port(void);
 
-void confUSART(USART_TypeDef *usart, uint16_t speed);
-void confUSART_IRQ_RX(USART_TypeDef *usart);
+void USART_Conf(USART_TypeDef *usart, uint16_t speed);
+void USART_ConfIRQ_RX(USART_TypeDef *usart);
 
-void setIRQ_USART(USART_TypeDef *usart, func_address_t func);
+void USART_setIRQ(USART_TypeDef *usart, func_address_t func);
 
-void transmitString_USART(USART_TypeDef *usart, uint8_t *data, uint8_t size);
+void USART_transmitString(USART_TypeDef *usart, uint8_t *data, uint8_t size);
 
 
 

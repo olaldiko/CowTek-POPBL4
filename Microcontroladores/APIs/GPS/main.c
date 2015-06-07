@@ -5,10 +5,10 @@
 int main(void){
 	int i = 0;
 	GPS_Pos position;
-	initUSART3(38400);
+	USART3_Init(38400);
 	GPS_setBuffer(usart3_buffer, &bufflen3);
-	setIRQ_USART(USART3, getMsg_GPS);
+	USART_setIRQ(USART3, GPS_getMsg);
 	while(1){
-	position = getLocation_GPS();
+	position = GPS_getLocation();
 	}	
 }
