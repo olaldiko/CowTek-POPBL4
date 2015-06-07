@@ -27,6 +27,13 @@ typedef struct{
 	int altitude;
 }GPS_Pos;
 
+extern uint8_t gpsMsg[MSG_SIZE];
+extern uint8_t gps_MsgLenght = 0;
+extern uint8_t *gps_usart_buffer;
+extern uint8_t *gps_usart_bufflen;
+extern GPS_DATA_TypeDef gpsData;
+
+
 void GPS_setBuffer(uint8_t *gps_buffer, uint8_t *gps_buffer_length);
 void getMsg_GPS(void);
 void parseData_GPS(void);
