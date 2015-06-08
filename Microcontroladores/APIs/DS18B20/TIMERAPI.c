@@ -159,6 +159,7 @@ void resetCounter(){
 void delay(uint16_t microsec){
 	resetCounter();
 	setTime(DELAY_PRESC, microsec);
+	setOnePulse(1);
 	startCounter();
 	while(!isUpdate(1));
 }

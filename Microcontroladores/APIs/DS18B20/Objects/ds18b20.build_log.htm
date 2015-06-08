@@ -22,16 +22,14 @@ Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
 C:\Users\Gorka\Documents\GitHub\CowTek-POPBL4\Microcontroladores\APIs\DS18B20\ds18b20.uvprojx
-Project File Date:  06/07/2015
+Project File Date:  06/08/2015
 
 <h2>Output:</h2>
 Rebuild target 'Target 1'
 compiling DS18B20_API.c...
 DS18B20_API.h(19): warning:  #1295-D: Deprecated declaration DS18_GPIOInit - give arg types
   void DS18_GPIOInit();
-DS18B20_API.c(81): warning:  #177-D: variable "bit" was declared but never referenced
-        int bit = 0;
-DS18B20_API.c: 2 warnings, 0 errors
+DS18B20_API.c: 1 warning, 0 errors
 compiling main.c...
 DS18B20_API.h(19): warning:  #1295-D: Deprecated declaration DS18_GPIOInit - give arg types
   void DS18_GPIOInit();
@@ -47,20 +45,20 @@ GPIOAPI.c(118): warning:  #186-D: pointless comparison of unsigned integer with 
                 if((pin >= 0)&&(pin <= 15)){
 GPIOAPI.c: 2 warnings, 0 errors
 compiling TIMERAPI.c...
-assembling startup_stm32f407xx.s...
-compiling system_stm32f4xx.c...
 compiling stm32f4xx_hal.c...
 compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_flash_ex.c...
 compiling stm32f4xx_hal_gpio.c...
 compiling stm32f4xx_hal_pwr.c...
 compiling stm32f4xx_hal_pwr_ex.c...
 compiling stm32f4xx_hal_rcc.c...
 compiling stm32f4xx_hal_rcc_ex.c...
-compiling stm32f4xx_hal_flash.c...
-compiling stm32f4xx_hal_flash_ex.c...
+assembling startup_stm32f407xx.s...
+compiling system_stm32f4xx.c...
 linking...
-Program Size: Code=3756 RO-data=424 RW-data=4 ZI-data=1636  
-".\Objects\ds18b20.axf" - 0 Error(s), 7 Warning(s).
+Program Size: Code=3872 RO-data=424 RW-data=4 ZI-data=1636  
+".\Objects\ds18b20.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -77,11 +75,11 @@ Package Vendor: Keil
    * Component: Startup Version: 2.1.0
    * Component: STM32Cube Framework Version: 
    * Component: PWR Version: 1.1.0
-   * Component: Classic Version: 1.1.0
    * Component: RCC Version: 1.1.0
-   * Component: Flash Version: 1.1.0
    * Component: Common Version: 1.1.0
+   * Component: Classic Version: 1.1.0
    * Component: Cortex Version: 1.1.0
+   * Component: Flash Version: 1.1.0
    * Component: GPIO Version: 1.1.0
 
 <h2>Collection of Component include folders:</h2>
@@ -97,41 +95,41 @@ Package Vendor: Keil
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
 
    * Component: Keil::Device:Startup:2.1.0
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\system_stm32f4xx.c
 
    * Component: ::Device:STM32Cube Framework (API)
 
    * Component: Keil::Device:STM32Cube HAL:PWR:1.1.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
-
-   * Component: Keil::Device:STM32Cube Framework:Classic:1.1.0
-      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
-      Source file:   MDK\Templates\Src\main.c
-      Include file:  MDK\Templates\Inc\main.h
-      Include file:  CMSIS\Driver\Config\RTE_Device.h
-      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
-      Source file:   MDK\Templates\Src\stm32f4xx_it.c
-      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.1.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.1.0
+      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.1.0
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Include file:  MDK\Templates\Inc\main.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Source file:   MDK\Templates\Src\main.c
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.1.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
    * Component: Keil::Device:STM32Cube HAL:Flash:1.1.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
-
-   * Component: Keil::Device:STM32Cube HAL:Common:1.1.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
-      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
-
-   * Component: Keil::Device:STM32Cube HAL:Cortex:1.1.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
    * Component: Keil::Device:STM32Cube HAL:GPIO:1.1.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c

@@ -13,87 +13,85 @@ void DS18_GPIOInit(){
 	aktdesgpio(DS18_PORT, 1);
 	//GPIOE->OSPEEDR = (0x01<<DS18_PIN);
 	//GPIOE->PUPDR = (0x01<<DS18_PIN);
-	setOutputMode(DS18_PORT, DS18_PIN, 0);
-	setpinmode(DS18_PORT, DS18_PIN, 2);
+	setOutputMode(DS18_PORT, DS18_PIN, 1);
+	//Output
+	GPIOE->MODER |= (1<<(DS18_PIN*2));
+	GPIOE->MODER &= ~(2<<(DS18_PIN*2));
 	
 }
 void DS18_TIMInit(void){
 	aktTimer();
-	setOnePulse(1);
 	setDebugMode(1);
 	setUpdateMode(1);
+	setOnePulse(1);
 }
 uint8_t DS18_ReadBit(void){
 	uint8_t bit = 0;
-	setpinmode(DS18_PORT, DS18_PIN, 2);
+	//Output
+	GPIOE->MODER |= (1<<(DS18_PIN*2));
+	GPIOE->MODER &= ~(2<<(DS18_PIN*2));
+	//Low
 	GPIOE->BSRRH |= (1<<DS18_PIN);
 	delay(3);
-	setpinmode(DS18_PORT, DS18_PIN, 1);
+	//Input
+	GPIOE->MODER &= ~(3<<(DS18_PIN*2));
 	delay(10);
-	if(irakurripin(DS18_PORT, DS18_PIN)){
-		bit = 1;
-	}
+	bit = (GPIOE->IDR & (1<<DS18_PIN))>>DS18_PIN;
 	delay(53);
 	return bit;
 }
 
 void DS18_WriteBit(uint8_t bit){
-	if(bit == 1){
+	if(bit & 1){
+		//Low
 		GPIOE->BSRRH |= (1<<DS18_PIN);
-		setpinmode(DS18_PORT, DS18_PIN, 2);
+		//Output
+		GPIOE->MODER |= (1<<(DS18_PIN*2));
+		GPIOE->MODER &= ~(2<<(DS18_PIN*2));
 		delay(10);
+		//High
 		GPIOE->BSRRL |= (1<<DS18_PIN);
 		delay(55);
 	}else{
+		//Low
 		GPIOE->BSRRH |= (1<<DS18_PIN);
-		setpinmode(DS18_PORT, DS18_PIN, 2);
+		//Output
+		GPIOE->MODER |= (1<<(DS18_PIN*2));
+		GPIOE->MODER &= ~(2<<(DS18_PIN*2));
 		delay(65);
+		//High
 		GPIOE->BSRRL |= (1<<DS18_PIN);
 		delay(5);
 	}
 }
 
 uint8_t DS18_ReadByte(void){
-	int i = 8;
-	uint8_t byte;
-	
-	/*
-	for(i = 7; i>=0;i--){
-		byte |= (DS18_ReadBit()<<i);
+	uint8_t byte = 0;
+	uint8_t bitMask;
+	for(bitMask = 0x01; bitMask ; bitMask <<= 1){
+		if( DS18_ReadBit()) byte |= bitMask;	
 	}
-	*/
-	while (i--) {
-		byte >>= 1;
-		byte |= (DS18_ReadBit() << 7);
-	}
-	setpinmode(DS18_PORT, DS18_PIN, 1);
-	GPIOE->BSRRH |= (1<<DS18_PIN);
 	return byte;
 }
-void DS18_ReadData(uint8_t data[]){
+void DS18_ReadData(uint8_t data[], uint8_t count){
 	int i = 0;
-	for(i = 0; i < 9;i++){
+	for(i = 0; i < count ;i++){
 		data[i] = DS18_ReadByte();
 	}
 }
 void DS18_WriteByte(uint8_t byte){
-	int i = 8;
-	int bit = 0;
-		while (i--) {
-		/* LSB bit is first */
-		DS18_WriteBit(byte & 0x01);
-		byte >>= 1;
+	uint8_t bitMask;
+	for(bitMask = 0x01; bitMask; bitMask <<=1){
+		DS18_WriteBit((bitMask & byte)?1:0);
 	}
-	/*
-	for(i = 0; i<8;i++){
-		bit = (byte>>i) & 0x01;
-		DS18_WriteBit(bit);
-	}
-	*/
+	//Input
+	GPIOE->MODER &= ~(3<<(DS18_PIN*2));
+	//Low
+	GPIOE->BSRRH |= (1<<DS18_PIN);
 }
 void DS18_convertTemp(void){
 	int i = 0;
-	if(DS18_Reset() == 0){
+	if(DS18_Reset() == 1){
 		DS18_WriteByte(DS18_CMD_SKIPROM); //Skip ROM
 		DS18_WriteByte(DS18_CMD_CONVERT); //Convert temp
 		for(i = 0; i <= 12;i++){
@@ -106,10 +104,11 @@ DS18_DATA DS18_readSensor(void){
 	DS18_DATA sensorData;
 	uint8_t data[9];
 	DS18_convertTemp();
-	if(DS18_Reset() == 0){
+	if(DS18_Reset() == 1){
 		DS18_WriteByte(DS18_CMD_SKIPROM); 
 		DS18_WriteByte(DS18_CMD_READSP);
-	//	DS18_ReadData(data);
+		DS18_ReadData(data, 9);
+		sensorData.temp = 0;
 		sensorData.temp += (data[0] & 0x01)*0.0625;
 		sensorData.temp += ((data[0] & 0x02)>>1)*0.125;
 		sensorData.temp += ((data[0] & 0x04)>>2)*0.25;
@@ -130,12 +129,26 @@ DS18_DATA DS18_readSensor(void){
 
 uint8_t DS18_Reset(void){
 	uint8_t presence = 0;
-	GPIOE->BSRRH |= (1<<DS18_PIN);
-	setpinmode(DS18_PORT, DS18_PIN, 2);
+	uint8_t retries = 125;
+	//Input
+	GPIOE->MODER &= ~(3<<(DS18_PIN*2));
+	do {
+		if (--retries == 0) return 1;
+		delay(2);
+	} while (!(GPIOE->IDR & (1<<DS18_PIN)));
+	//Low
+	GPIOE->ODR &= ~(1<<DS18_PIN);
+	//Output
+	GPIOE->MODER |= (1<<(DS18_PIN*2));
+	GPIOE->MODER &= ~(2<<(DS18_PIN*2));
 	delay(480);
-	setpinmode(DS18_PORT, DS18_PIN, 1);
+	//Input
+	GPIOE->MODER &= ~(3<<(DS18_PIN*2));
 	delay(70);
-	presence = irakurripin(DS18_PORT, DS18_PIN);
+	//presence = !((GPIOE->IDR & (1<<DS18_PIN))>>DS18_PIN);
+	if((GPIOE->IDR & (1<<DS18_PIN)) == 0){
+			presence = 1;
+	}
 	delay(410);
 	
 	return presence;
