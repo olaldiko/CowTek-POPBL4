@@ -16,7 +16,7 @@ typedef struct{
 }DS18_DATA;
 
 void DS18_Init(void);
-void DS18_GPIOInit();
+void DS18_GPIOInit(void);
 void DS18_TIMInit(void);
 uint8_t DS18_ReadBit(void);
 void DS18_WriteBit(uint8_t bit);

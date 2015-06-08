@@ -92,9 +92,9 @@ void setDebugMode(int piztua) {
 */
 void setOnePulse(int mode) {
 	if(mode == 1) {
-		TIM6->CR1 |= (1<<2);
+		TIM6->CR1 |= (1<<3);
 	} else {
-		TIM6->CR1 &= ~(1<<2);
+		TIM6->CR1 &= ~(1<<3);
 	}	
 }
 /**
