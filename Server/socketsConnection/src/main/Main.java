@@ -1,5 +1,6 @@
+package main;
 
-public class Principal {
+public class Main {
 
 	public static void main(String[] args) {
 		ServerSock servidor = new ServerSock();
