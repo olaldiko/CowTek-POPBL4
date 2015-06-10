@@ -18,7 +18,7 @@ public class AnalisisTemperatura {
 	public AnalisisTemperatura(ArrayList<Dato> datos) {
 		super();
 		this.datos = datos;
-		//realizarAnalisis();
+		realizarAnalisis();
 	}
 
 	private void realizarAnalisis() {
@@ -35,6 +35,8 @@ public class AnalisisTemperatura {
 		float sumXXXX = 0;
 		
 		for(int i = 0; i < datos.size(); i++){
+			sumX = sumX + datos.get(i).getValorEntrada();
+			sumY = sumY + datos.get(i).getValorSalida();
 			sumXY = sumXY + (datos.get(i).getValorEntrada()*datos.get(i).getValorSalida());
 		    sumXX = sumXX + (datos.get(i).getValorEntrada()*datos.get(i).getValorEntrada());
 		    sumXXX = sumXXX + (datos.get(i).getValorEntrada()*datos.get(i).getValorEntrada()*datos.get(i).getValorEntrada());
@@ -42,7 +44,8 @@ public class AnalisisTemperatura {
 		    sumXXXX = sumXXXX + (datos.get(i).getValorEntrada()*datos.get(i).getValorEntrada()*datos.get(i).getValorEntrada()*datos.get(i).getValorEntrada());
 		}
 		
-		double[][] matrix = {{1, sumX, sumXX, },{sumX, sumXX, sumXXX},{sumXX, sumXXX, sumXXXX}};
+		
+		double[][] matrix = {{datos.size(), sumX, sumXX, },{sumX, sumXX, sumXXX}, {sumXX, sumXXX, sumXXXX}};
 		double[][] array = {{sumY}, {sumXY}, {sumXXY}};
 		
 		Matrix A = new Matrix(matrix);
@@ -50,7 +53,7 @@ public class AnalisisTemperatura {
 		
 		Matrix x = A.solve(b);
 		
-		ecuacion = "y = " + x.get(0, 0) + " + " + x.get(1, 0) + "*x + " + x.get(2, 0) + "*x^2";
+		ecuacion = x.get(0, 0) + " + " + x.get(1, 0) + "*x + " + x.get(2, 0) + "*x^2";
 		
 		dEcuacion = derivada(ecuacion);
 		
@@ -85,7 +88,7 @@ public class AnalisisTemperatura {
 			//Convertimos el valor simplificado en un String
 			derivada =j.toString(simp);
 			//imprime la función
-			j.println(simp);
+			//j.println(simp);
 		} catch(ParseException e){ 
 			e.printStackTrace();
 		}
@@ -116,7 +119,5 @@ public class AnalisisTemperatura {
 	public void setdEcuacion(String dEcuacion) {
 		this.dEcuacion = dEcuacion;
 	}
-	
-	
 
 }

@@ -47,9 +47,10 @@ void setupXBee() {
 }
 
 void loop() {
+  Serial.println("Loop...");
   
   while(connectEthernet() == false){
-    delay(5000);
+    delay(500);
   }
   
   /*
@@ -66,7 +67,7 @@ void loop() {
   */
   
   loopXBee();
-  delay(1);
+  delay(1000);
 }
 
 boolean connectEthernet() {
@@ -92,6 +93,7 @@ boolean connectEthernet() {
      Serial.println("Connection invalid response");
     break;
    }
+   Serial.println("Connecting...");
    return false;
 }
 
@@ -116,15 +118,9 @@ void closeConnection(){
 
 void loopXBee(){
   if(xbee.available()) {
-    char caracter = xbee.read();
-    xbeeData = xbeeData + caracter;
-    if(caracter == '$') {
-      if(xbeeData != "$") {
-        while(!connectEthernet()) delay(100);
-        client.println(xbeeData);
-        Serial.println(xbeeData);
-        xbeeData = "$";
-      }
-    }
+    xbeeData = xbee.readString();
+    while(!connectEthernet()) delay(100);
+    client.println(xbeeData);
+    Serial.println(xbeeData);
   }
 }

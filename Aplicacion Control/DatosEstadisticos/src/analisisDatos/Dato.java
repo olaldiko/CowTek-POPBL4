@@ -28,5 +28,12 @@ public class Dato {
 	public void setValorSalida(float valorSalida) {
 		this.valorSalida = valorSalida;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Dato [valorEntrada=" + valorEntrada + ", valorSalida="
+				+ valorSalida + "]";
+	}
 		
 }
