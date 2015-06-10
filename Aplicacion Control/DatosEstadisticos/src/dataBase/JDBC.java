@@ -642,12 +642,12 @@ public class JDBC{
 
 			while (result.next()){			
 
-				int vacaID	 = result.getInt("VacaID");
-				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				int estacionID	 = result.getInt("EstacionID");
+				Date fechaHora = result.getDate("fechaHora");
+				float valor = result.getFloat("valor");
+				String nombre = result.getString ("nombre");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new DatosVistaVaca(estacionID, fechaHora, valor , nombre));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -670,12 +670,12 @@ public class JDBC{
 	
 			while (result.next()){			
 	
-				int vacaID	 = result.getInt("VacaID");
-				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				int estacionID	 = result.getInt("EstacionID");
+				Date fechaHora = result.getDate("fechaHora");
+				float valor = result.getFloat("valor");
+				String nombre = result.getString ("nombre");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new DatosVistaVaca(estacionID, fechaHora, valor , nombre));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -700,7 +700,7 @@ public class JDBC{
 	
 				int vacaID	 = result.getInt("VacaID");
 				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
+				float valor = result.getFloat("Cantidad");
 				
 				consumo.add(new DatosVistaVaca(vacaID, fechaHora, valor , "Kg"));
 			}

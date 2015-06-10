@@ -31,4 +31,12 @@
   		
   		return rowsAffected;
   	}
+
+	@Override
+	public String toString() {
+		return "DatosVaca [sensorID=" + sensorID + ", vacaID=" + vacaID
+				+ ", fechaHora=" + fechaHora + ", valor=" + valor
+				+ ", unidadID=" + unidadID + "]";
+	}
+  	
   }

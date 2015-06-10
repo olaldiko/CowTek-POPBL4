@@ -1,6 +1,5 @@
 #include <Ethernet.h>
 #include <SPI.h>
-#include <SD.h>
 #include <SoftwareSerial.h>
 #include <stdio.h>
 #include <string.h>
@@ -10,12 +9,10 @@ EthernetClient client;
 
 byte mac[] = { 0x1E, 0xAD, 0x1E, 0xE6, 0x1E, 0xED };
 byte ip[] = { 192, 168, 0, 10 };
-byte server[] = { 192, 168, 0, 13 };
+byte server[] = { 172, 17, 19, 204 };
 char url[] =  "mondra.olaldiko.mooo.com";
 int port = 6000;
 String xbeeData;
-
-File file;
 
 SoftwareSerial xbee(2, 3); //RX, TX
 
@@ -26,7 +23,6 @@ void setup() {
   
   setupEthernet();
   setupXBee();
-  //setupSD();
   Serial.println("Setup ended");
 }
 
@@ -50,20 +46,14 @@ void setupXBee() {
   xbee.begin(9600);
 }
 
-void setupSD() {
-  pinMode(10, OUTPUT);
-  
-  if(!SD.begin(4)) {
-    Serial.println("SD initiation failed");
-    return;
-  }
-}
-
 void loop() {
+  Serial.println("Loop...");
   
   while(connectEthernet() == false){
-    delay(5000);
+    delay(500);
   }
+  
+  /*
   Serial.println("Sending...");
   sendData("3", "0", "0", "0", "0");
   delay(100);
@@ -74,11 +64,10 @@ void loop() {
   closeConnection();
   delay(1000);
   Serial.println("Loop...");
-  
-  /*
-  loopXBee();
-  delay(1);
   */
+  
+  loopXBee();
+  delay(1000);
 }
 
 boolean connectEthernet() {
@@ -103,49 +92,35 @@ boolean connectEthernet() {
     case -4:
      Serial.println("Connection invalid response");
     break;
-    
-    default:
-      return true;
-    break;
    }
+   Serial.println("Connecting...");
    return false;
 }
 
 void sendData(String modo, String idPlaca, String idSensor, String valor_1, String valor_2){
-  if(modo == "1") client.println("$" + modo + "%" + idPlaca + "%" + idSensor + "%" + valor_1 + "$");
-  if(modo == "2") client.println("$" + modo + "%" + idPlaca + "%" + valor_1 + "%" + valor_2 + "$");
-  if(modo == "3") client.println("$" + modo + "$");
-  if(modo == "4") client.println("$" + modo + "$");
+  if(modo == "1") {
+    client.println("$" + modo + "%" + idPlaca + "%" + idSensor + "%" + valor_1 + "$");
+  }
+  if(modo == "2") {
+    client.println("$" + modo + "%" + idPlaca + "%" + valor_1 + "%" + valor_2 + "$");
+  }
+  if(modo == "3") {
+    client.println("$" + modo + "$");
+  }
+  if(modo == "4") {
+    client.println("$" + modo + "$"); 
+  }
 }
 
 void closeConnection(){
   client.stop();
 }
 
-boolean writeSD() {
-  file = SD.open("data.dat", FILE_WRITE);
-  
-  if(file) {
-    file.println("");
-  }
-  return true;
-}
-
-boolean readSD() {
-  
-}
-
 void loopXBee(){
   if(xbee.available()) {
-    char caracter = xbee.read();
-    xbeeData = xbeeData + caracter;
-    if(caracter == '$') {
-      if(xbeeData != "$") {
-        while(!connectEthernet()) delay(100);
-        client.println(xbeeData);
-        Serial.println(xbeeData);
-        xbeeData = "$";
-      }
-    }
+    xbeeData = xbee.readString();
+    while(!connectEthernet()) delay(100);
+    client.println(xbeeData);
+    Serial.println(xbeeData);
   }
 }
