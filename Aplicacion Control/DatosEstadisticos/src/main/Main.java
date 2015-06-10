@@ -1,6 +1,7 @@
 package main;
 
 import dataBase.DataBase;
+import analisisDatos.AnalisisDatos;
 import analisisDatos.AnalisisHumedad;
 import analisisDatos.AnalisisTemperatura;;
 
@@ -11,8 +12,8 @@ public class Main {
 		DataBase dataBase = new DataBase();
 		dataBase.iniciarPrograma();
 		dataBase.mostrarTodo();
-		AnalisisTemperatura a = new AnalisisTemperatura(null);
-		AnalisisHumedad humedad = new AnalisisHumedad(null);
+		AnalisisDatos analisisDatos = new AnalisisDatos();
+		analisisDatos.analizarTodo();
 	}
 
 }
