@@ -1,6 +1,16 @@
+package main;
 
 import java.net.*;
+import java.sql.Date;
+import java.util.Iterator;
+import java.util.List;
 import java.io.*;
+
+import dataBase.DatosEstacion;
+import dataBase.DatosVaca;
+import dataBase.JDBC;
+import dataBase.PlacaEstacion;
+import dataBase.PlacaVaca;
 
 public class ServerSock extends Thread{
 
@@ -18,6 +28,7 @@ public class ServerSock extends Thread{
 	
 	public boolean inicializarServidor() {
 		boolean ok = false;
+		long inicio = 0;
 		
 		try {
 			sc = new ServerSocket(puerto);
@@ -39,6 +50,7 @@ public class ServerSock extends Thread{
 		
 		//JOptionPane.showMessageDialog (null, "Un cliente se ha conectado", "Cliente", JOptionPane.INFORMATION_MESSAGE);
 		System.out.println("Un cliente se ha conectado");
+		inicio = System.currentTimeMillis();
 		
 		try {
 			entrada = new DataInputStream(so.getInputStream());
@@ -64,6 +76,7 @@ public class ServerSock extends Thread{
 				switch(guardarDato(mensajeRecibido)){
 				case 3:
 					ok = true;
+					inicio = System.currentTimeMillis();
 					break;
 				case 4:
 					ok = false;
@@ -77,6 +90,12 @@ public class ServerSock extends Thread{
 				//JOptionPane.showMessageDialog(null, e.getMessage(), "Recibiendo data", JOptionPane.ERROR);
 				System.out.println("Error recibiendo data: " + e.getMessage());
 			}
+			
+			if (System.currentTimeMillis() - inicio > 1000*10) {
+				System.out.println("Tiempo de espera agotado");
+				if (!cerrarConexion()) return false;
+			}
+			
 		} while(ok);
 		
 		return false;
@@ -132,6 +151,15 @@ public class ServerSock extends Thread{
 				System.out.println("Valor: " + valor_1);
 				System.out.println("---------------");
 				System.out.println("");
+				
+				if(getVacaID(idPlaca) != -1) {
+					DatosVaca datosVaca = new DatosVaca(idSensor, getVacaID(idPlaca), getCurrentDateTime(), valor_1, 1);
+					datosVaca.introducirEnBD();
+				}
+				if(getEstacionID(idPlaca) != -1) {
+					DatosEstacion datosEstacion = new DatosEstacion(idSensor, getEstacionID(idPlaca), getCurrentDateTime(), valor_1, 1);
+					datosEstacion.introducirEnBD();
+				}
 				break;
 			case 2:
 				System.out.println(mensaje);
@@ -143,6 +171,14 @@ public class ServerSock extends Thread{
 				System.out.println("Coordenadas: (" + valor_1 + "; " + valor_2 + ")");
 				System.out.println("---------------");
 				System.out.println("");
+				
+				if(getVacaID(idPlaca) != -1) {
+					DatosVaca datosVaca_1 = new DatosVaca(idSensor, getVacaID(idPlaca), getCurrentDateTime(), valor_1, 10);
+					datosVaca_1.introducirEnBD();
+					DatosVaca datosVaca_2 = new DatosVaca(idSensor, getVacaID(idPlaca), getCurrentDateTime(), valor_2, 10);
+					datosVaca_2.introducirEnBD();
+				}
+				
 				break;
 			case 3:
 				System.out.println("Hello packet");
@@ -154,4 +190,32 @@ public class ServerSock extends Thread{
 		}
 		return modo;
 	}
+
+	private int getVacaID(int idPlaca) {
+		JDBC dbConnection = new JDBC ();
+		List<PlacaVaca> placasVacas = dbConnection.getPlacasVacas();
+		Iterator<PlacaVaca> itrPlacasVacas = placasVacas.iterator();
+		while (itrPlacasVacas.hasNext()){
+			PlacaVaca placaVaca = itrPlacasVacas.next();
+			if(placaVaca.getPlacaID() == idPlaca) return placaVaca.getVacaID();
+		}
+		return -1;
+	}
+	
+	private int getEstacionID(int idPlaca) {
+		JDBC dbConnection = new JDBC ();
+		List<PlacaEstacion> placasEstaciones = dbConnection.getPlacasEstaciones();
+		Iterator<PlacaEstacion> itrPlacasEstaciones = placasEstaciones.iterator();
+		while (itrPlacasEstaciones.hasNext()){
+			PlacaEstacion placaEstacion = itrPlacasEstaciones.next();
+			if(placaEstacion.getPlacaID() == idPlaca) return placaEstacion.getEstacionID();
+		}
+		return -1;
+	}
+	
+	public Date getCurrentDateTime(){
+		Date date = new Date(System.currentTimeMillis());
+		return date;
+	}
+	
 }
