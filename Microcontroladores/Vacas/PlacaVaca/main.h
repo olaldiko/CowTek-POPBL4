@@ -1,3 +1,4 @@
+/** @file */
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -10,12 +11,12 @@
 #include "inc/WATCHDOG_API.h"
 #include "inc/SLEEP_API.h"
 
-typedef enum {INIT_S, IDLE_S, CAPTURE_S, SEND_S, ERROR_S}fsm_type;
+typedef enum {INIT_S, IDLE_S, CAPTURE_S, SEND_S, ERROR_S}fsm_type; /**< Finite state machine possible states enum. */
 
-#define BOARD_ID 20
-#define SEN_TEMPC_ID 3
-#define SEN_GPS_LAT_ID 4
-#define SEN_GPS_LON_ID 5
+#define BOARD_ID 20 		/**< Board ID. */
+#define SEN_TEMPC_ID 3		/**< DS18B20 temperature sensor ID. */
+#define SEN_GPS_LAT_ID 4	/**< GPS Latitude data ID. */
+#define SEN_GPS_LON_ID 5	/**< GPS Longitude data ID. */
 
 void initState(void);
 void idleState(void);
