@@ -112,7 +112,7 @@ void USART_ConfGPIO(USART_TypeDef *usart) {
 *
 *
 ********************************************/
-void USART3_EnableRS232Port() {
+void USART3_EnableRS232Port(void) {
 		enableGPIO_RCC(GPIOD);
 		
 		GPIOD->MODER |= (GPIO_MODER_ALTERNATE << (USART3_RS232_TX_PIN * MODER_SIZE));
@@ -187,7 +187,7 @@ void USART_setIRQ(USART_TypeDef *usart, func_address_t func) {
 *
 *
 ********************************************/
-void USART6_IRQHandler() {
+void USART6_IRQHandler(void) {
 	if(bufflen6 < BUFFERSIZE) {
 	usart6_buffer[bufflen6++] = USART6->DR;
 	irqUSART6();
@@ -202,7 +202,7 @@ void USART6_IRQHandler() {
 *Saves the received data into a buffer for later use, and calls the function that was previously set with setIRQ_USART function.
 *
 ********************************************/
-void USART3_IRQHandler() {
+void USART3_IRQHandler(void) {
 	if(bufflen3 < BUFFERSIZE) {
 	usart3_buffer[bufflen3++] = USART3->DR;
 	irqUSART3();
