@@ -1,3 +1,4 @@
+/** @file The DS18B20 sensor API headers */
 #ifndef DS18B20_API
 #define DS18B20_API
 #include <stm32f4xx.h>
@@ -5,15 +6,15 @@
 #include "GPIOAPI.h"
 #include "TIMERAPI.h"
 
-#define DS18_PORT 4
-#define DS18_PIN 8
-#define DS18_CMD_SKIPROM 0xCC
-#define DS18_CMD_CONVERT 0x44
-#define DS18_CMD_READSP 0xBE
+#define DS18_PORT 4 /**< The GPIO port where the sensor is connected. */
+#define DS18_PIN 8  /**< The GPIO pin where the sensor is connected. */
+#define DS18_CMD_SKIPROM 0xCC /**< The skip command value for the sensor. */
+#define DS18_CMD_CONVERT 0x44 /**< The convert temp command value for the sensor. */
+#define DS18_CMD_READSP 0xBE /**< The read scratchpad command value for the sensor. */
 
 typedef struct{
 	float temp;
-}DS18_DATA;
+}DS18_DATA; /**< The struct type where the data will be stored. */
 
 void DS18_Init(void);
 void DS18_GPIOInit(void);

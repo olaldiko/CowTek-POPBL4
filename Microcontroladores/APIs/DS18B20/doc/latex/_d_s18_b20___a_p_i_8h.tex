@@ -1,0 +1,259 @@
+\hypertarget{_d_s18_b20___a_p_i_8h}{}\section{D\+S18\+B20\+\_\+\+A\+P\+I.\+h File Reference}
+\label{_d_s18_b20___a_p_i_8h}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+{\ttfamily \#include $<$stm32f4xx.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+A\+P\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+I\+M\+E\+R\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_d_s18___d_a_t_a}{D\+S18\+\_\+\+D\+A\+T\+A}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_s18_b20___a_p_i_8h_a907c43dbb19579cb996504b2f8a5e046}{D\+S18\+\_\+\+P\+O\+R\+T}~4
+\begin{DoxyCompactList}\small\item\em The G\+P\+I\+O port where the sensor is connected. \end{DoxyCompactList}\item 
+\#define \hyperlink{_d_s18_b20___a_p_i_8h_a31e44a8dd8bd7230a577a8c10ab29e41}{D\+S18\+\_\+\+P\+I\+N}~8
+\begin{DoxyCompactList}\small\item\em The G\+P\+I\+O pin where the sensor is connected. \end{DoxyCompactList}\item 
+\#define \hyperlink{_d_s18_b20___a_p_i_8h_ae90980d0dedbf092a39bcb1d125f3520}{D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M}~0x\+C\+C
+\begin{DoxyCompactList}\small\item\em The skip command value for the sensor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_d_s18_b20___a_p_i_8h_a00c63550e01129240ed9a7331f2d750e}{D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T}~0x44
+\begin{DoxyCompactList}\small\item\em The convert temp command value for the sensor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_d_s18_b20___a_p_i_8h_afbf1bf01de76780b6891a8568ef87ad4}{D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P}~0x\+B\+E
+\begin{DoxyCompactList}\small\item\em The read scratchpad command value for the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_a1a4dc4ee161dcc98486be389d9a51393}{D\+S18\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em D\+S18 sensor init fucntion. \end{DoxyCompactList}\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_ae587094990220831a4f9416ab819ee08}{D\+S18\+\_\+\+G\+P\+I\+O\+Init} (void)
+\begin{DoxyCompactList}\small\item\em D\+S18 sensor G\+P\+I\+O init function. \end{DoxyCompactList}\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_a5eb56093d3e162ff3ba8cd65ca5e2a16}{D\+S18\+\_\+\+T\+I\+M\+Init} (void)
+\begin{DoxyCompactList}\small\item\em D\+S18 sensor timer init function. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_d_s18_b20___a_p_i_8h_acfd2fc5bba1be9f44947dcf8ce17fc7d}{D\+S18\+\_\+\+Read\+Bit} (void)
+\begin{DoxyCompactList}\small\item\em Read a bit from the One\+Wire line. \end{DoxyCompactList}\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_a5bbb14a3b1d584bbaf2d3ae4fce797c1}{D\+S18\+\_\+\+Write\+Bit} (uint8\+\_\+t bit)
+\begin{DoxyCompactList}\small\item\em Write a bit to the One\+Wire line. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_d_s18_b20___a_p_i_8h_ab7840ec3659af78eaf7769df812c8ef9}{D\+S18\+\_\+\+Read\+Byte} (void)
+\begin{DoxyCompactList}\small\item\em Read a byte from the One\+Wire line. \end{DoxyCompactList}\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_a9ec134d1321e3661b7930c1be18b3315}{D\+S18\+\_\+\+Read\+Data} (uint8\+\_\+t data\mbox{[}$\,$\mbox{]}, uint8\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Read a data array from the One\+Wire line. \end{DoxyCompactList}\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_ab4cb2c12d4c40ac11a3525505ef76261}{D\+S18\+\_\+\+Write\+Byte} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Write a byte to the One\+Wire line. \end{DoxyCompactList}\item 
+void \hyperlink{_d_s18_b20___a_p_i_8h_aa4079f58fbb053dae07b669cae299610}{D\+S18\+\_\+convert\+Temp} (void)
+\begin{DoxyCompactList}\small\item\em Send the convert temp to all D\+S18\+B20 sensors. \end{DoxyCompactList}\item 
+\hyperlink{struct_d_s18___d_a_t_a}{D\+S18\+\_\+\+D\+A\+T\+A} \hyperlink{_d_s18_b20___a_p_i_8h_a6f3b5cdd3209e746b7837cb0ba2803bd}{D\+S18\+\_\+read\+Sensor} (void)
+\begin{DoxyCompactList}\small\item\em Read the temperature from the D\+S18\+B20 sensor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_d_s18_b20___a_p_i_8h_a04e8c8d756559ea7dbc6a1895f207860}{D\+S18\+\_\+\+Reset} (void)
+\begin{DoxyCompactList}\small\item\em Send reset signal to the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_d_s18_b20___a_p_i_8h_a00c63550e01129240ed9a7331f2d750e}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T@{D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T}}
+\index{D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T@{D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+S18\+\_\+\+C\+M\+D\+\_\+\+C\+O\+N\+V\+E\+R\+T~0x44}\label{_d_s18_b20___a_p_i_8h_a00c63550e01129240ed9a7331f2d750e}
+
+
+The convert temp command value for the sensor. 
+
+\hypertarget{_d_s18_b20___a_p_i_8h_afbf1bf01de76780b6891a8568ef87ad4}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P@{D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P}}
+\index{D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P@{D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+S18\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+S\+P~0x\+B\+E}\label{_d_s18_b20___a_p_i_8h_afbf1bf01de76780b6891a8568ef87ad4}
+
+
+The read scratchpad command value for the sensor. 
+
+\hypertarget{_d_s18_b20___a_p_i_8h_ae90980d0dedbf092a39bcb1d125f3520}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M@{D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M}}
+\index{D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M@{D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+S18\+\_\+\+C\+M\+D\+\_\+\+S\+K\+I\+P\+R\+O\+M~0x\+C\+C}\label{_d_s18_b20___a_p_i_8h_ae90980d0dedbf092a39bcb1d125f3520}
+
+
+The skip command value for the sensor. 
+
+\hypertarget{_d_s18_b20___a_p_i_8h_a31e44a8dd8bd7230a577a8c10ab29e41}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+P\+I\+N@{D\+S18\+\_\+\+P\+I\+N}}
+\index{D\+S18\+\_\+\+P\+I\+N@{D\+S18\+\_\+\+P\+I\+N}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+S18\+\_\+\+P\+I\+N~8}\label{_d_s18_b20___a_p_i_8h_a31e44a8dd8bd7230a577a8c10ab29e41}
+
+
+The G\+P\+I\+O pin where the sensor is connected. 
+
+\hypertarget{_d_s18_b20___a_p_i_8h_a907c43dbb19579cb996504b2f8a5e046}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+P\+O\+R\+T@{D\+S18\+\_\+\+P\+O\+R\+T}}
+\index{D\+S18\+\_\+\+P\+O\+R\+T@{D\+S18\+\_\+\+P\+O\+R\+T}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+S18\+\_\+\+P\+O\+R\+T~4}\label{_d_s18_b20___a_p_i_8h_a907c43dbb19579cb996504b2f8a5e046}
+
+
+The G\+P\+I\+O port where the sensor is connected. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_d_s18_b20___a_p_i_8h_aa4079f58fbb053dae07b669cae299610}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+convert\+Temp@{D\+S18\+\_\+convert\+Temp}}
+\index{D\+S18\+\_\+convert\+Temp@{D\+S18\+\_\+convert\+Temp}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+convert\+Temp}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+convert\+Temp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_aa4079f58fbb053dae07b669cae299610}
+
+
+Send the convert temp to all D\+S18\+B20 sensors. 
+
+First sends a reset pulse to the sensors, then writes the skip R\+O\+M command and finally the convert command. Waits 750ms to complete the conversion. Uses the \hyperlink{_d_s18_b20___a_p_i_8c_ab4cb2c12d4c40ac11a3525505ef76261}{D\+S18\+\_\+\+Write\+Byte()} and \hyperlink{_d_s18_b20___a_p_i_8c_a04e8c8d756559ea7dbc6a1895f207860}{D\+S18\+\_\+\+Reset()} functions internally. \begin{DoxySeeAlso}{See also}
+\hyperlink{_d_s18_b20___a_p_i_8c_ab4cb2c12d4c40ac11a3525505ef76261}{D\+S18\+\_\+\+Write\+Byte()} 
+
+\hyperlink{_d_s18_b20___a_p_i_8c_a04e8c8d756559ea7dbc6a1895f207860}{D\+S18\+\_\+\+Reset()} 
+\end{DoxySeeAlso}
+\hypertarget{_d_s18_b20___a_p_i_8h_ae587094990220831a4f9416ab819ee08}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+G\+P\+I\+O\+Init@{D\+S18\+\_\+\+G\+P\+I\+O\+Init}}
+\index{D\+S18\+\_\+\+G\+P\+I\+O\+Init@{D\+S18\+\_\+\+G\+P\+I\+O\+Init}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+G\+P\+I\+O\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+\+G\+P\+I\+O\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_ae587094990220831a4f9416ab819ee08}
+
+
+D\+S18 sensor G\+P\+I\+O init function. 
+
+Initializes the G\+P\+I\+O port for the usage with the D\+S18\+B20 sensor. \hypertarget{_d_s18_b20___a_p_i_8h_a1a4dc4ee161dcc98486be389d9a51393}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Init@{D\+S18\+\_\+\+Init}}
+\index{D\+S18\+\_\+\+Init@{D\+S18\+\_\+\+Init}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_a1a4dc4ee161dcc98486be389d9a51393}
+
+
+D\+S18 sensor init fucntion. 
+
+Initializes the basics for the usage of the sensor. \hypertarget{_d_s18_b20___a_p_i_8h_acfd2fc5bba1be9f44947dcf8ce17fc7d}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Read\+Bit@{D\+S18\+\_\+\+Read\+Bit}}
+\index{D\+S18\+\_\+\+Read\+Bit@{D\+S18\+\_\+\+Read\+Bit}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Read\+Bit}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t D\+S18\+\_\+\+Read\+Bit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_acfd2fc5bba1be9f44947dcf8ce17fc7d}
+
+
+Read a bit from the One\+Wire line. 
+
+Reads a single bit from the One\+Wire line and returns it. \begin{DoxyReturn}{Returns}
+1-\/0 the bit the was read. 
+\end{DoxyReturn}
+\hypertarget{_d_s18_b20___a_p_i_8h_ab7840ec3659af78eaf7769df812c8ef9}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Read\+Byte@{D\+S18\+\_\+\+Read\+Byte}}
+\index{D\+S18\+\_\+\+Read\+Byte@{D\+S18\+\_\+\+Read\+Byte}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Read\+Byte}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t D\+S18\+\_\+\+Read\+Byte (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_ab7840ec3659af78eaf7769df812c8ef9}
+
+
+Read a byte from the One\+Wire line. 
+
+Reads a byte from the One\+Wire line. Internally uses the \hyperlink{_d_s18_b20___a_p_i_8c_acfd2fc5bba1be9f44947dcf8ce17fc7d}{D\+S18\+\_\+\+Read\+Bit()} function. \begin{DoxySeeAlso}{See also}
+\hyperlink{_d_s18_b20___a_p_i_8c_acfd2fc5bba1be9f44947dcf8ce17fc7d}{D\+S18\+\_\+\+Read\+Bit()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The byte that has been read. 
+\end{DoxyReturn}
+\hypertarget{_d_s18_b20___a_p_i_8h_a9ec134d1321e3661b7930c1be18b3315}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Read\+Data@{D\+S18\+\_\+\+Read\+Data}}
+\index{D\+S18\+\_\+\+Read\+Data@{D\+S18\+\_\+\+Read\+Data}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Read\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+\+Read\+Data (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{data\mbox{[}$\,$\mbox{]}, }
+\item[{uint8\+\_\+t}]{count}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_a9ec134d1321e3661b7930c1be18b3315}
+
+
+Read a data array from the One\+Wire line. 
+
+Reads a data array of n size from the One\+Wire line. Internally uses the \hyperlink{_d_s18_b20___a_p_i_8c_ab7840ec3659af78eaf7769df812c8ef9}{D\+S18\+\_\+\+Read\+Byte()} function. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The pointer to the array of data where the data will be written. \\
+\hline
+{\em count} & The number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_d_s18_b20___a_p_i_8c_ab7840ec3659af78eaf7769df812c8ef9}{D\+S18\+\_\+\+Read\+Byte()} 
+\end{DoxySeeAlso}
+\hypertarget{_d_s18_b20___a_p_i_8h_a6f3b5cdd3209e746b7837cb0ba2803bd}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+read\+Sensor@{D\+S18\+\_\+read\+Sensor}}
+\index{D\+S18\+\_\+read\+Sensor@{D\+S18\+\_\+read\+Sensor}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+read\+Sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+S18\+\_\+\+D\+A\+T\+A} D\+S18\+\_\+read\+Sensor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_a6f3b5cdd3209e746b7837cb0ba2803bd}
+
+
+Read the temperature from the D\+S18\+B20 sensor. 
+
+Does the full process of reading the temperature from the sensor. First it sends the reset command to the sensor. After that, sends the skip rom and convert temp commands and waits to complete the conversion. Finally reads the scratchpad from the sensor and converts the values to float. Internally uses the \hyperlink{_d_s18_b20___a_p_i_8c_a04e8c8d756559ea7dbc6a1895f207860}{D\+S18\+\_\+\+Reset()}, D\+S18\+\_\+\+Write\+Byte and D\+S18\+\_\+\+Read\+Data functions. \begin{DoxyReturn}{Returns}
+The temperature reading of the sensor. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_d_s18_b20___a_p_i_8c_a04e8c8d756559ea7dbc6a1895f207860}{D\+S18\+\_\+\+Reset()} 
+
+\hyperlink{_d_s18_b20___a_p_i_8c_ab4cb2c12d4c40ac11a3525505ef76261}{D\+S18\+\_\+\+Write\+Byte()} 
+
+\hyperlink{_d_s18_b20___a_p_i_8c_a9ec134d1321e3661b7930c1be18b3315}{D\+S18\+\_\+\+Read\+Data()} 
+\end{DoxySeeAlso}
+\hypertarget{_d_s18_b20___a_p_i_8h_a04e8c8d756559ea7dbc6a1895f207860}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Reset@{D\+S18\+\_\+\+Reset}}
+\index{D\+S18\+\_\+\+Reset@{D\+S18\+\_\+\+Reset}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Reset}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t D\+S18\+\_\+\+Reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_a04e8c8d756559ea7dbc6a1895f207860}
+
+
+Send reset signal to the sensor. 
+
+Sends the reset signal to the sensor, to prepare it for later commands. \hypertarget{_d_s18_b20___a_p_i_8h_a5eb56093d3e162ff3ba8cd65ca5e2a16}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+T\+I\+M\+Init@{D\+S18\+\_\+\+T\+I\+M\+Init}}
+\index{D\+S18\+\_\+\+T\+I\+M\+Init@{D\+S18\+\_\+\+T\+I\+M\+Init}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+T\+I\+M\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+\+T\+I\+M\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_a5eb56093d3e162ff3ba8cd65ca5e2a16}
+
+
+D\+S18 sensor timer init function. 
+
+Initializes the T\+I\+M6 timer for the usage with the delay function that will be used to control the wait times when using the sensor. \hypertarget{_d_s18_b20___a_p_i_8h_a5bbb14a3b1d584bbaf2d3ae4fce797c1}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Write\+Bit@{D\+S18\+\_\+\+Write\+Bit}}
+\index{D\+S18\+\_\+\+Write\+Bit@{D\+S18\+\_\+\+Write\+Bit}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Write\+Bit}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+\+Write\+Bit (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bit}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_a5bbb14a3b1d584bbaf2d3ae4fce797c1}
+
+
+Write a bit to the One\+Wire line. 
+
+Writes a single bit in the One\+Wire line. 
+\begin{DoxyParams}{Parameters}
+{\em bit} & the bit to send. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_d_s18_b20___a_p_i_8h_ab4cb2c12d4c40ac11a3525505ef76261}{}\index{D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}!D\+S18\+\_\+\+Write\+Byte@{D\+S18\+\_\+\+Write\+Byte}}
+\index{D\+S18\+\_\+\+Write\+Byte@{D\+S18\+\_\+\+Write\+Byte}!D\+S18\+B20\+\_\+\+A\+P\+I.\+h@{D\+S18\+B20\+\_\+\+A\+P\+I.\+h}}
+\subsubsection[{D\+S18\+\_\+\+Write\+Byte}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S18\+\_\+\+Write\+Byte (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{byte}
+\end{DoxyParamCaption}
+)}\label{_d_s18_b20___a_p_i_8h_ab4cb2c12d4c40ac11a3525505ef76261}
+
+
+Write a byte to the One\+Wire line. 
+
+Writes a byte to the One\+Wire line. Internally uses the \hyperlink{_d_s18_b20___a_p_i_8c_a5bbb14a3b1d584bbaf2d3ae4fce797c1}{D\+S18\+\_\+\+Write\+Bit()} function. 
+\begin{DoxyParams}{Parameters}
+{\em byte} & The byte to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_d_s18_b20___a_p_i_8c_a5bbb14a3b1d584bbaf2d3ae4fce797c1}{D\+S18\+\_\+\+Write\+Bit()}; 
+\end{DoxySeeAlso}
