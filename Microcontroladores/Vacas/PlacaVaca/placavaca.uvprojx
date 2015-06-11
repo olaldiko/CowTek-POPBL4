@@ -473,6 +473,16 @@
               <FileType>5</FileType>
               <FilePath>.\inc\WATCHDOG_API.h</FilePath>
             </File>
+            <File>
+              <FileName>SLEEP_API.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\inc\SLEEP_API.c</FilePath>
+            </File>
+            <File>
+              <FileName>SLEEP_API.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\SLEEP_API.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
