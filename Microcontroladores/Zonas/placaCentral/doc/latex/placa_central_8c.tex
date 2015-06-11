@@ -1,0 +1,102 @@
+\hypertarget{placa_central_8c}{}\section{placa\+Central.\+c File Reference}
+\label{placa_central_8c}\index{placa\+Central.\+c@{placa\+Central.\+c}}
+{\ttfamily \#include $<$Ethernet.\+h$>$}\\*
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}\\*
+{\ttfamily \#include $<$Software\+Serial.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{placa_central_8c_a259939c754ff0eb86d29c7847518eee6}{}Software\+Serial {\bfseries xbee} (2, 3)\label{placa_central_8c_a259939c754ff0eb86d29c7847518eee6}
+
+\item 
+\hypertarget{placa_central_8c_a4fc01d736fe50cf5b977f755b675f11d}{}void \hyperlink{placa_central_8c_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()\label{placa_central_8c_a4fc01d736fe50cf5b977f755b675f11d}
+
+\begin{DoxyCompactList}\small\item\em Setup of all the arduino settings. \end{DoxyCompactList}\item 
+void \hyperlink{placa_central_8c_ac96b6ff46ed622371d49915435e6cc4a}{setup\+Ethernet} ()
+\begin{DoxyCompactList}\small\item\em Setup of the ethernet connection. \end{DoxyCompactList}\item 
+\hypertarget{placa_central_8c_a8416d411c778d3837cdc0b142adf1269}{}void \hyperlink{placa_central_8c_a8416d411c778d3837cdc0b142adf1269}{setup\+X\+Bee} ()\label{placa_central_8c_a8416d411c778d3837cdc0b142adf1269}
+
+\begin{DoxyCompactList}\small\item\em Setup of the serial connection for X\+Bee. \end{DoxyCompactList}\item 
+\hypertarget{placa_central_8c_afe461d27b9c48d5921c00d521181f12f}{}void \hyperlink{placa_central_8c_afe461d27b9c48d5921c00d521181f12f}{loop} ()\label{placa_central_8c_afe461d27b9c48d5921c00d521181f12f}
+
+\begin{DoxyCompactList}\small\item\em Loop that makes the arduino everytime. \end{DoxyCompactList}\item 
+\hypertarget{placa_central_8c_a0b777ca7564aa5e9abc54c5ae829b687}{}boolean \hyperlink{placa_central_8c_a0b777ca7564aa5e9abc54c5ae829b687}{connect\+Ethernet} ()\label{placa_central_8c_a0b777ca7564aa5e9abc54c5ae829b687}
+
+\begin{DoxyCompactList}\small\item\em Connecting to the Ethernet client. \end{DoxyCompactList}\item 
+void \hyperlink{placa_central_8c_a67db8b8855aeeb07e9f90c6dc759b8c3}{send\+Data} (String modo, String id\+Placa, String id\+Sensor, String valor\+\_\+1, String valor\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Setup of all the arduino settings. \end{DoxyCompactList}\item 
+\hypertarget{placa_central_8c_aaf912c696192e6a13eb70526891b4cd2}{}void \hyperlink{placa_central_8c_aaf912c696192e6a13eb70526891b4cd2}{close\+Connection} ()\label{placa_central_8c_aaf912c696192e6a13eb70526891b4cd2}
+
+\begin{DoxyCompactList}\small\item\em Closes the connection with the client. \end{DoxyCompactList}\item 
+\hypertarget{placa_central_8c_a25a7b0442ebe2360a530580bc2cc6b5a}{}void \hyperlink{placa_central_8c_a25a7b0442ebe2360a530580bc2cc6b5a}{loop\+X\+Bee} ()\label{placa_central_8c_a25a7b0442ebe2360a530580bc2cc6b5a}
+
+\begin{DoxyCompactList}\small\item\em The loop that does to see if it is data in the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{placa_central_8c_a058da3453d064890d1eb0a5e2f730807}{}Ethernet\+Client {\bfseries client}\label{placa_central_8c_a058da3453d064890d1eb0a5e2f730807}
+
+\item 
+\hypertarget{placa_central_8c_aea3f7775fecafb66a619eb2dcb0357bd}{}byte {\bfseries mac} \mbox{[}$\,$\mbox{]} = \{ 0x1\+E, 0x\+A\+D, 0x1\+E, 0x\+E6, 0x1\+E, 0x\+E\+D \}\label{placa_central_8c_aea3f7775fecafb66a619eb2dcb0357bd}
+
+\item 
+\hypertarget{placa_central_8c_a0504bcde7a6b146902fa8b48b097bfe0}{}byte {\bfseries ip} \mbox{[}$\,$\mbox{]} = \{ 192, 168, 0, 10 \}\label{placa_central_8c_a0504bcde7a6b146902fa8b48b097bfe0}
+
+\item 
+\hypertarget{placa_central_8c_a5deabae309bd660ea13840db3810cf0a}{}byte {\bfseries server} \mbox{[}$\,$\mbox{]} = \{ 172, 17, 19, 204 \}\label{placa_central_8c_a5deabae309bd660ea13840db3810cf0a}
+
+\item 
+\hypertarget{placa_central_8c_aa7303a7dd62c5a774c92fc2ec5029151}{}char {\bfseries url} \mbox{[}$\,$\mbox{]} = \char`\"{}mondra.\+olaldiko.\+mooo.\+com\char`\"{}\label{placa_central_8c_aa7303a7dd62c5a774c92fc2ec5029151}
+
+\item 
+\hypertarget{placa_central_8c_a63c89c04d1feae07ca35558055155ffb}{}int {\bfseries port} = 6000\label{placa_central_8c_a63c89c04d1feae07ca35558055155ffb}
+
+\item 
+\hypertarget{placa_central_8c_a8d8dbc5b3f7b10f2c3ab58a6b9db9cf7}{}String {\bfseries xbee\+Data}\label{placa_central_8c_a8d8dbc5b3f7b10f2c3ab58a6b9db9cf7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{placa_central_8c_a67db8b8855aeeb07e9f90c6dc759b8c3}{}\index{placa\+Central.\+c@{placa\+Central.\+c}!send\+Data@{send\+Data}}
+\index{send\+Data@{send\+Data}!placa\+Central.\+c@{placa\+Central.\+c}}
+\subsubsection[{send\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void send\+Data (
+\begin{DoxyParamCaption}
+\item[{String}]{modo, }
+\item[{String}]{id\+Placa, }
+\item[{String}]{id\+Sensor, }
+\item[{String}]{valor\+\_\+1, }
+\item[{String}]{valor\+\_\+2}
+\end{DoxyParamCaption}
+)}\label{placa_central_8c_a67db8b8855aeeb07e9f90c6dc759b8c3}
+
+
+Setup of all the arduino settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em modo} & The type of the messagge \\
+\hline
+{\em id\+Placa} & The I\+D whose is the data \\
+\hline
+{\em id\+Sensor} & The I\+D whose is the data \\
+\hline
+{\em valor\+\_\+1} & The first value to send \\
+\hline
+{\em valor\+\_\+2} & The second value to send \\
+\hline
+\end{DoxyParams}
+\hypertarget{placa_central_8c_ac96b6ff46ed622371d49915435e6cc4a}{}\index{placa\+Central.\+c@{placa\+Central.\+c}!setup\+Ethernet@{setup\+Ethernet}}
+\index{setup\+Ethernet@{setup\+Ethernet}!placa\+Central.\+c@{placa\+Central.\+c}}
+\subsubsection[{setup\+Ethernet}]{\setlength{\rightskip}{0pt plus 5cm}void setup\+Ethernet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{placa_central_8c_ac96b6ff46ed622371d49915435e6cc4a}
+
+
+Setup of the ethernet connection. 
+
+Gets the I\+P from the M\+A\+C address. 

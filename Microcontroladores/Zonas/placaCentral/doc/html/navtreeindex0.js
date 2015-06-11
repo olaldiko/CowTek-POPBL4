@@ -1,0 +1,25 @@
+var NAVTREEINDEX0 =
+{
+"files.html":[0,0],
+"globals.html":[0,1,0],
+"globals_func.html":[0,1,1],
+"index.html":[],
+"pages.html":[],
+"placa_central_8c.html":[0,0,0],
+"placa_central_8c.html#a0504bcde7a6b146902fa8b48b097bfe0":[0,0,0,10],
+"placa_central_8c.html#a058da3453d064890d1eb0a5e2f730807":[0,0,0,9],
+"placa_central_8c.html#a0b777ca7564aa5e9abc54c5ae829b687":[0,0,0,1],
+"placa_central_8c.html#a259939c754ff0eb86d29c7847518eee6":[0,0,0,8],
+"placa_central_8c.html#a25a7b0442ebe2360a530580bc2cc6b5a":[0,0,0,3],
+"placa_central_8c.html#a4fc01d736fe50cf5b977f755b675f11d":[0,0,0,5],
+"placa_central_8c.html#a5deabae309bd660ea13840db3810cf0a":[0,0,0,13],
+"placa_central_8c.html#a63c89c04d1feae07ca35558055155ffb":[0,0,0,12],
+"placa_central_8c.html#a67db8b8855aeeb07e9f90c6dc759b8c3":[0,0,0,4],
+"placa_central_8c.html#a8416d411c778d3837cdc0b142adf1269":[0,0,0,7],
+"placa_central_8c.html#a8d8dbc5b3f7b10f2c3ab58a6b9db9cf7":[0,0,0,15],
+"placa_central_8c.html#aa7303a7dd62c5a774c92fc2ec5029151":[0,0,0,14],
+"placa_central_8c.html#aaf912c696192e6a13eb70526891b4cd2":[0,0,0,0],
+"placa_central_8c.html#ac96b6ff46ed622371d49915435e6cc4a":[0,0,0,6],
+"placa_central_8c.html#aea3f7775fecafb66a619eb2dcb0357bd":[0,0,0,11],
+"placa_central_8c.html#afe461d27b9c48d5921c00d521181f12f":[0,0,0,2]
+};

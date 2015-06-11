@@ -1,4 +1,4 @@
-/** @file The ArduinoCode itself */
+/** @file */
 #include <Ethernet.h>
 #include <SPI.h>
 #include <SoftwareSerial.h>
