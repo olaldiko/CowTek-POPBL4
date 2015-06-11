@@ -1,3 +1,4 @@
+/** @file The ArduinoCode itself */
 #include <Ethernet.h>
 #include <SPI.h>
 #include <SoftwareSerial.h>
@@ -16,6 +17,11 @@ String xbeeData;
 
 SoftwareSerial xbee(2, 3); //RX, TX
 
+/******************************************//**
+*Setup of all the arduino settings.
+*
+*
+********************************************/
 void setup() {
   
   Serial.begin(9600); 
@@ -26,6 +32,11 @@ void setup() {
   Serial.println("Setup ended");
 }
 
+/******************************************//**
+*Setup of the ethernet connection. Gets the IP from the MAC address.
+*
+*
+********************************************/
 void setupEthernet() {
   Ethernet.begin(mac);
   
@@ -42,10 +53,20 @@ void setupEthernet() {
   Serial.println("");
 }
 
+/******************************************//**
+*Setup of the serial connection for XBee.
+*
+*
+********************************************/
 void setupXBee() {
   xbee.begin(9600);
 }
 
+/******************************************//**
+*Loop that makes the arduino everytime.
+*
+*
+********************************************/
 void loop() {
   Serial.println("Loop...");
   
@@ -70,6 +91,11 @@ void loop() {
   delay(1000);
 }
 
+/******************************************//**
+*Connecting to the Ethernet client.
+*
+*
+********************************************/
 boolean connectEthernet() {
    switch (client.connect(url, port)) {
     case 1:
@@ -97,6 +123,15 @@ boolean connectEthernet() {
    return false;
 }
 
+/******************************************//**
+*Setup of all the arduino settings.
+*@param modo The type of the messagge
+*@param idPlaca The ID whose is the data
+*@param idSensor The ID whose is the data
+*@param valor_1 The first value to send
+*@param valor_2 The second value to send
+*
+********************************************/
 void sendData(String modo, String idPlaca, String idSensor, String valor_1, String valor_2){
   if(modo == "1") {
     client.println("$" + modo + "%" + idPlaca + "%" + idSensor + "%" + valor_1 + "$");
@@ -112,10 +147,18 @@ void sendData(String modo, String idPlaca, String idSensor, String valor_1, Stri
   }
 }
 
+/******************************************//**
+*Closes the connection with the client.
+*
+********************************************/
 void closeConnection(){
   client.stop();
 }
 
+/******************************************//**
+*The loop that does to see if it is data in the serial port.
+*
+********************************************/
 void loopXBee(){
   if(xbee.available()) {
     xbeeData = xbee.readString();
