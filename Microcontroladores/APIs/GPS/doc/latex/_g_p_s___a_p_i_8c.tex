@@ -1,0 +1,162 @@
+\hypertarget{_g_p_s___a_p_i_8c}{}\section{G\+P\+S\+\_\+\+A\+P\+I.\+c File Reference}
+\label{_g_p_s___a_p_i_8c}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+{\ttfamily \#include \char`\"{}G\+P\+S\+\_\+\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g_p_s___a_p_i_8c_ab6c0a17d6cd896a429da7793c0f34f91}{G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g_p_s___a_p_i_8c_af3b7573756661de738cf13ffa83698c9}{G\+P\+S\+\_\+set\+Buffer} (uint8\+\_\+t $\ast$gps\+\_\+buffer, uint16\+\_\+t $\ast$gps\+\_\+buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Set the buffer where the G\+P\+S messages are being received. \end{DoxyCompactList}\item 
+void \hyperlink{_g_p_s___a_p_i_8c_a57beda8e3e5ef20ce09c31348b89baee}{G\+P\+S\+\_\+get\+Msg} (void)
+\begin{DoxyCompactList}\small\item\em Read the message from the U\+S\+A\+R\+T buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_g_p_s___a_p_i_8c_ae9ff2835b8807fc891f4fe8c0db5513a}{G\+P\+S\+\_\+parse\+Data} (void)
+\begin{DoxyCompactList}\small\item\em Parse the message and store it in \hyperlink{struct_g_p_s___d_a_t_a___type_def}{G\+P\+S\+\_\+\+D\+A\+T\+A\+\_\+\+Type\+Def} struct. \end{DoxyCompactList}\item 
+\hyperlink{struct_g_p_s___pos}{G\+P\+S\+\_\+\+Pos} \hyperlink{_g_p_s___a_p_i_8c_affe9a7a778a95ccd80db05fe64f4b63e}{G\+P\+S\+\_\+get\+Location} (void)
+\begin{DoxyCompactList}\small\item\em Get the last stored location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{_g_p_s___a_p_i_8c_a6deedc3ae13d8575f5555efab73537de}{gps\+Msg} \mbox{[}\hyperlink{_g_p_s___a_p_i_8h_ad4d025ecf1bdbf8b244ca688df8e478d}{M\+S\+G\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The buffer where the G\+P\+S messages will be stored. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_g_p_s___a_p_i_8c_af6e999e4314ed38b85e9615487c0c0a9}{gps\+\_\+\+Msg\+Lenght} = 0
+\begin{DoxyCompactList}\small\item\em The length of the message buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_g_p_s___a_p_i_8c_a0c8898fbfaf7e55f249bb14b03796a83}{in\+Msg} = 0
+\begin{DoxyCompactList}\small\item\em Boolean that indicates if the data received from the U\+S\+A\+R\+T will be stored on the buffer or not. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \hyperlink{_g_p_s___a_p_i_8c_a2d38c9dd7869bb891f61c87235c2f65b}{gps\+\_\+usart\+\_\+buffer}
+\begin{DoxyCompactList}\small\item\em The pointer to the U\+S\+A\+R\+T buffer where the G\+P\+S messages are being received. \end{DoxyCompactList}\item 
+uint16\+\_\+t $\ast$ \hyperlink{_g_p_s___a_p_i_8c_aa02436d5d3d7412bf9b5f5ae4247ae86}{gps\+\_\+usart\+\_\+bufflen}
+\begin{DoxyCompactList}\small\item\em The pointer to the length variable of the U\+S\+A\+R\+T buffer. \end{DoxyCompactList}\item 
+\hyperlink{struct_g_p_s___d_a_t_a___type_def}{G\+P\+S\+\_\+\+D\+A\+T\+A\+\_\+\+Type\+Def} \hyperlink{_g_p_s___a_p_i_8c_a2712ca24ebb691a7f65673c1d254c32c}{gps\+Data}
+\begin{DoxyCompactList}\small\item\em Struct where the location data will be stored after conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g_p_s___a_p_i_8c_ab6c0a17d6cd896a429da7793c0f34f91}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C@{G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C}}
+\index{G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C@{G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+S\+\_\+\+A\+P\+I\+\_\+\+C}\label{_g_p_s___a_p_i_8c_ab6c0a17d6cd896a429da7793c0f34f91}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g_p_s___a_p_i_8c_affe9a7a778a95ccd80db05fe64f4b63e}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!G\+P\+S\+\_\+get\+Location@{G\+P\+S\+\_\+get\+Location}}
+\index{G\+P\+S\+\_\+get\+Location@{G\+P\+S\+\_\+get\+Location}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{G\+P\+S\+\_\+get\+Location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+P\+S\+\_\+\+Pos} G\+P\+S\+\_\+get\+Location (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_g_p_s___a_p_i_8c_affe9a7a778a95ccd80db05fe64f4b63e}
+
+
+Get the last stored location. 
+
+Convert the data in the G\+P\+S\+\_\+\+Data struct to useful location data. Then stores it in in a \hyperlink{struct_g_p_s___pos}{G\+P\+S\+\_\+\+Pos} struct. \begin{DoxyReturn}{Returns}
+The struct that contains the location info. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{struct_g_p_s___d_a_t_a___type_def}{G\+P\+S\+\_\+\+D\+A\+T\+A\+\_\+\+Type\+Def} 
+
+\hyperlink{struct_g_p_s___pos}{G\+P\+S\+\_\+\+Pos} 
+\end{DoxySeeAlso}
+\hypertarget{_g_p_s___a_p_i_8c_a57beda8e3e5ef20ce09c31348b89baee}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!G\+P\+S\+\_\+get\+Msg@{G\+P\+S\+\_\+get\+Msg}}
+\index{G\+P\+S\+\_\+get\+Msg@{G\+P\+S\+\_\+get\+Msg}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{G\+P\+S\+\_\+get\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+S\+\_\+get\+Msg (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_g_p_s___a_p_i_8c_a57beda8e3e5ef20ce09c31348b89baee}
+
+
+Read the message from the U\+S\+A\+R\+T buffer. 
+
+Reads the last character that has been read by the U\+S\+A\+R\+T, and if it detects that is a G\+P\+S message, stores it to the buffer of G\+P\+S messages. If detect that the full message has been received, it will call the \hyperlink{_g_p_s___a_p_i_8c_ae9ff2835b8807fc891f4fe8c0db5513a}{G\+P\+S\+\_\+parse\+Data()} function to process it. Must be called from the U\+S\+A\+R\+T I\+R\+Q. \begin{DoxySeeAlso}{See also}
+\hyperlink{_u_s_a_r_t___a_p_i_8c_a9e20e4eb45c71ba81845ebfa564ecca4}{U\+S\+A\+R\+T6\+\_\+\+I\+R\+Q\+Handler()} 
+
+\hyperlink{_u_s_a_r_t___a_p_i_8c_a7ef0c8dc631c3684df826336b678dda0}{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler()} 
+
+\hyperlink{_g_p_s___a_p_i_8c_ae9ff2835b8807fc891f4fe8c0db5513a}{G\+P\+S\+\_\+parse\+Data()} 
+\end{DoxySeeAlso}
+$<$ Detect the start of message
+
+$<$ If inside a message and is not the ending char store the character.
+
+$<$ If inside a message and the received char is the ending char process the message \hypertarget{_g_p_s___a_p_i_8c_ae9ff2835b8807fc891f4fe8c0db5513a}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!G\+P\+S\+\_\+parse\+Data@{G\+P\+S\+\_\+parse\+Data}}
+\index{G\+P\+S\+\_\+parse\+Data@{G\+P\+S\+\_\+parse\+Data}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{G\+P\+S\+\_\+parse\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+S\+\_\+parse\+Data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_g_p_s___a_p_i_8c_ae9ff2835b8807fc891f4fe8c0db5513a}
+
+
+Parse the message and store it in \hyperlink{struct_g_p_s___d_a_t_a___type_def}{G\+P\+S\+\_\+\+D\+A\+T\+A\+\_\+\+Type\+Def} struct. 
+
+If the received message is of G\+P\+G\+G\+A type, splits it into fields and stores it in the G\+P\+S\+\_\+\+Data struct. \begin{DoxySeeAlso}{See also}
+\hyperlink{struct_g_p_s___d_a_t_a___type_def}{G\+P\+S\+\_\+\+D\+A\+T\+A\+\_\+\+Type\+Def} 
+\end{DoxySeeAlso}
+\hypertarget{_g_p_s___a_p_i_8c_af3b7573756661de738cf13ffa83698c9}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!G\+P\+S\+\_\+set\+Buffer@{G\+P\+S\+\_\+set\+Buffer}}
+\index{G\+P\+S\+\_\+set\+Buffer@{G\+P\+S\+\_\+set\+Buffer}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{G\+P\+S\+\_\+set\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+S\+\_\+set\+Buffer (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{gps\+\_\+buffer, }
+\item[{uint16\+\_\+t $\ast$}]{gps\+\_\+buffer\+\_\+length}
+\end{DoxyParamCaption}
+)}\label{_g_p_s___a_p_i_8c_af3b7573756661de738cf13ffa83698c9}
+
+
+Set the buffer where the G\+P\+S messages are being received. 
+
+Sets the buffer of the U\+S\+A\+R\+T where the messages are arriving for posterior reading. 
+\begin{DoxyParams}{Parameters}
+{\em gps\+\_\+buffer} & The pointer to the buffer. \\
+\hline
+{\em gps\+\_\+buffer\+\_\+length} & The pointer to the variable that stores the length of the buffer. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g_p_s___a_p_i_8c_af6e999e4314ed38b85e9615487c0c0a9}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!gps\+\_\+\+Msg\+Lenght@{gps\+\_\+\+Msg\+Lenght}}
+\index{gps\+\_\+\+Msg\+Lenght@{gps\+\_\+\+Msg\+Lenght}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{gps\+\_\+\+Msg\+Lenght}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t gps\+\_\+\+Msg\+Lenght = 0}\label{_g_p_s___a_p_i_8c_af6e999e4314ed38b85e9615487c0c0a9}
+
+
+The length of the message buffer. 
+
+Extern definition of the G\+P\+S buffer length.\hypertarget{_g_p_s___a_p_i_8c_a2d38c9dd7869bb891f61c87235c2f65b}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!gps\+\_\+usart\+\_\+buffer@{gps\+\_\+usart\+\_\+buffer}}
+\index{gps\+\_\+usart\+\_\+buffer@{gps\+\_\+usart\+\_\+buffer}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{gps\+\_\+usart\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ gps\+\_\+usart\+\_\+buffer}\label{_g_p_s___a_p_i_8c_a2d38c9dd7869bb891f61c87235c2f65b}
+
+
+The pointer to the U\+S\+A\+R\+T buffer where the G\+P\+S messages are being received. 
+
+Extern definition of the U\+S\+A\+R\+T buffer to use with the G\+P\+S.\hypertarget{_g_p_s___a_p_i_8c_aa02436d5d3d7412bf9b5f5ae4247ae86}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!gps\+\_\+usart\+\_\+bufflen@{gps\+\_\+usart\+\_\+bufflen}}
+\index{gps\+\_\+usart\+\_\+bufflen@{gps\+\_\+usart\+\_\+bufflen}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{gps\+\_\+usart\+\_\+bufflen}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t$\ast$ gps\+\_\+usart\+\_\+bufflen}\label{_g_p_s___a_p_i_8c_aa02436d5d3d7412bf9b5f5ae4247ae86}
+
+
+The pointer to the length variable of the U\+S\+A\+R\+T buffer. 
+
+Extern definition of the length of the U\+S\+A\+R\+T buffer.\hypertarget{_g_p_s___a_p_i_8c_a2712ca24ebb691a7f65673c1d254c32c}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!gps\+Data@{gps\+Data}}
+\index{gps\+Data@{gps\+Data}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{gps\+Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+P\+S\+\_\+\+D\+A\+T\+A\+\_\+\+Type\+Def} gps\+Data}\label{_g_p_s___a_p_i_8c_a2712ca24ebb691a7f65673c1d254c32c}
+
+
+Struct where the location data will be stored after conversion. 
+
+Extern definition of the G\+P\+S Data struct.\hypertarget{_g_p_s___a_p_i_8c_a6deedc3ae13d8575f5555efab73537de}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!gps\+Msg@{gps\+Msg}}
+\index{gps\+Msg@{gps\+Msg}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{gps\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t gps\+Msg\mbox{[}{\bf M\+S\+G\+\_\+\+S\+I\+Z\+E}\mbox{]}}\label{_g_p_s___a_p_i_8c_a6deedc3ae13d8575f5555efab73537de}
+
+
+The buffer where the G\+P\+S messages will be stored. 
+
+Extern definition of the G\+P\+S buffer.\hypertarget{_g_p_s___a_p_i_8c_a0c8898fbfaf7e55f249bb14b03796a83}{}\index{G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}!in\+Msg@{in\+Msg}}
+\index{in\+Msg@{in\+Msg}!G\+P\+S\+\_\+\+A\+P\+I.\+c@{G\+P\+S\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{in\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t in\+Msg = 0}\label{_g_p_s___a_p_i_8c_a0c8898fbfaf7e55f249bb14b03796a83}
+
+
+Boolean that indicates if the data received from the U\+S\+A\+R\+T will be stored on the buffer or not. 
+
