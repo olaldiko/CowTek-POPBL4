@@ -1,0 +1,85 @@
+\hypertarget{_w_a_t_c_h_d_o_g___a_p_i_8c}{}\section{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c File Reference}
+\label{_w_a_t_c_h_d_o_g___a_p_i_8c}\index{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}}
+{\ttfamily \#include \char`\"{}W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_w_a_t_c_h_d_o_g___a_p_i_8c_ac3514ad60e3cbd9b66d50697755dcc0c}{W\+D\+\_\+\+Start} (void)
+\begin{DoxyCompactList}\small\item\em Starts the downcount of the Watch\+Dog. \end{DoxyCompactList}\item 
+void \hyperlink{_w_a_t_c_h_d_o_g___a_p_i_8c_a45ab1ba4d361a225bbcb1e9a398760ea}{W\+D\+\_\+\+Reset\+Counter} (void)
+\begin{DoxyCompactList}\small\item\em Reset the countdown. \end{DoxyCompactList}\item 
+void \hyperlink{_w_a_t_c_h_d_o_g___a_p_i_8c_a4929bddf67f33e3d9819af1f3c25d2f1}{W\+D\+\_\+\+Set\+Preescaler} (uint8\+\_\+t psc)
+\begin{DoxyCompactList}\small\item\em Set the preescaler divisor of the Watchdog. \end{DoxyCompactList}\item 
+void \hyperlink{_w_a_t_c_h_d_o_g___a_p_i_8c_abde11c99b2c77ee08ac89ba80832ab8a}{W\+D\+\_\+\+Set\+Debug\+Mode} (uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Set debug operation of the Watch\+Dog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_w_a_t_c_h_d_o_g___a_p_i_8c_a45ab1ba4d361a225bbcb1e9a398760ea}{}\index{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}!W\+D\+\_\+\+Reset\+Counter@{W\+D\+\_\+\+Reset\+Counter}}
+\index{W\+D\+\_\+\+Reset\+Counter@{W\+D\+\_\+\+Reset\+Counter}!W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{W\+D\+\_\+\+Reset\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}void W\+D\+\_\+\+Reset\+Counter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_w_a_t_c_h_d_o_g___a_p_i_8c_a45ab1ba4d361a225bbcb1e9a398760ea}
+
+
+Reset the countdown. 
+
+Resets the countdown of the watchdog. \hypertarget{_w_a_t_c_h_d_o_g___a_p_i_8c_abde11c99b2c77ee08ac89ba80832ab8a}{}\index{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}!W\+D\+\_\+\+Set\+Debug\+Mode@{W\+D\+\_\+\+Set\+Debug\+Mode}}
+\index{W\+D\+\_\+\+Set\+Debug\+Mode@{W\+D\+\_\+\+Set\+Debug\+Mode}!W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{W\+D\+\_\+\+Set\+Debug\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void W\+D\+\_\+\+Set\+Debug\+Mode (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{mode}
+\end{DoxyParamCaption}
+)}\label{_w_a_t_c_h_d_o_g___a_p_i_8c_abde11c99b2c77ee08ac89ba80832ab8a}
+
+
+Set debug operation of the Watch\+Dog. 
+
+Sets the behaviour of the Watchdog when entering a debug stop.
+\begin{DoxyItemize}
+\item 0. Stop the watchdog.
+\item 1. Continue the countdown. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & The operation mode. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{_w_a_t_c_h_d_o_g___a_p_i_8c_a4929bddf67f33e3d9819af1f3c25d2f1}{}\index{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}!W\+D\+\_\+\+Set\+Preescaler@{W\+D\+\_\+\+Set\+Preescaler}}
+\index{W\+D\+\_\+\+Set\+Preescaler@{W\+D\+\_\+\+Set\+Preescaler}!W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{W\+D\+\_\+\+Set\+Preescaler}]{\setlength{\rightskip}{0pt plus 5cm}void W\+D\+\_\+\+Set\+Preescaler (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{psc}
+\end{DoxyParamCaption}
+)}\label{_w_a_t_c_h_d_o_g___a_p_i_8c_a4929bddf67f33e3d9819af1f3c25d2f1}
+
+
+Set the preescaler divisor of the Watchdog. 
+
+Unlocks the preescaler register by writing 0x5555 to the key register and then writes the desired value to the preescaler register.
+\begin{DoxyItemize}
+\item 0 -\/ L\+S\+I/4
+\item 1 -\/ L\+S\+I/8
+\item 2 -\/ L\+S\+I/16
+\item 3 -\/ L\+S\+I/32
+\item 4 -\/ L\+S\+I/64
+\item 5 -\/ L\+S\+I/128
+\item 6 -\/ L\+S\+I/256 
+\begin{DoxyParams}{Parameters}
+{\em psc} & Preescaler divisor \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{_w_a_t_c_h_d_o_g___a_p_i_8c_ac3514ad60e3cbd9b66d50697755dcc0c}{}\index{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}!W\+D\+\_\+\+Start@{W\+D\+\_\+\+Start}}
+\index{W\+D\+\_\+\+Start@{W\+D\+\_\+\+Start}!W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c@{W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+c}}
+\subsubsection[{W\+D\+\_\+\+Start}]{\setlength{\rightskip}{0pt plus 5cm}void W\+D\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_w_a_t_c_h_d_o_g___a_p_i_8c_ac3514ad60e3cbd9b66d50697755dcc0c}
+
+
+Starts the downcount of the Watch\+Dog. 
+
+Writes the start countdown value into the key register and the Watchdog starts the downcount to 0. After this, a reset signal will be sent to the microcontroller. 
