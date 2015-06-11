@@ -25,6 +25,7 @@ int main(void){
 }
 void initState(){
 	initWatchDog();
+	SL_Init();
 	DS18_Init();
 	USART3_Init(34800);
 	USART6_Init(9600);
@@ -38,8 +39,12 @@ void initState(){
 void idleState(){
 	int i;
 	WD_ResetCounter();
-	for(i = 0; i < 200; i++){ 
-	delay(65000);
+	disableIRQs();
+	SL_sleepForSecs(25);
+	WD_ResetCounter();
+	enableIRQs();
+	for(i = 0; i < 30;i++){
+		delay(65000);
 	}
 	WD_ResetCounter();
 	state = CAPTURE_S;

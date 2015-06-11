@@ -8,6 +8,7 @@
 #include "inc/DS18B20_API.h"
 #include "inc/GPS_API.h"
 #include "inc/WATCHDOG_API.h"
+#include "inc/SLEEP_API.h"
 
 typedef enum {INIT_S, IDLE_S, CAPTURE_S, SEND_S, ERROR_S}fsm_type;
 
