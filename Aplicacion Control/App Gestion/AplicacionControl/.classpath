@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/Jama-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/jep-2.24.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/ext-1.1.1.jar/ext-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/MapsJava.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/license (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/jxbrowser-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/jfreechart-1.0.19-experimental.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/jfreesvg-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/orsoncharts-1.4-eval-nofx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/orsonpdf-1.6-eval.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/lib/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/MySQL/MySQL Connector J/mysql-connector-java-5.1.35-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/substance-4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gorka/Downloads/jcalendar-1.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

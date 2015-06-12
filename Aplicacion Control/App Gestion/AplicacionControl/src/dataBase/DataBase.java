@@ -1,66 +1,67 @@
-package JDBC;
+package dataBase;
+
+import interfaz.Principal;
 
 import java.sql.Date;
 import java.sql.ResultSet;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
-import com.mysql.fabric.FabricStateResponse;
 
+public class DataBase {
 
-public class Principal {
+	
+	public void iniciarPrograma() {
+		Date fecha = new Date(Calendar.getInstance().getTimeInMillis());
+		fecha.toString();
 
-	public static void main(String[] args) {
-		Principal demo = new Principal();
-		demo.iniciarPrograma();
-
-	}
-
-	private void iniciarPrograma() {
-		Date fecha = new Date(15, 5, 21);
 		
-		mostrarVacas();
 		/*
+		Fabricante fabricante = new Fabricante("Olimex", "Placas SUBdesarrolladas", fecha);
+		fabricante.introducirEnBD();
+		Unidad unidad = new Unidad("Grados Celsius");
+		unidad.introducirEnBD();
+		PlacaEstacion placaEstacion = new PlacaEstacion(1, 1, fecha, fecha);
+		placaEstacion.introducirEnBD();
+		PlacaVaca placavaca = new PlacaVaca(1, 1, fecha, fecha);
+		placavaca.introducirEnBD();
+		ConsumoVaca consumoVaca = new ConsumoVaca(1, 1, fecha, (float)13.65);
+		consumoVaca.introducirEnBD();
+		DatosVaca datosVaca = new DatosVaca(1, 1, fecha, 23, 1);
+		datosVaca.introducirEnBD();
+		DatosEstacion datosEstacion = new DatosEstacion(1, 1, fecha, 46, 1);
+		datosEstacion.introducirEnBD();		
+		Sensor sensor = new Sensor("prueba", 1, 1);
+		sensor.introducirEnBD();
+		Comedero comedero = new Comedero("prueba", 1, 1);
+		comedero.introducirEnBD();
+		Vaca vaca = new Vaca("Maribel", "Blanca y negra", fecha);
+		vaca.introducirEnBD();
+		*/
+	}
+	
+	public void mostrarTodo() {
+		mostrarVacas();
 		mostrarTipoSensor();
 		mostrarUnidad();
 		mostrarModelos();
 		mostrarPlacasVacas();
-		mostrarOrdeñaderos();
+		mostrarOrdenaderos();
 		mostrarPlacas();
 		mostrarPlacaEstacion();
 		mostrarProduccionVaca();
 		mostrarTiposPlacas();
 		mostrarfabricantes();
 		mostrarEstaciones();
-		mostrarDatosEstacion();
 		mostrarConsumosVacas();
 		mostrarDatosEstacion();
 		mostrarComederos();
-		Fabricante fabricante = new Fabricante("Olimex", "Placas SUBdesarrolladas", fecha);
-		fabricante.intoducirEnBD();
-		Unidad unidad = new Unidad("Grados Celsius");
-		unidad.intoducirEnBD();
-		PlacaEstacion placaEstacion = new PlacaEstacion(1, 1, fecha, fecha);
-		placaEstacion.intoducirEnBD();
-		PlacaVaca placavaca = new PlacaVaca(1, 1, fecha, fecha);
-		placavaca.intoducirEnBD();
-		ConsumoVaca consumoVaca = new ConsumoVaca(1, 1, fecha, (float)13.65);
-		consumoVaca.intoducirEnBD();
-		DatosVaca datosVaca = new DatosVaca(1, 1, fecha, 23, 1);
-		datosVaca.intoducirEnBD();
-		DatosEstacion datosEstacion = new DatosEstacion(1, 1, fecha, 46, 1);
-		datosEstacion.intoducirEnBD();		
-		Sensor sensor = new Sensor("prueba", 1, 1);
-		sensor.intoducirEnBD();
-		Comedero comedero = new Comedero("prueba", 1, 1);
-		comedero.intoducirEnBD();
-		Vaca vaca = new Vaca("Maribel", "Blanca y negra", fecha);
-		vaca.intoducirEnBD(); 
-		*/
+		mostrarDatosVaca();
 	}
 
 	private void mostrarVacas() {
-		JDBC dbConnection = new JDBC ("gorkaram","narvaja");
+		JDBC dbConnection = new JDBC ();
 		List<Vaca> vacas= dbConnection.getVacas();
 		Iterator<Vaca> itrVacas = vacas.iterator();
 		while (itrVacas.hasNext()){
@@ -70,7 +71,7 @@ public class Principal {
 	}
 
 	private void mostrarUnidad() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<Unidad> unidades= dbConnection.getUnidades();
 		Iterator<Unidad> itrUnidades = unidades.iterator();
 		while (itrUnidades.hasNext()){
@@ -80,7 +81,7 @@ public class Principal {
 		
 
 	private void mostrarTipoSensor() {
-		JDBC dbConnection = new JDBC ("root", "");
+		JDBC dbConnection = new JDBC ();
 		List<TipoSensor> tiposSensores = dbConnection.getTiposSesores();
 		Iterator<TipoSensor> itrTiposSensores = tiposSensores.iterator();
 		while (itrTiposSensores.hasNext()){
@@ -88,7 +89,7 @@ public class Principal {
 			}
 		}
 	private void mostrarTiposPlacas() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<TipoPlaca> tiposPlacas = dbConnection.getTiposPlacas();
 		Iterator<TipoPlaca> itrTiposPlacas = tiposPlacas.iterator();
 		while (itrTiposPlacas.hasNext()){
@@ -98,7 +99,7 @@ public class Principal {
 
 
 	private void mostrarPlacasVacas() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<PlacaVaca> placasVacas = dbConnection.getPlacasVacas();
 		Iterator<PlacaVaca> itrPlacasVacas = placasVacas.iterator();
 		while (itrPlacasVacas.hasNext()){
@@ -107,7 +108,7 @@ public class Principal {
 		}
 
 	private void mostrarProduccionVaca() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<ProduccionVaca> produccionesVacas = dbConnection.getProduccionesVacas();
 		Iterator<ProduccionVaca> itrProduccionesVacas = produccionesVacas.iterator();
 		while (itrProduccionesVacas.hasNext()){
@@ -116,7 +117,7 @@ public class Principal {
 		}
 
 	private void mostrarPlacaEstacion() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<PlacaEstacion> placasEstaciones = dbConnection.getPlacasEstaciones();
 		Iterator<PlacaEstacion> itrPlacasEstaciones = placasEstaciones.iterator();
 		while (itrPlacasEstaciones.hasNext()){
@@ -125,7 +126,7 @@ public class Principal {
 		}
 
 	private void mostrarPlacas() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<Placa> placas = dbConnection.getPlacas();
 		Iterator<Placa> itrPlacas= placas.iterator();
 		while (itrPlacas.hasNext()){
@@ -133,17 +134,17 @@ public class Principal {
 			}
 		}
 
-	private void mostrarOrdeñaderos() {
-		JDBC dbConnection = new JDBC ("root","");
-		List<Ordeñadero> ordeñaderos = dbConnection.getOrdeñaderos();
-		Iterator<Ordeñadero> itrOrdeñaderos = ordeñaderos.iterator();
-		while (itrOrdeñaderos.hasNext()){
-			System.out.println(itrOrdeñaderos.next().toString());
+	private void mostrarOrdenaderos() {
+		JDBC dbConnection = new JDBC ();
+		List<Ordenadero> ordenaderos = dbConnection.getOrdenaderos();
+		Iterator<Ordenadero> itrOrdenaderos = ordenaderos.iterator();
+		while (itrOrdenaderos.hasNext()){
+			System.out.println(itrOrdenaderos.next().toString());
 			}
 		}
 
 	private void mostrarModelos() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<Modelo> modelos = dbConnection.getModelos();
 		Iterator<Modelo> itrModelos = modelos.iterator();
 		while (itrModelos.hasNext()){
@@ -152,7 +153,7 @@ public class Principal {
 		}
 
 	private void mostrarfabricantes() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<Fabricante> faricantes = dbConnection.getFabricantes();
 		Iterator<Fabricante> itrFabricantes = faricantes.iterator();
 		while (itrFabricantes.hasNext()){
@@ -163,7 +164,7 @@ public class Principal {
 
 	private void mostrarEstaciones() {
 	
-	JDBC dbConnection = new JDBC ("root","");
+	JDBC dbConnection = new JDBC ();
 	List<Estacion> estaciones = dbConnection.getEstaciones();
 	Iterator<Estacion> itrEstaciones = estaciones.iterator();
 	while (itrEstaciones.hasNext()){
@@ -173,7 +174,7 @@ public class Principal {
 
 	private void mostrarDatosVaca() {
 		  
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<DatosVaca> datosVacas = dbConnection.getDatosVacas();
 		Iterator<DatosVaca> itrDatosVacas = datosVacas.iterator();
 		while (itrDatosVacas.hasNext()){
@@ -183,7 +184,7 @@ public class Principal {
 	
 	private void mostrarConsumosVacas() {
 		  
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<ConsumoVaca> consumosVacas = dbConnection.getConsumosVacas();
 		Iterator<ConsumoVaca> itrConsumoVacas = consumosVacas.iterator();
 		while (itrConsumoVacas.hasNext()){
@@ -192,7 +193,7 @@ public class Principal {
 	}
 
 	private void mostrarComederos() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<Comedero> comederos = dbConnection.getComederos();
 		Iterator<Comedero> itrComedero = comederos.iterator();
 		while (itrComedero.hasNext()){
@@ -202,7 +203,7 @@ public class Principal {
 	}
 
 	private void mostrarDatosEstacion() {
-		JDBC dbConnection = new JDBC ("root","");
+		JDBC dbConnection = new JDBC ();
 		List<DatosEstacion> datosEstaciones = dbConnection.getDatosEstacion();
 		Iterator<DatosEstacion> itrEstaciones = datosEstaciones.iterator();
 		while (itrEstaciones.hasNext()){
