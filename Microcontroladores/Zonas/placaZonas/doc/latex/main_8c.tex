@@ -1,0 +1,142 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{}int {\bfseries main} (void)\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+\item 
+void \hyperlink{main_8c_a3c34ea9b29f410748d4435a667484924}{init\+State} ()
+\begin{DoxyCompactList}\small\item\em Initialization state of the board. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a9fc20e1a13248bf8ffb2c648839e8da4}{idle\+State} ()
+\begin{DoxyCompactList}\small\item\em Idle state of the board. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a59fec04517f739426fefba974dc67568}{capture\+State} ()
+\begin{DoxyCompactList}\small\item\em Capture state of the board. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a253cf78672bbebd6d2dcbdfb74744a5c}{send\+State} ()
+\begin{DoxyCompactList}\small\item\em Send state of the board. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a126950a7bf6836c37db518b2d99d5e3e}{}void \hyperlink{main_8c_a126950a7bf6836c37db518b2d99d5e3e}{err\+State} ()\label{main_8c_a126950a7bf6836c37db518b2d99d5e3e}
+
+\begin{DoxyCompactList}\small\item\em Error state of the board. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a4234279d45126d7a32f80aa97f97efd2}{}void \hyperlink{main_8c_a4234279d45126d7a32f80aa97f97efd2}{init\+Watch\+Dog} ()\label{main_8c_a4234279d45126d7a32f80aa97f97efd2}
+
+\begin{DoxyCompactList}\small\item\em Starts the watchdog with the desired settings. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ae112fce874b14ce4c82d5fc8b04507e1}{}void \hyperlink{main_8c_ae112fce874b14ce4c82d5fc8b04507e1}{enable\+I\+R\+Qs} ()\label{main_8c_ae112fce874b14ce4c82d5fc8b04507e1}
+
+\begin{DoxyCompactList}\small\item\em Enables the I\+R\+Qs of the U\+S\+A\+R\+T6. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a28a74d4d92dcb4a41a6369f3d89fc192}{}void \hyperlink{main_8c_a28a74d4d92dcb4a41a6369f3d89fc192}{disable\+I\+R\+Qs} ()\label{main_8c_a28a74d4d92dcb4a41a6369f3d89fc192}
+
+\begin{DoxyCompactList}\small\item\em Disables the I\+R\+Qs of the U\+S\+A\+R\+T6. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a746514949644f26d47ff05ac1de1bafa}{prepare\+Msg} (char $\ast$\hyperlink{main_8c_a1dca96dc45819b46f2c1aae81df669da}{msg}, uint8\+\_\+t sensor, float value)
+\begin{DoxyCompactList}\small\item\em Prepares the message with the correct format to be sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{main_8c_a1dca96dc45819b46f2c1aae81df669da}{msg} \mbox{[}40\mbox{]}
+\begin{DoxyCompactList}\small\item\em The output message of the board. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{main_8c_a5df02340888254db29d9102cd482053f}{msg\+Len} = 0
+\begin{DoxyCompactList}\small\item\em The current length of the output message. \end{DoxyCompactList}\item 
+D\+H\+T\+\_\+\+D\+A\+T\+A \hyperlink{main_8c_a1704d587cfe1cd36ef6079bffa28be0c}{dht}
+\begin{DoxyCompactList}\small\item\em D\+H\+T11 sensor output data struct. \end{DoxyCompactList}\item 
+fsm\+\_\+type \hyperlink{main_8c_a77266ae78607173565e55dabc71f5905}{state} = I\+N\+I\+T\+\_\+\+S
+\begin{DoxyCompactList}\small\item\em The current state of the F\+S\+M. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a59fec04517f739426fefba974dc67568}{}\index{main.\+c@{main.\+c}!capture\+State@{capture\+State}}
+\index{capture\+State@{capture\+State}!main.\+c@{main.\+c}}
+\subsubsection[{capture\+State}]{\setlength{\rightskip}{0pt plus 5cm}void capture\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a59fec04517f739426fefba974dc67568}
+
+
+Capture state of the board. 
+
+Will first read the D\+H\+T11 sensor with the interrupts disabled for more accurate timing. After that, it will re-\/enable interrupts and will put the F\+S\+M in send state. \hypertarget{main_8c_a9fc20e1a13248bf8ffb2c648839e8da4}{}\index{main.\+c@{main.\+c}!idle\+State@{idle\+State}}
+\index{idle\+State@{idle\+State}!main.\+c@{main.\+c}}
+\subsubsection[{idle\+State}]{\setlength{\rightskip}{0pt plus 5cm}void idle\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a9fc20e1a13248bf8ffb2c648839e8da4}
+
+
+Idle state of the board. 
+
+In this state, the board will first restart the watchdog counter and then wait 10 secs before restarting the watchdog and putting the F\+S\+M in capture state. \hypertarget{main_8c_a3c34ea9b29f410748d4435a667484924}{}\index{main.\+c@{main.\+c}!init\+State@{init\+State}}
+\index{init\+State@{init\+State}!main.\+c@{main.\+c}}
+\subsubsection[{init\+State}]{\setlength{\rightskip}{0pt plus 5cm}void init\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a3c34ea9b29f410748d4435a667484924}
+
+
+Initialization state of the board. 
+
+In this state, the board will initialize the D\+H\+T11 sensor, watchdog, and U\+S\+A\+R\+T6. Finally it will start the Watchdog countdown and put the F\+S\+M in the idle state. \hypertarget{main_8c_a746514949644f26d47ff05ac1de1bafa}{}\index{main.\+c@{main.\+c}!prepare\+Msg@{prepare\+Msg}}
+\index{prepare\+Msg@{prepare\+Msg}!main.\+c@{main.\+c}}
+\subsubsection[{prepare\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}void prepare\+Msg (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg, }
+\item[{uint8\+\_\+t}]{sensor, }
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}\label{main_8c_a746514949644f26d47ff05ac1de1bafa}
+
+
+Prepares the message with the correct format to be sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The pointer where the message will be stored. \\
+\hline
+{\em sensor} & The sensor I\+D. \\
+\hline
+{\em value} & The value generated by that sensor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a253cf78672bbebd6d2dcbdfb74744a5c}{}\index{main.\+c@{main.\+c}!send\+State@{send\+State}}
+\index{send\+State@{send\+State}!main.\+c@{main.\+c}}
+\subsubsection[{send\+State}]{\setlength{\rightskip}{0pt plus 5cm}void send\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a253cf78672bbebd6d2dcbdfb74744a5c}
+
+
+Send state of the board. 
+
+Will prepare the temp and humidity messages, and send them via usart. Will put the F\+S\+M in idle mode again. 
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_a1704d587cfe1cd36ef6079bffa28be0c}{}\index{main.\+c@{main.\+c}!dht@{dht}}
+\index{dht@{dht}!main.\+c@{main.\+c}}
+\subsubsection[{dht}]{\setlength{\rightskip}{0pt plus 5cm}D\+H\+T\+\_\+\+D\+A\+T\+A dht}\label{main_8c_a1704d587cfe1cd36ef6079bffa28be0c}
+
+
+D\+H\+T11 sensor output data struct. 
+
+\hypertarget{main_8c_a1dca96dc45819b46f2c1aae81df669da}{}\index{main.\+c@{main.\+c}!msg@{msg}}
+\index{msg@{msg}!main.\+c@{main.\+c}}
+\subsubsection[{msg}]{\setlength{\rightskip}{0pt plus 5cm}char msg\mbox{[}40\mbox{]}}\label{main_8c_a1dca96dc45819b46f2c1aae81df669da}
+
+
+The output message of the board. 
+
+\hypertarget{main_8c_a5df02340888254db29d9102cd482053f}{}\index{main.\+c@{main.\+c}!msg\+Len@{msg\+Len}}
+\index{msg\+Len@{msg\+Len}!main.\+c@{main.\+c}}
+\subsubsection[{msg\+Len}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t msg\+Len = 0}\label{main_8c_a5df02340888254db29d9102cd482053f}
+
+
+The current length of the output message. 
+
+\hypertarget{main_8c_a77266ae78607173565e55dabc71f5905}{}\index{main.\+c@{main.\+c}!state@{state}}
+\index{state@{state}!main.\+c@{main.\+c}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}fsm\+\_\+type state = I\+N\+I\+T\+\_\+\+S}\label{main_8c_a77266ae78607173565e55dabc71f5905}
+
+
+The current state of the F\+S\+M. 
+

@@ -1,0 +1,149 @@
+\hypertarget{main_8h}{}\section{main.\+h File Reference}
+\label{main_8h}\index{main.\+h@{main.\+h}}
+{\ttfamily \#include $<$stm32f4xx.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}inc/\+U\+S\+A\+R\+T\+\_\+\+A\+P\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}inc/dht11.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}inc/\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8h_aebf99e3a4120f931ce1e4914ae60ea91}{B\+O\+A\+R\+D\+\_\+\+I\+D}~1
+\begin{DoxyCompactList}\small\item\em Board I\+D. \end{DoxyCompactList}\item 
+\#define \hyperlink{main_8h_ade532c222259539357a5060003eec503}{S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D}~1
+\begin{DoxyCompactList}\small\item\em D\+H\+T11 temperature sensor I\+D. \end{DoxyCompactList}\item 
+\#define \hyperlink{main_8h_af682948a31361533b23a1d7f3daff924}{S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D}~2
+\begin{DoxyCompactList}\small\item\em D\+H\+T11 humidity sensor I\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8h_a1c750a1586c9c682b7e184a7f37b365d}{}enum {\bfseries fsm\+\_\+type} \{ \\*
+{\bfseries I\+N\+I\+T\+\_\+\+S}, 
+{\bfseries I\+D\+L\+E\+\_\+\+S}, 
+{\bfseries C\+A\+P\+T\+U\+R\+E\+\_\+\+S}, 
+{\bfseries S\+E\+N\+D\+\_\+\+S}, 
+\\*
+{\bfseries E\+R\+R\+O\+R\+\_\+\+S}
+ \}\label{main_8h_a1c750a1586c9c682b7e184a7f37b365d}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8h_a0eea0fc32138d47b4b4cc8cf425cc0fa}{init\+State} (void)
+\begin{DoxyCompactList}\small\item\em Initialization state of the board. \end{DoxyCompactList}\item 
+void \hyperlink{main_8h_a6ddfd460646f68782765c4c96e07dd50}{idle\+State} (void)
+\begin{DoxyCompactList}\small\item\em Idle state of the board. \end{DoxyCompactList}\item 
+void \hyperlink{main_8h_a0ac861ce5a7c4dd4eda955548b5fa655}{capture\+State} (void)
+\begin{DoxyCompactList}\small\item\em Capture state of the board. \end{DoxyCompactList}\item 
+void \hyperlink{main_8h_af7083be845da4b76d30054ad43a8bcb6}{send\+State} (void)
+\begin{DoxyCompactList}\small\item\em Send state of the board. \end{DoxyCompactList}\item 
+\hypertarget{main_8h_ab5edd8ea70fba68952ed2d8fde9c4314}{}void \hyperlink{main_8h_ab5edd8ea70fba68952ed2d8fde9c4314}{err\+State} (void)\label{main_8h_ab5edd8ea70fba68952ed2d8fde9c4314}
+
+\begin{DoxyCompactList}\small\item\em Error state of the board. \end{DoxyCompactList}\item 
+\hypertarget{main_8h_a7884055e8bdd92fa30a61314e92c8b87}{}void \hyperlink{main_8h_a7884055e8bdd92fa30a61314e92c8b87}{init\+Watch\+Dog} (void)\label{main_8h_a7884055e8bdd92fa30a61314e92c8b87}
+
+\begin{DoxyCompactList}\small\item\em Starts the watchdog with the desired settings. \end{DoxyCompactList}\item 
+\hypertarget{main_8h_abf393b0b8ad2e298caa7c38d8a0ecf1d}{}void \hyperlink{main_8h_abf393b0b8ad2e298caa7c38d8a0ecf1d}{enable\+I\+R\+Qs} (void)\label{main_8h_abf393b0b8ad2e298caa7c38d8a0ecf1d}
+
+\begin{DoxyCompactList}\small\item\em Enables the I\+R\+Qs of the U\+S\+A\+R\+T6. \end{DoxyCompactList}\item 
+\hypertarget{main_8h_a4cc8baed101eef9465da546d3121bbdf}{}void \hyperlink{main_8h_a4cc8baed101eef9465da546d3121bbdf}{disable\+I\+R\+Qs} (void)\label{main_8h_a4cc8baed101eef9465da546d3121bbdf}
+
+\begin{DoxyCompactList}\small\item\em Disables the I\+R\+Qs of the U\+S\+A\+R\+T6. \end{DoxyCompactList}\item 
+void \hyperlink{main_8h_a746514949644f26d47ff05ac1de1bafa}{prepare\+Msg} (char $\ast$\hyperlink{main_8c_a1dca96dc45819b46f2c1aae81df669da}{msg}, uint8\+\_\+t sensor, float value)
+\begin{DoxyCompactList}\small\item\em Prepares the message with the correct format to be sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{main_8h_aebf99e3a4120f931ce1e4914ae60ea91}{}\index{main.\+h@{main.\+h}!B\+O\+A\+R\+D\+\_\+\+I\+D@{B\+O\+A\+R\+D\+\_\+\+I\+D}}
+\index{B\+O\+A\+R\+D\+\_\+\+I\+D@{B\+O\+A\+R\+D\+\_\+\+I\+D}!main.\+h@{main.\+h}}
+\subsubsection[{B\+O\+A\+R\+D\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+A\+R\+D\+\_\+\+I\+D~1}\label{main_8h_aebf99e3a4120f931ce1e4914ae60ea91}
+
+
+Board I\+D. 
+
+\hypertarget{main_8h_af682948a31361533b23a1d7f3daff924}{}\index{main.\+h@{main.\+h}!S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D@{S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D}}
+\index{S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D@{S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D}!main.\+h@{main.\+h}}
+\subsubsection[{S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+N\+\_\+\+H\+U\+M\+\_\+\+I\+D~2}\label{main_8h_af682948a31361533b23a1d7f3daff924}
+
+
+D\+H\+T11 humidity sensor I\+D. 
+
+\hypertarget{main_8h_ade532c222259539357a5060003eec503}{}\index{main.\+h@{main.\+h}!S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D@{S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D}}
+\index{S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D@{S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D}!main.\+h@{main.\+h}}
+\subsubsection[{S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+N\+\_\+\+T\+E\+M\+P\+\_\+\+I\+D~1}\label{main_8h_ade532c222259539357a5060003eec503}
+
+
+D\+H\+T11 temperature sensor I\+D. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8h_a0ac861ce5a7c4dd4eda955548b5fa655}{}\index{main.\+h@{main.\+h}!capture\+State@{capture\+State}}
+\index{capture\+State@{capture\+State}!main.\+h@{main.\+h}}
+\subsubsection[{capture\+State}]{\setlength{\rightskip}{0pt plus 5cm}void capture\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a0ac861ce5a7c4dd4eda955548b5fa655}
+
+
+Capture state of the board. 
+
+Will first read the D\+H\+T11 sensor with the interrupts disabled for more accurate timing. After that, it will re-\/enable interrupts and will put the F\+S\+M in send state. \hypertarget{main_8h_a6ddfd460646f68782765c4c96e07dd50}{}\index{main.\+h@{main.\+h}!idle\+State@{idle\+State}}
+\index{idle\+State@{idle\+State}!main.\+h@{main.\+h}}
+\subsubsection[{idle\+State}]{\setlength{\rightskip}{0pt plus 5cm}void idle\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a6ddfd460646f68782765c4c96e07dd50}
+
+
+Idle state of the board. 
+
+In this state, the board will first restart the watchdog counter and then wait 10 secs before restarting the watchdog and putting the F\+S\+M in capture state. \hypertarget{main_8h_a0eea0fc32138d47b4b4cc8cf425cc0fa}{}\index{main.\+h@{main.\+h}!init\+State@{init\+State}}
+\index{init\+State@{init\+State}!main.\+h@{main.\+h}}
+\subsubsection[{init\+State}]{\setlength{\rightskip}{0pt plus 5cm}void init\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a0eea0fc32138d47b4b4cc8cf425cc0fa}
+
+
+Initialization state of the board. 
+
+In this state, the board will initialize the D\+H\+T11 sensor, watchdog, and U\+S\+A\+R\+T6. Finally it will start the Watchdog countdown and put the F\+S\+M in the idle state. \hypertarget{main_8h_a746514949644f26d47ff05ac1de1bafa}{}\index{main.\+h@{main.\+h}!prepare\+Msg@{prepare\+Msg}}
+\index{prepare\+Msg@{prepare\+Msg}!main.\+h@{main.\+h}}
+\subsubsection[{prepare\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}void prepare\+Msg (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg, }
+\item[{uint8\+\_\+t}]{sensor, }
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}\label{main_8h_a746514949644f26d47ff05ac1de1bafa}
+
+
+Prepares the message with the correct format to be sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The pointer where the message will be stored. \\
+\hline
+{\em sensor} & The sensor I\+D. \\
+\hline
+{\em value} & The value generated by that sensor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8h_af7083be845da4b76d30054ad43a8bcb6}{}\index{main.\+h@{main.\+h}!send\+State@{send\+State}}
+\index{send\+State@{send\+State}!main.\+h@{main.\+h}}
+\subsubsection[{send\+State}]{\setlength{\rightskip}{0pt plus 5cm}void send\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8h_af7083be845da4b76d30054ad43a8bcb6}
+
+
+Send state of the board. 
+
+Will prepare the temp and humidity messages, and send them via usart. Will put the F\+S\+M in idle mode again. 
