@@ -560,7 +560,7 @@ public class JDBC{
 
 			while (result.next()){			
 
-				int vacaID	 = result.getInt("vacaID");
+				int vacaID	 = result.getInt("VacaID");
 				String nombre = result.getString ("Nombre");
 				String Raza = result.getString ("Raza");
 				Date FechaNacimiento = result.getDate("FechaNacimiento");
