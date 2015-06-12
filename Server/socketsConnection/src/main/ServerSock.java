@@ -18,7 +18,6 @@ public class ServerSock extends Thread{
 	ServerSocket sc;
 	Socket so;
 	String mensajeRecibido;
-	DataOutputStream salida;
 	DataInputStream entrada;
 	BufferedReader entradaBuffered;
 	
@@ -54,7 +53,6 @@ public class ServerSock extends Thread{
 		
 		try {
 			entrada = new DataInputStream(so.getInputStream());
-			salida = new DataOutputStream(so.getOutputStream());
 			entradaBuffered = new BufferedReader(new InputStreamReader(so.getInputStream()));
 		} catch (IOException e) {
 			//JOptionPane.showMessageDialog(null, e.getMessage(), "Creando entradas y salidas", JOptionPane.ERROR);
