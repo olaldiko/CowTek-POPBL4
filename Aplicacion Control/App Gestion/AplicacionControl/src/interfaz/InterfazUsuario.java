@@ -24,7 +24,7 @@ import org.jfree.ui.RefineryUtilities;
 import dataBase.JDBC;
 
 public class InterfazUsuario extends JFrame implements ActionListener{
-	
+
 	JTabbedPane pestañas;
 	JPanel panelGenerico;
     private JLabel texto;           // etiqueta o texto no editable
@@ -39,7 +39,7 @@ public class InterfazUsuario extends JFrame implements ActionListener{
     }
 	private void configurarVentana() {
 		pestañas =new JTabbedPane();
-        this.setTitle("VacasSA");                  				// colocamos titulo a la ventana
+        this.setTitle("COWTEK");                  				// colocamos titulo a la ventana
         this.setSize(1024, 720);                                 // colocamos tamanio a la ventana (ancho, alto)
         this.setLocationRelativeTo(null);                       // centramos la ventana en la pantalla
         this.setLayout(null);                                   // no usamos ningun layout, solo asi podremos dar posiciones a los componentes
@@ -70,10 +70,11 @@ public class InterfazUsuario extends JFrame implements ActionListener{
 		return panelIndividualizado;
 	}
 	private Component completarPanel2() {
-    	GeoLocalizacion posicion = new GeoLocalizacion();
-		Double coordenadaY = 42.1162766;
-		Double coordenadaX = -2.3710892405;
-    	return posicion.Geolocalizar(coordenadaY, coordenadaX);
+    	SwingFXWebView posicion = new SwingFXWebView();
+		Double coordenadaY =  42.907140535552294;
+		Double coordenadaX = -2.415549470114115;
+    	posicion.Geolocalizar(coordenadaY, coordenadaX);
+    	return posicion;
 	}
 	private Component completarPanel1() {
     	panelGenerico=new JPanel(new GridLayout(2,2));
@@ -87,6 +88,8 @@ public class InterfazUsuario extends JFrame implements ActionListener{
     Random random = new Random();
     int maxDataPoints = 40;
     int maxScore = 10;
+    JDBC dbconnection = new JDBC();
+    dbconnection.getHumedad();
     for (int i = 0; i < maxDataPoints; i++) {
         scores.add((double) random.nextDouble() * maxScore);
 //        scores.add((double) i);
@@ -118,14 +121,14 @@ public class InterfazUsuario extends JFrame implements ActionListener{
     	 List<Double> Temperatures = new ArrayList<>();
     	
  		JDBC dbConnection = new JDBC ();
- 		
+ 		/*
  		try {
 			Temperatures = dbConnection.readResultTemperatures();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
- 		
+ 		*/
  		GraphPanel grafico1 = new GraphPanel(Temperatures);
  		
 		grafico1.add(new JLabel("Temperaturas"), BorderLayout.NORTH);

@@ -101,7 +101,17 @@ public class JDBC{
 		return Temperatures;
 		
 	}
-	
+public Connection getConnection(String user, String password) throws SQLException{
+		this.userName = user ;
+		this.password = password;
+		Properties connectionProps = new Properties();
+		connectionProps.put("user", this.userName);
+		connectionProps.put("password", this.password);
+		
+		conn = DriverManager.getConnection(dbmsurl, connectionProps);
+		return conn;
+	}
+
 	public Connection getConnection() throws SQLException{
 		
 		Properties connectionProps = new Properties();

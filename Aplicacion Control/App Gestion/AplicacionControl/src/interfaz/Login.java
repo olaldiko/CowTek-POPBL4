@@ -6,6 +6,8 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,9 +17,12 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.jvnet.substance.SubstanceLookAndFeel;
 import org.jvnet.substance.watermark.SubstanceImageWatermark;
+
+import dataBase.JDBC;
 		
 		
 		public class Login extends JFrame implements ActionListener{
@@ -31,10 +36,9 @@ import org.jvnet.substance.watermark.SubstanceImageWatermark;
 		    
 		    int usuario = 0;
 		    public void Login() { 
-		    	this.setTitle("VacasSA");                  				// colocamos titulo a la ventana
+		    	this.setTitle("COWTEK");                  				// colocamos titulo a la ventana
 		        this.setSize(750, 500);                                 // colocamos tamanio a la ventana (ancho, alto)
-		        this.setLocationRelativeTo(null);                       // centramos la ventana en la pantalla
-		        //this.setLayout(new BorderLayout());                    
+		        this.setLocationRelativeTo(null);                       // centramos la ventana en la pantalla                
 		        this.setResizable(false);                               // hacemos que la ventana no sea redimiensionable
 		        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    // hacemos que cuando se cierre la ventana termina todo proceso
 		        
@@ -97,22 +101,21 @@ import org.jvnet.substance.watermark.SubstanceImageWatermark;
 			public void actionPerformed(ActionEvent e) {
 				String origen = e.getActionCommand();
 				switch(origen){
-				case "1":	if( user.getText().equals("admin") && pass.getText().equals("123") ){
-                    InterfazUsuario interfazUsuario = new InterfazUsuario();
+				case "1":	
+					JDBC dbconnection = new JDBC();
+					String usuario = (String) user.getText();
+					String contraseña = pass.getText();
+					try{
+					dbconnection.getConnection(usuario, contraseña);
+					}catch (SQLException e2) {
+	                    JOptionPane.showMessageDialog(null,"USUARIO O CONTRASEÑA INCORRECTO");
+						System.out.println("ez gara konektatzen");
+					}
+					InterfazUsuario interfazUsuario = new InterfazUsuario();
                  	interfazUsuario.setVisible(true);
                  	this.dispose();
-                 	                 	
-                }else{
-                                     
-                 
-                if( !user.getText().equals("admin") ){
-                    JOptionPane.showMessageDialog(null,"USUARIO INCORRECTO");
-                    
-                }else           
-                if( !pass.getText().equals("123") )
-                    JOptionPane.showMessageDialog(null,"PASSWORD INCORRECTO");
-                	
-                }	break;
+                 	               
+                    break;
 				}
 		    }
 		}

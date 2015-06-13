@@ -9,7 +9,7 @@ import dataBase.DatosVistaVaca;
 import dataBase.JDBC;
 
 public class AnalisisDatos {
-
+	
 	
 	public void analizarTodo() {
 		JDBC dbConnection = new JDBC ();
