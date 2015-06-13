@@ -10,79 +10,104 @@ import dataBase.JDBC;
 
 public class AnalisisDatos {
 	
+	AnalisisIngesta aIng;
+	AnalisisTemperatura aTemp;
+	AnalisisHumedad aHum;
 	
 	public void analizarTodo() {
 		JDBC dbConnection = new JDBC ();
 		List<DatosVistaVaca> produccionVacas = dbConnection.getVistaProduccionVaca();
-		List<DatosVistaVaca> consumosVacas = dbConnection.getVistaConsumoVaca();
+		List<DatosVistaVaca> consumoVacas = dbConnection.getVistaConsumoVaca();
 		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempVaca();
 		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumVaca();
 		
+		aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		System.out.println("Ingesta: a = " + aIng.getA() + "; b = " + aIng.getB() + ";");
+		
+		aTemp = new AnalisisTemperatura(sacarDatosEst((ArrayList<DatosVistaVaca>) temperaturaVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		System.out.println("Temperatura: " + aTemp.getEcuacion());
+		
+		aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<DatosVistaVaca>) humedadVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		System.out.println("Humedad: " + aHum.getEcuacion());
 	}
 	
-	public void analizarIngesta(ArrayList<DatosVistaVaca> ingesta, ArrayList<DatosVistaVaca> produccion) {
-		int i = 0;
-		int vaca = 0;
+	public ArrayList<Dato> sacarDatos(ArrayList<DatosVistaVaca> entrada, ArrayList<DatosVistaVaca> salida) {
+
+		ArrayList<Dato> datosVaca = new ArrayList<Dato>();
 		
-		ArrayList<Dato> datosVaca;
-		
-		while(vaca < 1000){
-			datosVaca  = new ArrayList<Dato>();
-			while(ingesta.get(i) != null){
-				if(ingesta.get(i).getVacaID() == vaca){
-					while(produccion.get(i) != null) {
-						if(produccion.get(i).getVacaID() == vaca){
-							float diff = Math.abs(produccion.get(i).getFechaHora().getTime() - ingesta.get(i).getFechaHora().getTime());
-							if(diff < 1000*60*60) datosVaca.add(new Dato(ingesta.get(i).getValor(), produccion.get(i).getValor()));
+		for(int i = 0; i < salida.size(); i++) {
+			
+			long diffSal = System.currentTimeMillis() - salida.get(i).getFechaHora().getTime();
+			if (diffSal < 1000*60*60*24*365) {
+			
+				for(int z = 0; z < entrada.size(); z++) {
+					
+					if (salida.get(i).getVacaID() == entrada.get(z).getVacaID()) {
+						
+						long diff = salida.get(i).getFechaHora().getTime() - entrada.get(z).getFechaHora().getTime();
+						diff = Math.abs(diff);
+						
+						if (diff < 1000*60*60*24) {
+							datosVaca.add(new Dato(entrada.get(z).getValor(), salida.get(i).getValor()));
 						}
+						
 					}
+					
 				}
+			
 			}
-			AnalisisIngesta analisis = new AnalisisIngesta(datosVaca);
+			
 		}
+		return datosVaca;
 	}
 	
-	public void analizarTemperatura(ArrayList<DatosVistaVaca> temperatura, ArrayList<DatosVistaVaca> produccion) {
-		int i = 0;
-		int vaca = 0;
+	public ArrayList<Dato> sacarDatosEst(ArrayList<DatosVistaVaca> entrada, ArrayList<DatosVistaVaca> salida) {
+
+		ArrayList<Dato> datosVaca = new ArrayList<Dato>();
 		
-		ArrayList<Dato> datosVaca;
-		
-		while(vaca < 1000){
-			datosVaca  = new ArrayList<Dato>();
-			while(temperatura.get(i) != null){
-				if(temperatura.get(i).getVacaID() == vaca){
-					while(produccion.get(i) != null) {
-						if(produccion.get(i).getVacaID() == vaca){
-							float diff = Math.abs(produccion.get(i).getFechaHora().getTime() - temperatura.get(i).getFechaHora().getTime());
-							if(diff < 1000*60*60) datosVaca.add(new Dato(temperatura.get(i).getValor(), produccion.get(i).getValor()));
-						}
+		for(int i = 0; i < salida.size(); i++) {
+			
+			long diffSal = System.currentTimeMillis() - salida.get(i).getFechaHora().getTime();
+			
+			if (diffSal < 1000*60*60*24*365) {
+				for(int z = 0; z < entrada.size(); z++) {
+					
+					long diff = salida.get(i).getFechaHora().getTime() - entrada.get(z).getFechaHora().getTime();
+					diff = Math.abs(diff);
+					if (diff < 1000*60*60*24) {
+						datosVaca.add(new Dato(entrada.get(z).getValor(), salida.get(i).getValor()));
 					}
+					
 				}
+			
 			}
-			AnalisisTemperatura analisis = new AnalisisTemperatura(datosVaca);
+			
 		}
+		return datosVaca;
+	}
+
+	public AnalisisIngesta getaIng() {
+		return aIng;
+	}
+
+	public void setaIng(AnalisisIngesta aIng) {
+		this.aIng = aIng;
+	}
+
+	public AnalisisTemperatura getaTemp() {
+		return aTemp;
+	}
+
+	public void setaTemp(AnalisisTemperatura aTemp) {
+		this.aTemp = aTemp;
+	}
+
+	public AnalisisHumedad getaHum() {
+		return aHum;
+	}
+
+	public void setaHum(AnalisisHumedad aHum) {
+		this.aHum = aHum;
 	}
 	
-	public void analizarHumedad(ArrayList<DatosVistaVaca> humedad, ArrayList<DatosVistaVaca> produccion) {
-		int i = 0;
-		int vaca = 0;
-		
-		ArrayList<Dato> datosVaca;
-		
-		while(vaca < 1000){
-			datosVaca  = new ArrayList<Dato>();
-			while(humedad.get(i) != null){
-				if(humedad.get(i).getVacaID() == vaca){
-					while(produccion.get(i) != null) {
-						if(produccion.get(i).getVacaID() == vaca){
-							float diff = Math.abs(produccion.get(i).getFechaHora().getTime() - humedad.get(i).getFechaHora().getTime());
-							if(diff < 1000*60*60) datosVaca.add(new Dato(humedad.get(i).getValor(), produccion.get(i).getValor()));
-						}
-					}
-				}
-			}
-			AnalisisHumedad analisis = new AnalisisHumedad(datosVaca);
-		}
-	}
 }

@@ -2,7 +2,7 @@ package analisisDatos;
 
 import java.util.ArrayList;
 
-public class AnalisisIngesta extends AnalisisDatos {
+public class AnalisisIngesta {
 
 	ArrayList<Dato> datos;
 	

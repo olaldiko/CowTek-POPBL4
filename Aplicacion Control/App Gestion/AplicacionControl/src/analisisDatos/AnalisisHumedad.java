@@ -8,7 +8,7 @@ import org.nfunk.jep.ParseException;
 
 import Jama.Matrix;
 
-public class AnalisisHumedad extends AnalisisDatos {
+public class AnalisisHumedad {
 	
 	ArrayList<Dato> datos;
 	String ecuacion;
@@ -17,8 +17,9 @@ public class AnalisisHumedad extends AnalisisDatos {
 	public AnalisisHumedad(ArrayList<Dato> datos) {
 		super();
 		this.datos = datos;
+		realizarAnalisis();
 	}
-
+	
 	private void realizarAnalisis() {
 		
 		float sumX = 0;
@@ -48,7 +49,7 @@ public class AnalisisHumedad extends AnalisisDatos {
 		
 		Matrix x = A.solve(b);
 		
-		ecuacion = "y = " + x.get(0, 0) + " + " + x.get(1, 0) + "*x + " + x.get(2, 0) + "*x^2";
+		ecuacion = x.get(0, 0) + " + " + x.get(1, 0) + "*x + " + x.get(2, 0) + "*x^2";
 		
 		dEcuacion = derivada(ecuacion);
 	}
@@ -81,8 +82,8 @@ public class AnalisisHumedad extends AnalisisDatos {
 			Node simp = j.simplify(diff);
 			//Convertimos el valor simplificado en un String
 			derivada =j.toString(simp);
-			//imprime la función
-			j.println(simp);
+			//imprime la funciÃ³n
+			//j.println(simp);
 		} catch(ParseException e){ 
 			e.printStackTrace();
 		}
