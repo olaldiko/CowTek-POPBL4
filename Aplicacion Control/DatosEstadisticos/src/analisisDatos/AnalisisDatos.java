@@ -9,7 +9,10 @@ import dataBase.DatosVistaVaca;
 import dataBase.JDBC;
 
 public class AnalisisDatos {
-
+	
+	AnalisisIngesta aIng;
+	AnalisisTemperatura aTemp;
+	AnalisisHumedad aHum;
 	
 	public void analizarTodo() {
 		JDBC dbConnection = new JDBC ();
@@ -18,13 +21,13 @@ public class AnalisisDatos {
 		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempVaca();
 		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumVaca();
 		
-		AnalisisIngesta aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
 		System.out.println("Ingesta: a = " + aIng.getA() + "; b = " + aIng.getB() + ";");
 		
-		AnalisisTemperatura aTemp = new AnalisisTemperatura(sacarDatosEst((ArrayList<DatosVistaVaca>) temperaturaVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		aTemp = new AnalisisTemperatura(sacarDatosEst((ArrayList<DatosVistaVaca>) temperaturaVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
 		System.out.println("Temperatura: " + aTemp.getEcuacion());
 		
-		AnalisisHumedad aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<DatosVistaVaca>) humedadVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<DatosVistaVaca>) humedadVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
 		System.out.println("Humedad: " + aHum.getEcuacion());
 	}
 	
@@ -81,6 +84,30 @@ public class AnalisisDatos {
 			
 		}
 		return datosVaca;
+	}
+
+	public AnalisisIngesta getaIng() {
+		return aIng;
+	}
+
+	public void setaIng(AnalisisIngesta aIng) {
+		this.aIng = aIng;
+	}
+
+	public AnalisisTemperatura getaTemp() {
+		return aTemp;
+	}
+
+	public void setaTemp(AnalisisTemperatura aTemp) {
+		this.aTemp = aTemp;
+	}
+
+	public AnalisisHumedad getaHum() {
+		return aHum;
+	}
+
+	public void setaHum(AnalisisHumedad aHum) {
+		this.aHum = aHum;
 	}
 	
 }
