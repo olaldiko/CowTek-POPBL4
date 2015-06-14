@@ -21,6 +21,12 @@ import dataBase.JDBC;
 import dataBase.PlacaVaca;
 import dataBase.Vaca;
  
+/**
+ * clase encargada de introducir, borrar,y modificar datos de vacas en la BD y 
+ * el diseño grafico de la interfaz
+ * @author gorka
+ *
+ */
 public class Modificaciones extends JPanel implements ActionListener {
  
 	JTable jTabla;
@@ -35,7 +41,9 @@ public class Modificaciones extends JPanel implements ActionListener {
     TrazadorTablaVacas trazador;     
     ModeloColumnasTablaVacas columnas;
     ModeloTablaVacas tabla;
-    
+    /**
+     * Diseño grafico de la interfaz
+     */
     public Modificaciones(){
         panelce  = crearPanelArribaCentroIzda();
         panelde  = crearPanelArribaDcha();
@@ -62,7 +70,10 @@ public class Modificaciones extends JPanel implements ActionListener {
         this.add(panelex);
         
     }
-
+    /**
+     * Panel con tabla que posee toda la informacion
+     * @return
+     */
 	private Component crearPanelAbajo() {
 		JPanel panel = new JPanel();
 		panelS = new JScrollPane();
@@ -79,6 +90,10 @@ public class Modificaciones extends JPanel implements ActionListener {
 		return panel;
 	}
 	
+	/**
+	 * Diseño de botones
+	 * @return
+	 */
 	private JPanel crearPanelArribaDcha() {
 		JPanel panel = new JPanel(new GridLayout(3,0));
 
@@ -106,6 +121,10 @@ public class Modificaciones extends JPanel implements ActionListener {
 		return panel;
 	}
 
+	/**
+	 * Diseño de formulario para introducir la informacion
+	 * @return
+	 */
 	private JPanel crearPanelArribaCentroIzda() {
 		panelce = new JPanel();
 		panelce.setSize(500, 350);
@@ -144,7 +163,9 @@ public class Modificaciones extends JPanel implements ActionListener {
         
 		return panelce;
 	}
-
+	/**
+	 * implementacion de los botones y su funcion
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()){
@@ -156,7 +177,7 @@ public class Modificaciones extends JPanel implements ActionListener {
 				JDBC dbConnection = new JDBC();
 				System.out.println(vacaID);
 				dbConnection.borrarVaca(vacaID);
-				tabla.leerTablaFichero();
+				tabla.leerTablaDB();
 				tabla.fireTableDataChanged();	
 			}
 			break;
@@ -175,7 +196,7 @@ public class Modificaciones extends JPanel implements ActionListener {
 			if (vacaID!=-1){
 				PlacaVaca vacaTienePlaca = new PlacaVaca(vacaID, placaID, fecha, null);
 				vacaTienePlaca.introducirEnBD();
-				tabla.leerTablaFichero();
+				tabla.leerTablaDB();
 				tabla.fireTableDataChanged();	
 				System.out.println("se ha introducido correctamente");
 			}

@@ -692,14 +692,14 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 			getStatements();
 			result = stmt.executeQuery(sql);
 
+			
 			while (result.next()){			
 
 				int vacaID	 = result.getInt("VacaID");
-				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				Date fechaHora = result.getDate("fechahora");
+				float valor = result.getFloat("valor");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , "ºC"));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -710,7 +710,7 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		return vacas;
 	}
 	
-	public List<DatosVistaVaca> getVistaTempVaca() {
+	public List<DatosVistaVaca> getVistaTempAmb() {
 		
 		String sql = "SELECT * FROM tempAmb_v";
 		List<DatosVistaVaca> vacas = new ArrayList<>();
@@ -722,10 +722,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 			while (result.next()){			
 
-				int vacaID	 = result.getInt("VacaID");
+				int vacaID	 = result.getInt("EstacionID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				String unidad = result.getString ("nombre");
 				
 				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
 			}
@@ -750,10 +750,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 			while (result.next()){			
 	
-				int vacaID	 = result.getInt("VacaID");
+				int vacaID	 = result.getInt("EstacionID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				String unidad = result.getString ("nombre");
 				
 				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
 			}
@@ -776,11 +776,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 			getStatements();
 			result = stmt.executeQuery(sql);
 			
-			while (result.next()){			
+			while (result.next()){
 	
 				int vacaID	 = result.getInt("VacaID");
-				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
+				Date fechaHora = result.getDate("fechahora");
+				float valor = result.getFloat("Cantidad");
 				
 				consumo.add(new DatosVistaVaca(vacaID, fechaHora, valor , "Kg"));
 			}
@@ -805,6 +805,7 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 			while (result.next()){			
 	
 				int vacaID	 = result.getInt("VacaID");
+				int ordenaderoID = result.getInt("OrdenaderoID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Cantidad");
 				

@@ -18,7 +18,7 @@ public class AnalisisDatos {
 		JDBC dbConnection = new JDBC ();
 		List<DatosVistaVaca> produccionVacas = dbConnection.getVistaProduccionVaca();
 		List<DatosVistaVaca> consumoVacas = dbConnection.getVistaConsumoVaca();
-		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempVaca();
+		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempAmb();
 		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumVaca();
 		
 		aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));

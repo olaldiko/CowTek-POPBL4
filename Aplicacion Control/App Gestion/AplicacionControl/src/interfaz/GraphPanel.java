@@ -15,6 +15,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+
+/**
+ * realiza un gráfico con los datos de un arraylist, uniendo todos los puntos obtenidos
+ * @author gorka
+ *
+ */
 public class GraphPanel extends JPanel {
 
     private int width = 800;

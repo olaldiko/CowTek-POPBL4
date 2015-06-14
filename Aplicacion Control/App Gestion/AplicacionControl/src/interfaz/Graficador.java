@@ -1,4 +1,7 @@
 package interfaz;
+import java.awt.Dimension;
+import javax.swing.JPanel;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -6,24 +9,30 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
 
-import java.awt.Dimension;
+/**
+ * Clase encargada de graficar un funcion polinomica a partir los coeficientes
+ * @author gorka
+ *
+ */
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
- 
 public class Graficador extends JPanel{
+	String nombre, leyendaX, leyendaY;
 	double coeficienteGrado2;
 	double coeficienteGrado1;
 	double coeficienteGrado0;
+	double valorMaximo, valorMinimo;
 	
-    public Graficador(double coeficienteGrado2, double coeficienteGrado1, double coeficienteGrado0){
-       this.coeficienteGrado0 = coeficienteGrado0;
-       this.coeficienteGrado1 = coeficienteGrado1;
-       this.coeficienteGrado2 = coeficienteGrado2;
+    public Graficador(String nombre,double valorMinimo, double valorMaximo, 
+    		String leyendaX, String leyendaY, double coeficienteGrado2, double coeficienteGrado1, double coeficienteGrado0){
+    	this.nombre = nombre;
+    	this.valorMaximo = valorMaximo;
+    	this.valorMinimo = valorMinimo;
+    	this.leyendaY = leyendaY;
+    	this.leyendaX = leyendaX;
+        this.coeficienteGrado0 = coeficienteGrado0;
+        this.coeficienteGrado1 = coeficienteGrado1;
+        this.coeficienteGrado2 = coeficienteGrado2;
     	
     	XYDataset paresDeDatos = generarDatos();
         JFreeChart diagrama = crearDiagrama(paresDeDatos);
@@ -35,8 +44,8 @@ public class Graficador extends JPanel{
     private XYDataset generarDatos(){
         //le pasamos una funcion generadora f(x)
         XYSeries datos = new XYSeries("Linea Funcion");
-        for(double x=0.0; x<=50.0; x+=0.2) datos.add(x,f(x));
- 
+        for(double x=valorMinimo; x<=valorMaximo; x+=0.5) datos.add(x,f(x));
+        
         XYSeriesCollection conjuntoDatos = new XYSeriesCollection();
         conjuntoDatos.addSeries(datos);
  
@@ -45,9 +54,9 @@ public class Graficador extends JPanel{
  
     private JFreeChart crearDiagrama(XYDataset conjuntoDatos){
         JFreeChart diag = ChartFactory.createXYLineChart(
-                                "Ingesta", //Titulo Grafica
-                                "X", // Leyenda eje X
-                                "Y", // Leyenda eje Y
+                                nombre, //Titulo Grafica
+                                leyendaX, // Leyenda eje X
+                                leyendaY, // Leyenda eje Y
                                 conjuntoDatos, // Los datos
                                 PlotOrientation.VERTICAL, //orientacion
                                 false, // ver titulo de linea
