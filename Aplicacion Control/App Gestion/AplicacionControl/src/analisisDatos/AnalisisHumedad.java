@@ -7,7 +7,11 @@ import org.nfunk.jep.Node;
 import org.nfunk.jep.ParseException;
 
 import Jama.Matrix;
-
+/**
+ * Clase para realizar el analisis de datos de humedad y la regresion lineal de estos
+ * @author gorka
+ *
+ */
 public class AnalisisHumedad {
 	
 	ArrayList<Dato> datos;
@@ -19,7 +23,9 @@ public class AnalisisHumedad {
 		this.datos = datos;
 		realizarAnalisis();
 	}
-	
+	/**
+	 * Realiza el analisis de los datos y la regresion lineal
+	 */
 	private void realizarAnalisis() {
 		
 		float sumX = 0;
@@ -54,6 +60,11 @@ public class AnalisisHumedad {
 		dEcuacion = derivada(ecuacion);
 	}
 	
+	/**
+	 * Realiza la derivada de la regresion lineal obtenida en el anterior apartado, pudiendo obtener los maximo y minimos
+	 * @param funcion
+	 * @return
+	 */
 	public String derivada(String funcion){
 		String derivada = "";
 		

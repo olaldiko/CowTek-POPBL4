@@ -1,7 +1,11 @@
 package dataBase;
 
   import java.sql.Date;
-
+  /**
+   * clase para crear placas de vacas e introducirlas en el servidor de bd
+   * @author gorka
+   *
+   */
 
   public class PlacaVaca{
 	  int vacaID;

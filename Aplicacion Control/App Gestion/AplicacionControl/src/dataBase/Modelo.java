@@ -2,7 +2,11 @@ package dataBase;
 
 import java.sql.Date;
 
-
+/**
+ *  Clase para crear Modelos de placas e introducirlos en la db
+ * @author gorka
+ *
+ */
 public class Modelo{
 	int modeloID;
 	String nombre;

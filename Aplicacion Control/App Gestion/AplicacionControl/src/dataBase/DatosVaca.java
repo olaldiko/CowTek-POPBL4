@@ -2,7 +2,11 @@
 
   import java.sql.Date;
 
-
+  /**
+   * clase para crear DatosVaca e introducirlos en la db
+   * @author gorka
+   *
+   */
   public class DatosVaca{
 	  int sensorID;
 	  int vacaID;

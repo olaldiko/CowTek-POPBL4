@@ -6,7 +6,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
-
+/**
+ * trazador de la tabla, con el estilo que tine cada apartado
+ * @author gorka
+ *
+ */
 public class TrazadorTablaVacas extends DefaultTableCellRenderer {
 
 	@Override

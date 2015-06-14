@@ -1,7 +1,11 @@
 package dataBase;
 
 import java.sql.Date;
-
+/**
+ * clase para crear DatosVistaVaca e introducirlos en la db
+ * @author gorka
+ *
+ */
 public class DatosVistaVaca {
 	int vacaID;
 	Date fechaHora;

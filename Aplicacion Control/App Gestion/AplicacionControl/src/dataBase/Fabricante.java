@@ -1,7 +1,11 @@
 package dataBase;
 
 import java.sql.Date;
-
+/**
+ * clase para crear fabricantes e introducirlos en la db
+ * @author gorka
+ *
+ */
 
 public class Fabricante{
 	int fabricanteID;

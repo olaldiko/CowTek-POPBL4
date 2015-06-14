@@ -1,7 +1,11 @@
 package analisisDatos;
 
 import java.util.ArrayList;
-
+/**
+ * Clase para realizar el analisis de datos de Humedad y la regresion lineal de estos
+ * @author gorka
+ *
+ */
 public class AnalisisIngesta {
 
 	ArrayList<Dato> datos;
@@ -14,7 +18,9 @@ public class AnalisisIngesta {
 		this.datos = datos;
 		realizarAnalisis();
 	}
-	
+	/**
+	 *  Realiza el analisis de los datos y la regresion lineal
+	 */
 	private void realizarAnalisis(){
 		ArrayList<Float> U = new ArrayList<Float>();
 		ArrayList<Float> V = new ArrayList<Float>();

@@ -1,7 +1,11 @@
 package dataBase;
 
   import java.sql.Date;
-
+/**
+ * clase para las producciones de las vacas e introducirlas en el servidor de bd
+ * @author gorka
+ *
+ */
 
   public class ProduccionVaca{
 	  int vacaID;

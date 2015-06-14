@@ -2,7 +2,11 @@ package dataBase;
 
 import java.sql.Date;
 
-
+/**
+ * clase para crear vacas e introducirlas en el servidor de bd
+ * @author gorka
+ *
+ */
 public class Vaca{
 	int vacaID;
 	String nombre;

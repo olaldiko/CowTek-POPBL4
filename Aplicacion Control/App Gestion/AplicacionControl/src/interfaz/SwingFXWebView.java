@@ -25,8 +25,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
   
 /** 
+ * Panel para poder mostrar una pagina web dentro de la aplicacion
  * SwingFXWebView 
  */  
+
 public class SwingFXWebView extends JPanel {  
      
 	private Double  coordenadaX;

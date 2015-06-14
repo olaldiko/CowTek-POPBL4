@@ -15,7 +15,7 @@ public class ModeloColumnasTablaVacas extends DefaultTableColumnModel{
 	TrazadorTablaVacas trazador;
 	/**
 	 * definir el estilo de las columnas de la tabla, y el nombre de estas
-	 * @param trazador
+	 * @param trazador 
 	 */
 	public ModeloColumnasTablaVacas(TrazadorTablaVacas trazador){
 		super();

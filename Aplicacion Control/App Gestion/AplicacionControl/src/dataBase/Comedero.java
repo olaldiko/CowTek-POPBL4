@@ -4,7 +4,11 @@ package dataBase;
 
 import java.sql.Date;
 
-
+/**
+ * clase para crear comederos e introducirlos en la db
+ * @author gorka
+ *
+ */
 public class Comedero{
 	int comederoID=4;
 	String descripcion;

@@ -1,7 +1,12 @@
 package dataBase;
 
 import java.sql.Date;
-
+/**
+ * Clase para crear placas e introducirlos en la bd
+ * 
+ * @author gorka
+ *
+ */
 
 public class Placa{
 	int placaID;

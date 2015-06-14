@@ -2,7 +2,11 @@ package dataBase;
 
 import java.sql.Date;
 
-
+/**
+ * clase para crear estaciones e introducirlos en la db
+ * @author gorka
+ *
+ */
 public class Estacion{
 	int estacionID;
 	String nombre;

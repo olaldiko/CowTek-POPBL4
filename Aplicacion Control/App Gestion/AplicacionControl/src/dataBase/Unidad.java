@@ -1,7 +1,11 @@
 package dataBase;
 
 import java.sql.Date;
-
+/**
+ * clase para crear unidades de medida e introducirlas en el servidor de bd
+ * @author gorka
+ *
+ */
 public class Unidad {
 
 	int unidadID;
