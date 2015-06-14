@@ -294,9 +294,10 @@ public class JDBC{
 				int estacionID = result.getInt("EstacionID");
 				String nombre = result.getString("Nombre");
 				String descripcion = result.getString ("Descripcion");
+				Double latitud = result.getDouble("Latitud");
+				Double longitud = result.getDouble("Longitud");
 				
-				estaciones.add(new Estacion(estacionID, nombre, descripcion) );
-
+				estaciones.add(new Estacion(estacionID, nombre, descripcion, latitud, longitud) );
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -846,6 +847,40 @@ public class JDBC{
 			while (result.next()){			
 	
 				int vacaID	 = result.getInt("VacaID");
+				int ordenaderoID = result.getInt("OrdenaderoID");
+				Date fechaHora = result.getDate("FechaHora");
+				float valor = result.getFloat("Cantidad");
+				
+				produccion.add(new DatosVistaVaca(vacaID, fechaHora, valor , "L"));
+			}
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return produccion;
+	}
+	
+	
+public List<DatosVistaVaca> getVistaVacas() {
+		
+		String sql = "SELECT 	v.VacaID, v.Nombre, d.Valor, u.nombre, d.Valor, u.nombre"
+				+ "FROM 	vaca v, datosVaca d, unidad u"
+				+ "WHERE	v.VacaID = d.VacaID"
+				+ "AND		d.UnidadID = u.UnidadID"
+				+ "ORDER BY v.VacaID;";
+		List<DatosVistaVaca> produccion = new ArrayList<>();
+		
+		try {
+			conn=getConnection();
+			getStatements();
+			result = stmt.executeQuery(sql);
+			
+			while (result.next()){			
+	
+				int vacaID	 = result.getInt("VacaID");
+				//////////////////////////////////////String nombre = result.get
 				int ordenaderoID = result.getInt("OrdenaderoID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Cantidad");

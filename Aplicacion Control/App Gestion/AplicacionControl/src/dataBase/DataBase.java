@@ -65,7 +65,7 @@ public class DataBase {
 		List<Vaca> vacas= dbConnection.getVacas();
 		Iterator<Vaca> itrVacas = vacas.iterator();
 		while (itrVacas.hasNext()){
-			System.out.println(itrVacas.next().toString());
+			//System.out.println(itrVacas.next().toString());
 			}
 		
 	}
