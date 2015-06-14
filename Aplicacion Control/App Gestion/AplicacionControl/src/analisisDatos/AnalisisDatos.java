@@ -40,9 +40,9 @@ public class AnalisisDatos {
 	
 	/**
 	 * Obtiene los datos
-	 * @param entrada
-	 * @param salida
-	 * @return
+	 * @param entrada entrada
+	 * @param salida salida
+	 * @return datos
 	 */
 	public ArrayList<Dato> sacarDatos(ArrayList<DatosVistaVaca> entrada, ArrayList<DatosVistaVaca> salida) {
 

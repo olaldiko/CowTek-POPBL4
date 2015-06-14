@@ -15,7 +15,7 @@ public class ModeloColumnasTablaVacas extends DefaultTableColumnModel{
 	TrazadorTablaVacas trazador;
 	/**
 	 * definir el estilo de las columnas de la tabla, y el nombre de estas
-	 * @param trazador 
+	 * @param trazador trazador
 	 */
 	public ModeloColumnasTablaVacas(TrazadorTablaVacas trazador){
 		super();
@@ -30,7 +30,7 @@ public class ModeloColumnasTablaVacas extends DefaultTableColumnModel{
 	 * @param texto
 	 * @param indice
 	 * @param ancho
-	 * @return
+	 * @return tablaColumnas
 	 */
 	private TableColumn crearColumna(String texto, int indice, int ancho) {
 		TableColumn columna = new TableColumn(indice,ancho);

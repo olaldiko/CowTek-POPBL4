@@ -62,8 +62,8 @@ public class AnalisisHumedad {
 	
 	/**
 	 * Realiza la derivada de la regresion lineal obtenida en el anterior apartado, pudiendo obtener los maximo y minimos
-	 * @param funcion
-	 * @return
+	 * @param funcion funcion
+	 * @return string de la derivada
 	 */
 	public String derivada(String funcion){
 		String derivada = "";

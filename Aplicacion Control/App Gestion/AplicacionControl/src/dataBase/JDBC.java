@@ -35,7 +35,7 @@ public class JDBC{
 	}
 	/**
 	 * Funcion para crear un establecimiento con la BD
-	 * @return
+	 * @return Resultado
 	 */
 	public ResultSet getStatements(){
 		
@@ -53,8 +53,8 @@ public class JDBC{
 	 * Conexion a la bd mediante usuario y contraseña
 	 * @param user usuario
 	 * @param password contraseña
-	 * @return 
-	 * @throws SQLException
+	 * @return 	conexion
+	 * @throws SQLException excepcion en la conexion
 	 */
 	public Connection getConnection(String user, String password) throws SQLException{
 		this.userName = user ;
@@ -68,8 +68,8 @@ public class JDBC{
 	}
 	/**
 	 * Conexion a BD con usuario y contraseña ya preestablecidos
-	 * @return
-	 * @throws SQLException
+	 * @return connection conexion
+	 * @throws SQLException error en la conexion
 	 */
 	public Connection getConnection() throws SQLException{
 		
@@ -83,7 +83,7 @@ public class JDBC{
 	/**
 	 * Ejecutar la SQL para actualizar la BD
 	 * @param sql String del Query a ejecutar
-	 * @return
+	 * @return IDvaca actualizada
 	 */
 	public int ejecutarUpdate(String sql) {
 		int insertedID = 0;
@@ -110,7 +110,7 @@ public class JDBC{
 
 	/**
 	 * Obtiene los datos de las estaciones
-	 * @return
+	 * @return datosEstacion
 	 */
 	public List<DatosEstacion> getDatosEstacion (){
 		String sql = "SELECT * FROM datosEstacion";
@@ -143,7 +143,7 @@ public class JDBC{
 	/**
 	 * Obtiene los datos de las estaciones en funcion del nombre de las estaciones
 	 * @param nombre Nombre de la estacion
-	 * @return
+	 * @return datos de estaciones
 	 */
 	
 	public List<DatosEstacion> getDatosEstacionesporNombre(String nombre) {
@@ -180,7 +180,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de los comederos
-	 * @return
+	 * @return comedero
 	 */
 	public List<Comedero> getComederos() {
 		String sql = "SELECT * FROM comedero";
@@ -210,7 +210,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener los datos de consumo de las vacas
-	 * @return
+	 * @return consumosvacas
 	 */
 	public List<ConsumoVaca> getConsumosVacas() {
 		String sql = "SELECT * FROM consumoVaca";
@@ -241,7 +241,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener los datos de las vacas
-	 * @return
+	 * @return datos vacas
 	 */
 	public List<DatosVaca> getDatosVacas() {
 	
@@ -278,7 +278,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener los datos de las estaciones
-	 * @return
+	 * @return estaciones
 	 */
 	public List<Estacion> getEstaciones() {
 		
@@ -308,7 +308,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de los fabricantes
-	 * @return
+	 * @return fabricantes
 	 */
 	public List<Fabricante> getFabricantes() {
 		
@@ -339,7 +339,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de los modelos utilizados
-	 * @return
+	 * @return	modelos
 	 */
 	public List<Modelo> getModelos() {
 		
@@ -372,7 +372,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de los ordenaderos
-	 * @return
+	 * @return ordeñaderos
 	 */
 	public List<Ordenadero> getOrdenaderos() {
 		
@@ -403,7 +403,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de las placas
-	 * @return
+	 * @return placas
 	 */
 	public List<Placa> getPlacas() {
 		
@@ -432,7 +432,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de las placas de estaciones
-	 * @return
+	 * @return placas estaciones
 	 */
 	public List<PlacaEstacion> getPlacasEstaciones() {
 		
@@ -462,7 +462,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacino de las placas de las vacas
-	 * @return
+	 * @return placas vacas
 	 */
 	public List<PlacaVaca> getPlacasVacas() {
 		
@@ -493,7 +493,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de las producciondes de cada vaca
-	 * @return
+	 * @return producciones de vacas
 	 */
 	public List<ProduccionVaca> getProduccionesVacas() {
 		
@@ -523,7 +523,7 @@ public class JDBC{
 	}
 	/**
 	 * obtener la informacion de los tipos de placas
-	 * @return
+	 * @return tipos de placas
 	 */
 	public List<TipoPlaca> getTiposPlacas() {
 		
@@ -552,7 +552,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de los tipos de sensores
-	 * @return
+	 * @return tipos de sensores
 	 */
 	public List<TipoSensor> getTiposSesores() {
 		
@@ -582,7 +582,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener las informacion de las unidades
-	 * @return
+	 * @return unidades
 	 */
 	public List<Unidad> getUnidades() {
 		
@@ -611,7 +611,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la informacion de las vacas
-	 * @return
+	 * @return vacas
 	 */
 	public List<Vaca> getVacas() {
 		
@@ -644,7 +644,7 @@ public class JDBC{
 	/**
 	 * Obtener la informacion de las vacas en funcion de su nombre
 	 * @param nombreVaca nombre de la vaca
-	 * @return
+	 * @return vacas por nombre
 	 */
 	public List<Vaca> getVacasporNomre(String nombreVaca) {
 		String sql = "SELECT * FROM vaca"
@@ -676,7 +676,7 @@ public class JDBC{
 		
 	/**
 	 * obtener la vista de ubicacion de las vacas
-	 * @return
+	 * @return vista de vacas
 	 */
 	
 	public List<DatosVistaVaca> getVistaUbicacionVaca() {
@@ -708,7 +708,7 @@ public class JDBC{
 	}
 	/**
 	 * obtener la vista de las temperaturas corporales de las vacas
-	 * @return
+	 * @return temperaturas corporales
 	 */
 	public List<DatosVistaVaca> getVistaTempCorpVaca() {
 		
@@ -739,7 +739,7 @@ public class JDBC{
 	}
 	/**
 	 * obtener la vista de las temperatura ambietal
-	 * @return
+	 * @return vista de temperaturas
 	 */
 	public List<DatosVistaVaca> getVistaTempAmb() {
 		
@@ -770,7 +770,7 @@ public class JDBC{
 	}
 	/**
 	 * obtener la vista de la humedad ambiental
-	 * @return
+	 * @return vistas humedad
 	 */
 	public List<DatosVistaVaca> getVistaHumAmb() {
 		
@@ -801,7 +801,7 @@ public class JDBC{
 	}
 	/**
 	 * Obtener la vista del consumo de pienso de las vacas
-	 * @return
+	 * @return vistas consumos de vacas
 	 */
 	public List<DatosVistaVaca> getVistaConsumoVaca() {
 		
@@ -831,7 +831,7 @@ public class JDBC{
 	}
 	/**
 	 * obtener la vista de la produccion de las vacas
-	 * @return
+	 * @return vista producciones de vacas
 	 */
 	public List<DatosVistaVaca> getVistaProduccionVaca() {
 		
@@ -862,7 +862,7 @@ public class JDBC{
 	}
 	/**
 	 * obtener el ID del ultimo INSERT echo en la BD
-	 * @return
+	 * @return ultimo ID insertado
 	 */
 	public int getLastInsertID() {
 		int vacaID = -1 ;
@@ -884,7 +884,7 @@ public class JDBC{
 	/**
 	 * Borra la vaca de la BD
 	 * @param vacaID id de la vaca a eliminar
-	 * @return
+	 * @return vacaID borrada
 	 */
 	public int borrarVaca(int vacaID) {
 		String sql = "DELETE FROM vaca"
