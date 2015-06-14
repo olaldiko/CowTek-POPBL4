@@ -20,12 +20,17 @@ import dataBase.JDBC;
  *
  */
 public class PanelGraficos extends JPanel{
+	AnalisisDatos analisis;
+	
 	public PanelGraficos(){
-	this.setLayout(new GridLayout(2,2));
-	this.add(Grafico1());        
-	this.add(Grafico2());
-	this.add(Grafico3());
-	this.add(Grafico4());    	
+		analisis = new AnalisisDatos();
+ 		analisis.analizarTodo();
+ 		
+		this.setLayout(new GridLayout(2,2));
+		this.add(Grafico4());        
+		this.add(Grafico2());
+		this.add(Grafico3());
+		this.add(Grafico1());    	
 	}
 	/**
 	 * muestra un historico de las temperaturas de los ultimos 3 dias
@@ -56,8 +61,7 @@ public class PanelGraficos extends JPanel{
 	  */
 	private Component Grafico3() {
 
- 		AnalisisDatos analisis = new AnalisisDatos();
- 		analisis.analizarTodo();
+ 		
  		String temperatura = analisis.getaTemp().getEcuacion();
 		
 		int i= 0;
@@ -66,16 +70,13 @@ public class PanelGraficos extends JPanel{
        while (st.hasMoreTokens()) {  
        	if (i==0){
            	grado0 = Double.parseDouble(st.nextToken());
-           	System.out.println(grado0);
        	}
        	if (i==1){
            	grado1 = Double.parseDouble(st.nextToken());
-           	System.out.println(grado1);
        	}
        	if (i==5){
            	grado2
            	= Double.parseDouble(st.nextToken());
-           	System.out.println(grado2);
        	}
        	i++;
        	st.nextToken();
@@ -92,22 +93,25 @@ public class PanelGraficos extends JPanel{
 	 * @return
 	 */
 	private Component Grafico2() {
-
-        Component miGraficador = new Graficador("Ingesta", 0.0, 100.0, "kg", "Producción", 5, 2, 1);
-        JPanel panel = new JPanel();
-        panel.add(miGraficador);
-        panel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
-		return panel;
 		
+		int i= 0;
+		double coeficiente=0, exponente=0 ;
+		coeficiente = analisis.getaIng().getA();
+		exponente = analisis.getaIng().getB();
+
+       Component miGraficador = new Graficador("Ingesta", -1.0, 100.0, "Kg ingeridos","Producción", coeficiente, exponente);
+       JPanel panel = new JPanel();
+       panel.add(miGraficador);
+       panel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
+		
+		return panel;
 	}
 
     /**
      * Realiza un grafico con la regresion lineal de la produccion en funcion de la humedad
      */
 	private Component Grafico1() {
-    	
- 		AnalisisDatos analisis = new AnalisisDatos();
- 		analisis.analizarTodo();
+		
  		String humedad = analisis.getaHum().getEcuacion();
  		
  		int i= 0;
@@ -116,16 +120,12 @@ public class PanelGraficos extends JPanel{
         while (st.hasMoreTokens()) {  
         	if (i==0){
             	grado0 = Double.parseDouble(st.nextToken());
-            	System.out.println(grado0);
         	}
         	if (i==1){
             	grado1 = Double.parseDouble(st.nextToken());
-            	System.out.println(grado1);
         	}
         	if (i==5){
-            	grado2
-            	= Double.parseDouble(st.nextToken());
-            	System.out.println(grado2);
+            	grado2 = Double.parseDouble(st.nextToken());
         	}
         	i++;
         	st.nextToken();

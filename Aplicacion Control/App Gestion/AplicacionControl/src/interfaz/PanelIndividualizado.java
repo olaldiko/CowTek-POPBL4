@@ -62,7 +62,6 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 		listaVacas = new JDBC().getVacas();
 		String[] columnNames = {"VacaID", "Nombre", "Raza", "FechaNacimiento"};
 		String informacion[][] = convertirAMatriz(listaVacas);
-		System.out.println();
 		
 		model = new DefaultTableModel(informacion, columnNames);
 		tablaCentral = new JTable(model);
@@ -98,7 +97,6 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 		panelNorte = new JPanel(new BorderLayout());
 		JButton mostrar = new JButton("mostrar");
 		ArrayList<String> nombres = getNombreVacas();
-		System.out.println(nombres);
 		mostrar.addActionListener(this);
 		panelNorte.add(mostrar, BorderLayout.EAST);
 		box = new JComboBox(nombres.toArray());
@@ -118,7 +116,6 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 		nombresVacas.add("Todas");
 		for (int i=0;i<vacas.size();i++){
 			 nombresVacas.add(vacas.get(i).getNombre()) ;
-			 System.out.println(i);
 			}
 		return nombresVacas;
 		
