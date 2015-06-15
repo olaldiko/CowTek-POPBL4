@@ -2,7 +2,11 @@ package dataBase;
 
   import java.sql.Date;
 
-
+/**
+ * clase para crear tipos de sensores e introducirlas en el servidor de bd
+ * @author gorka
+ *
+ */
   public class TipoSensor{
   	int TipoSensorID;
   	String descripcion;

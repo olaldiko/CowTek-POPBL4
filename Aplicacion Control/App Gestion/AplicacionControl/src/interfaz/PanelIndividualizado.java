@@ -21,6 +21,11 @@ import dataBase.DatosVaca;
 import dataBase.JDBC;
 import dataBase.Vaca;
 
+/**
+ * calse con la informacion de las vacas mostrada en una tabla
+ * @author gorka
+ *
+ */
 public class PanelIndividualizado extends JPanel implements ActionListener {
 	JPanel panelCentral, panelNorte;
 	JScrollPane scroll;
@@ -31,7 +36,9 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 	String[] columnNames = {"VacaID", "Nombre", "Raza", "FechaNacimiento"};
 	String informacion[][] = null;
 	
-	
+	/**
+	 * diseño del panel individualizado
+	 */
 	public PanelIndividualizado(){
 	super(new BorderLayout());
 	JPanel panelNorte = new JPanel();
@@ -46,13 +53,15 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 	panelCentral.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 	this.add(panelCentral, BorderLayout.CENTER);
 	}
-
+	/**
+	 * diseño de la tabla central
+	 * @return
+	 */
 	private JTable panelTablaCentral() {
 		
 		listaVacas = new JDBC().getVacas();
 		String[] columnNames = {"VacaID", "Nombre", "Raza", "FechaNacimiento"};
 		String informacion[][] = convertirAMatriz(listaVacas);
-		System.out.println();
 		
 		model = new DefaultTableModel(informacion, columnNames);
 		tablaCentral = new JTable(model);
@@ -61,6 +70,12 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 			
 		return tablaCentral;
 	}
+	
+	/**
+	 * convierte la informacion del array a una matriz
+	 * @param listaVacas
+	 * @return
+	 */
 	private  String[][] convertirAMatriz(List<Vaca> listaVacas){
 	int i = 0;
 	String informacion[][] = new String[listaVacas.size()][4]; 
@@ -74,11 +89,14 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 	 return informacion;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	private Component panelNorte() {
 		panelNorte = new JPanel(new BorderLayout());
 		JButton mostrar = new JButton("mostrar");
 		ArrayList<String> nombres = getNombreVacas();
-		System.out.println(nombres);
 		mostrar.addActionListener(this);
 		panelNorte.add(mostrar, BorderLayout.EAST);
 		box = new JComboBox(nombres.toArray());
@@ -87,6 +105,10 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 		return panelNorte;
 	}
 
+	/**
+	 * obtener los nombres de las vacas, para despues poder mostrarlas en un ComboBox
+	 * @return
+	 */
 	private ArrayList<String> getNombreVacas() {
 		List<Vaca> vacas = new JDBC().getVacas();
 		Iterator<Vaca> itrVacas = vacas.iterator();
@@ -94,7 +116,6 @@ public class PanelIndividualizado extends JPanel implements ActionListener {
 		nombresVacas.add("Todas");
 		for (int i=0;i<vacas.size();i++){
 			 nombresVacas.add(vacas.get(i).getNombre()) ;
-			 System.out.println(i);
 			}
 		return nombresVacas;
 		

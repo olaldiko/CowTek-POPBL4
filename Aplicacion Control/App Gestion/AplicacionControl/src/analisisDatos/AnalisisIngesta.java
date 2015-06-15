@@ -1,9 +1,13 @@
 package analisisDatos;
 
 import java.util.ArrayList;
-
+/**
+ * Clase para realizar el analisis de datos de Humedad y la regresion lineal de estos
+ * @author gorka
+ *
+ */
 public class AnalisisIngesta {
-
+	private String y;
 	ArrayList<Dato> datos;
 	
 	float a = 0;
@@ -14,8 +18,11 @@ public class AnalisisIngesta {
 		this.datos = datos;
 		realizarAnalisis();
 	}
-	
-	private void realizarAnalisis(){
+	/**
+	 *  Realiza el analisis de los datos y la regresion lineal
+	 * @return 
+	 */
+	private String realizarAnalisis(){
 		ArrayList<Float> U = new ArrayList<Float>();
 		ArrayList<Float> V = new ArrayList<Float>();
 		
@@ -42,7 +49,8 @@ public class AnalisisIngesta {
 		b = ((sumUV/datos.size())-(medU*medV))/((sumUU/datos.size())-(medU*medU));
 		float A = medV - b*medU;
 		a = (float) Math.exp(A);
-		//y = a*x^b
+		setY(a+"*x"+b);
+		return getY();
 	}
 
 	public ArrayList<Dato> getDatos() {
@@ -67,6 +75,12 @@ public class AnalisisIngesta {
 
 	public void setB(float b) {
 		this.b = b;
+	}
+	public String getY() {
+		return y;
+	}
+	public void setY(String y) {
+		this.y = y;
 	}
 	
 	

@@ -24,6 +24,11 @@ import dataBase.Estacion;
 import dataBase.JDBC;
 import dataBase.Vaca;
 
+/**
+ * selecciona los datos de las estaciones y los muestra en una tabla 
+ * @author gorka
+ *
+ */
 public class PanelEstaciones extends JPanel implements ActionListener {
 	JTable panelCentral;
 	JComboBox box;
@@ -47,7 +52,10 @@ public class PanelEstaciones extends JPanel implements ActionListener {
 	panelCentral.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 	this.add(panelCentral, BorderLayout.CENTER);
 	}
-
+	/**
+	 * panel central
+	 * @return
+	 */
 	private Component panelTablaCentral() {
 		
 		datosEstaciones = new JDBC().getDatosEstacion();
@@ -59,7 +67,12 @@ public class PanelEstaciones extends JPanel implements ActionListener {
 		
 		return panelCentral;
 	}
-
+	/**
+	 * convierte los datos de arraylist, obtenidos desde la bd a una matriz para la clase DefaultTableModel
+	 * @param datosEstaciones array con la informacion de las estaciones
+	 * @return
+	 */
+	
 	private  String[][] convertirAMatriz(List<DatosEstacion> datosEstaciones){
 	
 	informacion = new String[datosEstaciones.size()][5]; 
@@ -73,6 +86,10 @@ public class PanelEstaciones extends JPanel implements ActionListener {
 	 return informacion;
 	}
 	
+	/**
+	 * ComboBox con los nombres de las estaciones
+	 * @return
+	 */
 	private Component panelNorte() {
 		JPanel panel = new JPanel(new BorderLayout());
 		JButton mostrar = new JButton("mostrar");
@@ -83,6 +100,10 @@ public class PanelEstaciones extends JPanel implements ActionListener {
 		panel.add(box, BorderLayout.WEST);
 		return panel;
 	}
+	/**
+	 * obtener los nombres de las estaciones de una bd
+	 * @return
+	 */
 
 	private ArrayList<String> getNombreEstaciones() {
 		List<Estacion> estaciones = new JDBC().getEstaciones();

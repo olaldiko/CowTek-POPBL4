@@ -2,7 +2,12 @@ package dataBase;
 
   import java.sql.Date;
 
-
+  /**
+   * clase para crear consumoVaca e introducirlos en la db
+   * @author gorka
+   *
+   */
+  
   public class ConsumoVaca{
 	  @Override
 	public String toString() {

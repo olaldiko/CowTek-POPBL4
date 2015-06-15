@@ -24,7 +24,12 @@ import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
 import dataBase.JDBC;
 		
-		
+		/**
+		 * se encarga de conectarse a la base de datos y asegurarse de que el usuario y contraseña
+		 * utilizados ya existen en la BD.		 * 
+		 * @author gorka
+		 *
+		 */
 		public class Login extends JFrame implements ActionListener{
 		    static int ADMIN = 1;
 		    static int USUARIO = 0;
@@ -55,6 +60,10 @@ import dataBase.JDBC;
 
 		    }
 		    
+		    /**
+		     * diseño de la ventana de registro
+		     * @return
+		     */
 		    private Component crearCampos() {
 				JPanel panel = new JPanel();
 				
@@ -97,7 +106,10 @@ import dataBase.JDBC;
              	
 				return panel;
 			}
-
+		    
+		    /**
+		     * implementacion de action listener y conexion al servidor de BD
+		     */
 			public void actionPerformed(ActionEvent e) {
 				String origen = e.getActionCommand();
 				switch(origen){
@@ -107,13 +119,12 @@ import dataBase.JDBC;
 					String contraseña = pass.getText();
 					try{
 					dbconnection.getConnection(usuario, contraseña);
-					}catch (SQLException e2) {
-	                    JOptionPane.showMessageDialog(null,"USUARIO O CONTRASEÑA INCORRECTO");
-						System.out.println("ez gara konektatzen");
-					}
 					InterfazUsuario interfazUsuario = new InterfazUsuario();
                  	interfazUsuario.setVisible(true);
                  	this.dispose();
+					}catch (SQLException e2) {
+	                    JOptionPane.showMessageDialog(null,"USUARIO O CONTRASEÑA INCORRECTO");
+					}
                  	               
                     break;
 				}

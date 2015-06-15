@@ -12,9 +12,12 @@ import javax.swing.table.AbstractTableModel;
 import dataBase.JDBC;
 import dataBase.Vaca;
 
+/**
+ * funcion la introduccion de informacion en la tabla
+ * @author gorka
+ *
+ */
 public class ModeloTablaVacas extends AbstractTableModel {
-	
-	final static String NOMBRE_FICHERO = "listaclase.txt";
 	
 	ModeloColumnasTablaVacas columnas;
 	
@@ -22,12 +25,14 @@ public class ModeloTablaVacas extends AbstractTableModel {
 	
 	public ModeloTablaVacas(ModeloColumnasTablaVacas columnas){
 		super();
-		leerTablaFichero();
-		
+		leerTablaDB();		
 		this.columnas = columnas;
 		
 	}
-	public void leerTablaFichero() {
+	/**
+	 * lectura de la tabla
+	 */
+	public void leerTablaDB() {
 		listaVacas = new ArrayList<>();
 		
 		JDBC dbConection =new JDBC();

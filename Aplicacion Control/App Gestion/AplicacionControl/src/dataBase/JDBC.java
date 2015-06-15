@@ -12,7 +12,12 @@ import java.util.List;
 import java.util.Properties;
 import java.sql.Statement;
 
-
+/**
+ * 	Clase para crear la conexion con la db mediante usuario y contraseña y leer las tablas 
+ *  y vistas de la bd
+ *  @author gorka
+ *
+ */
 
 public class JDBC{
 	final String db = "COWTEK";
@@ -28,46 +33,10 @@ public class JDBC{
 		this.userName = "gorkaram";
 		this.password = "narvaja";
 	}
-	
-	public void updatedatabase (int opcion){
-		opcion = 1;
-		System.out.println("opcion: "+ opcion);
-		switch (opcion){
-		case 1:
-			//addVaca(1065, "homer", new SimpleDateFormat("2001-10-09"));
-			
-				
-			break;
-		case 2:
-			
-			break;
-		}
-	}
-
-	public void addRandomTemperature() throws SQLException {
-		int i = 10, value=50;
-		String sql;
-
-		conn=getConnection();
-		
-		sql = "DELETE	FROM	sensor " +
-				"WHERE	(SensorID <= 100)";
-		ejecutarUpdate(sql);
-		
-		for (i=0; i<100; i++){
-			value = (int)Math.floor(25+Math.random()*(38-25+1));
-			System.out.println(value);
-			
-			sql = "INSERT INTO sensor (SensorID, Valor) " +
-				 "VALUES ("+i+", "+value+")";
-			
-			
-			ejecutarUpdate(sql);			
-			
-		}
-		conn.close();
-	}
-
+	/**
+	 * Funcion para crear un establecimiento con la BD
+	 * @return Resultado
+	 */
 	public ResultSet getStatements(){
 		
 		try{
@@ -80,28 +49,14 @@ public class JDBC{
 		return result;
 		
 	}
-	
-	public List<Double> readResultTemperatures() throws SQLException{
-		
-		conn=getConnection();
-		
-		List<Double> Temperatures = new ArrayList<>();
-		String sql ="SELECT * FROM sensor";
-		try {
-			getStatements();
-			ResultSet result = stmt.executeQuery(sql);
-			while (result.next()){
-				Temperatures.add((double)result.getInt("Valor"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		conn.close();
-		return Temperatures;
-		
-	}
-public Connection getConnection(String user, String password) throws SQLException{
+	/**
+	 * Conexion a la bd mediante usuario y contraseña
+	 * @param user usuario
+	 * @param password contraseña
+	 * @return 	conexion
+	 * @throws SQLException excepcion en la conexion
+	 */
+	public Connection getConnection(String user, String password) throws SQLException{
 		this.userName = user ;
 		this.password = password;
 		Properties connectionProps = new Properties();
@@ -111,7 +66,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		conn = DriverManager.getConnection(dbmsurl, connectionProps);
 		return conn;
 	}
-
+	/**
+	 * Conexion a BD con usuario y contraseña ya preestablecidos
+	 * @return connection conexion
+	 * @throws SQLException error en la conexion
+	 */
 	public Connection getConnection() throws SQLException{
 		
 		Properties connectionProps = new Properties();
@@ -121,7 +80,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		conn = DriverManager.getConnection(dbmsurl, connectionProps);
 		return conn;
 	}
-	
+	/**
+	 * Ejecutar la SQL para actualizar la BD
+	 * @param sql String del Query a ejecutar
+	 * @return IDvaca actualizada
+	 */
 	public int ejecutarUpdate(String sql) {
 		int insertedID = 0;
 		try {
@@ -145,6 +108,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		
 	}
 
+	/**
+	 * Obtiene los datos de las estaciones
+	 * @return datosEstacion
+	 */
 	public List<DatosEstacion> getDatosEstacion (){
 		String sql = "SELECT * FROM datosEstacion";
 		List<DatosEstacion> datosEstaciones = new ArrayList<>();
@@ -173,6 +140,12 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		return datosEstaciones;
 	}
 
+	/**
+	 * Obtiene los datos de las estaciones en funcion del nombre de las estaciones
+	 * @param nombre Nombre de la estacion
+	 * @return datos de estaciones
+	 */
+	
 	public List<DatosEstacion> getDatosEstacionesporNombre(String nombre) {
 		String sql = "SELECT  datEst.SensorID, datEst.EstacionID, datEst.FechaHora, datEst.Valor, datEst.UnidadID"
 				+ " FROM		estacion est, datosEstacion datEst"
@@ -205,7 +178,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		System.out.println(datosEstaciones);
 		return datosEstaciones;
 	}
-	
+	/**
+	 * Obtener la informacion de los comederos
+	 * @return comedero
+	 */
 	public List<Comedero> getComederos() {
 		String sql = "SELECT * FROM comedero";
 		List<Comedero> comederos = new ArrayList<>();
@@ -232,7 +208,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return comederos;
 	}
-
+	/**
+	 * Obtener los datos de consumo de las vacas
+	 * @return consumosvacas
+	 */
 	public List<ConsumoVaca> getConsumosVacas() {
 		String sql = "SELECT * FROM consumoVaca";
 		List<ConsumoVaca> consumosVacas = new ArrayList<>();
@@ -260,7 +239,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return consumosVacas;
 	}
-
+	/**
+	 * Obtener los datos de las vacas
+	 * @return datos vacas
+	 */
 	public List<DatosVaca> getDatosVacas() {
 	
 	String sql = "SELECT * FROM datosVaca";
@@ -294,7 +276,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 	return datosVacas;
 	}
-
+	/**
+	 * Obtener los datos de las estaciones
+	 * @return estaciones
+	 */
 	public List<Estacion> getEstaciones() {
 		
 		String sql = "SELECT * FROM estacion";
@@ -309,9 +294,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 				int estacionID = result.getInt("EstacionID");
 				String nombre = result.getString("Nombre");
 				String descripcion = result.getString ("Descripcion");
+				Double latitud = result.getDouble("Latitud");
+				Double longitud = result.getDouble("Longitud");
 				
-				estaciones.add(new Estacion(estacionID, nombre, descripcion) );
-
+				estaciones.add(new Estacion(estacionID, nombre, descripcion, latitud, longitud) );
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -321,7 +307,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return estaciones;
 	}
-
+	/**
+	 * Obtener la informacion de los fabricantes
+	 * @return fabricantes
+	 */
 	public List<Fabricante> getFabricantes() {
 		
 		String sql = "SELECT * FROM fabricante";
@@ -349,7 +338,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return fabricantes;
 	}
-
+	/**
+	 * Obtener la informacion de los modelos utilizados
+	 * @return	modelos
+	 */
 	public List<Modelo> getModelos() {
 		
 		String sql = "SELECT * FROM modelo";
@@ -379,7 +371,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return modelos;
 	}
-
+	/**
+	 * Obtener la informacion de los ordenaderos
+	 * @return ordeñaderos
+	 */
 	public List<Ordenadero> getOrdenaderos() {
 		
 		String sql = "SELECT * FROM ordenadero";
@@ -407,7 +402,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return ordenaderos;
 	}
-
+	/**
+	 * Obtener la informacion de las placas
+	 * @return placas
+	 */
 	public List<Placa> getPlacas() {
 		
 		String sql = "SELECT * FROM placa";
@@ -433,7 +431,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return placas;
 	}
-
+	/**
+	 * Obtener la informacion de las placas de estaciones
+	 * @return placas estaciones
+	 */
 	public List<PlacaEstacion> getPlacasEstaciones() {
 		
 		String sql = "SELECT * FROM placaEstacion";
@@ -460,7 +461,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return placasEstaciones;
 	}
-
+	/**
+	 * Obtener la informacino de las placas de las vacas
+	 * @return placas vacas
+	 */
 	public List<PlacaVaca> getPlacasVacas() {
 		
 		String sql = "SELECT * FROM placaVaca";
@@ -488,7 +492,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return placasVacas;
 	}
-
+	/**
+	 * Obtener la informacion de las producciondes de cada vaca
+	 * @return producciones de vacas
+	 */
 	public List<ProduccionVaca> getProduccionesVacas() {
 		
 		String sql = "SELECT * FROM produccionVaca";
@@ -515,7 +522,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return produccionesVacas;
 	}
-
+	/**
+	 * obtener la informacion de los tipos de placas
+	 * @return tipos de placas
+	 */
 	public List<TipoPlaca> getTiposPlacas() {
 		
 		String sql = "SELECT * FROM tipoPlaca";
@@ -541,7 +551,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return tiposPlacas;
 	}
-
+	/**
+	 * Obtener la informacion de los tipos de sensores
+	 * @return tipos de sensores
+	 */
 	public List<TipoSensor> getTiposSesores() {
 		
 		String sql = "SELECT * FROM tipoSensor";
@@ -568,7 +581,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return tiposSensores;
 	}
-
+	/**
+	 * Obtener las informacion de las unidades
+	 * @return unidades
+	 */
 	public List<Unidad> getUnidades() {
 		
 		String sql = "SELECT * FROM unidad";
@@ -594,7 +610,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return unidades;
 	}
-
+	/**
+	 * Obtener la informacion de las vacas
+	 * @return vacas
+	 */
 	public List<Vaca> getVacas() {
 		
 		String sql = "SELECT * FROM vaca";
@@ -623,7 +642,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return vacas;
 	}
-
+	/**
+	 * Obtener la informacion de las vacas en funcion de su nombre
+	 * @param nombreVaca nombre de la vaca
+	 * @return vacas por nombre
+	 */
 	public List<Vaca> getVacasporNomre(String nombreVaca) {
 		String sql = "SELECT * FROM vaca"
 				+ "	  WHERE Nombre='"+ nombreVaca+"'" ;
@@ -652,7 +675,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		return vacas;
 	}
 		
-	
+	/**
+	 * obtener la vista de ubicacion de las vacas
+	 * @return vista de vacas
+	 */
 	
 	public List<DatosVistaVaca> getVistaUbicacionVaca() {
 		
@@ -681,7 +707,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return vacas;
 	}
-	
+	/**
+	 * obtener la vista de las temperaturas corporales de las vacas
+	 * @return temperaturas corporales
+	 */
 	public List<DatosVistaVaca> getVistaTempCorpVaca() {
 		
 		String sql = "SELECT * FROM tempCorpVaca_v";
@@ -692,14 +721,14 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 			getStatements();
 			result = stmt.executeQuery(sql);
 
+			
 			while (result.next()){			
 
 				int vacaID	 = result.getInt("VacaID");
-				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				Date fechaHora = result.getDate("fechahora");
+				float valor = result.getFloat("valor");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , "ºC"));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -709,8 +738,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return vacas;
 	}
-	
-	public List<DatosVistaVaca> getVistaTempVaca() {
+	/**
+	 * obtener la vista de las temperatura ambietal
+	 * @return vista de temperaturas
+	 */
+	public List<DatosVistaVaca> getVistaTempAmb() {
 		
 		String sql = "SELECT * FROM tempAmb_v";
 		List<DatosVistaVaca> vacas = new ArrayList<>();
@@ -722,10 +754,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 			while (result.next()){			
 
-				int vacaID	 = result.getInt("VacaID");
+				int vacaID	 = result.getInt("EstacionID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				String unidad = result.getString ("nombre");
 				
 				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
 			}
@@ -737,8 +769,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 
 		return vacas;
 	}
-
-	public List<DatosVistaVaca> getVistaHumVaca() {
+	/**
+	 * obtener la vista de la humedad ambiental
+	 * @return vistas humedad
+	 */
+	public List<DatosVistaVaca> getVistaHumAmb() {
 		
 		String sql = "SELECT * FROM humAmb_v";
 		List<DatosVistaVaca> vacas = new ArrayList<>();
@@ -750,10 +785,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 			while (result.next()){			
 	
-				int vacaID	 = result.getInt("VacaID");
+				int vacaID	 = result.getInt("EstacionID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Valor");
-				String unidad = result.getString ("Unidad");
+				String unidad = result.getString ("nombre");
 				
 				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
 			}
@@ -765,7 +800,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 		return vacas;
 	}
-
+	/**
+	 * Obtener la vista del consumo de pienso de las vacas
+	 * @return vistas consumos de vacas
+	 */
 	public List<DatosVistaVaca> getVistaConsumoVaca() {
 		
 		String sql = "SELECT * FROM consumoVaca";
@@ -776,11 +814,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 			getStatements();
 			result = stmt.executeQuery(sql);
 			
-			while (result.next()){			
+			while (result.next()){
 	
 				int vacaID	 = result.getInt("VacaID");
-				Date fechaHora = result.getDate("FechaHora");
-				float valor = result.getFloat("Valor");
+				Date fechaHora = result.getDate("fechahora");
+				float valor = result.getFloat("Cantidad");
 				
 				consumo.add(new DatosVistaVaca(vacaID, fechaHora, valor , "Kg"));
 			}
@@ -792,6 +830,10 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 		return consumo;
 	}
+	/**
+	 * obtener la vista de la produccion de las vacas
+	 * @return vista producciones de vacas
+	 */
 	public List<DatosVistaVaca> getVistaProduccionVaca() {
 		
 		String sql = "SELECT * FROM produccionVaca";
@@ -805,6 +847,7 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 			while (result.next()){			
 	
 				int vacaID	 = result.getInt("VacaID");
+				int ordenaderoID = result.getInt("OrdenaderoID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Cantidad");
 				
@@ -818,7 +861,44 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 		return produccion;
 	}
-
+	
+	
+public List<DatosVistaVaca> getVistaVacas() {
+		
+		String sql = "SELECT 	v.VacaID, v.Nombre, d.Valor, u.nombre, d.Valor, u.nombre"
+				+ "FROM 	vaca v, datosVaca d, unidad u"
+				+ "WHERE	v.VacaID = d.VacaID"
+				+ "AND		d.UnidadID = u.UnidadID"
+				+ "ORDER BY v.VacaID;";
+		List<DatosVistaVaca> produccion = new ArrayList<>();
+		
+		try {
+			conn=getConnection();
+			getStatements();
+			result = stmt.executeQuery(sql);
+			
+			while (result.next()){			
+	
+				int vacaID	 = result.getInt("VacaID");
+				//////////////////////////////////////String nombre = result.get
+				int ordenaderoID = result.getInt("OrdenaderoID");
+				Date fechaHora = result.getDate("FechaHora");
+				float valor = result.getFloat("Cantidad");
+				
+				produccion.add(new DatosVistaVaca(vacaID, fechaHora, valor , "L"));
+			}
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return produccion;
+	}
+	/**
+	 * obtener el ID del ultimo INSERT echo en la BD
+	 * @return ultimo ID insertado
+	 */
 	public int getLastInsertID() {
 		int vacaID = -1 ;
 		String sql = "SELECT LAST_INSERT_ID() ;";
@@ -836,7 +916,11 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 	
 		return vacaID;
 	}
-
+	/**
+	 * Borra la vaca de la BD
+	 * @param vacaID id de la vaca a eliminar
+	 * @return vacaID borrada
+	 */
 	public int borrarVaca(int vacaID) {
 		String sql = "DELETE FROM vaca"
 				+ "WHERE vacaID = "+vacaID+";";
@@ -855,5 +939,49 @@ public Connection getConnection(String user, String password) throws SQLExceptio
 		return vacaID;
 	}
 
+	/*public void addRandomTemperature() throws SQLException {
+	int i = 10, value=50;
+	String sql;
 
+	conn=getConnection();
+	
+	sql = "DELETE	FROM	sensor " +
+			"WHERE	(SensorID <= 100)";
+	ejecutarUpdate(sql);
+	
+	for (i=0; i<100; i++){
+		value = (int)Math.floor(25+Math.random()*(38-25+1));
+		System.out.println(value);
+		
+		sql = "INSERT INTO sensor (SensorID, Valor) " +
+			 "VALUES ("+i+", "+value+")";
+		
+		
+		ejecutarUpdate(sql);			
+		
+	}
+	conn.close();
+}
+*/
+
+	/*public List<Double> readResultTemperatures() throws SQLException{
+		
+		conn=getConnection();
+		
+		List<Double> Temperatures = new ArrayList<>();
+		String sql ="SELECT * FROM sensor";
+		try {
+			getStatements();
+			ResultSet result = stmt.executeQuery(sql);
+			while (result.next()){
+				Temperatures.add((double)result.getInt("Valor"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		conn.close();
+		return Temperatures;
+		
+	}*/
 }

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.StringTokenizer;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -21,9 +22,21 @@ import javax.swing.JTextField;
 
 import org.jfree.ui.RefineryUtilities;
 
+import analisisDatos.AnalisisDatos;
+import analisisDatos.AnalisisHumedad;
 import dataBase.JDBC;
 
-public class InterfazUsuario extends JFrame implements ActionListener{
+
+/**
+ * 
+ * Interfaz grafica mediante Java swing encargada de mostrar los datos recopilados
+ * y analizados en la explotacion
+ * 
+ * @author gorka
+ *
+ */
+	
+public class InterfazUsuario extends JFrame{
 
 	JTabbedPane pestañas;
 	JPanel panelGenerico;
@@ -34,9 +47,12 @@ public class InterfazUsuario extends JFrame implements ActionListener{
 	public InterfazUsuario() {
 		super();                    // usamos el contructor de la clase padre JFrame
         configurarVentana();        // configuramos la ventana
-        inicializarComponentes();   // inicializamos los atributos o componentes
 
     }
+	
+	/**
+	 * Configurar los rasgos generales de la ventana y añade 
+	 */
 	private void configurarVentana() {
 		pestañas =new JTabbedPane();
         this.setTitle("COWTEK");                  				// colocamos titulo a la ventana
@@ -56,19 +72,38 @@ public class InterfazUsuario extends JFrame implements ActionListener{
         this.setContentPane(pestañas);
         
 	}
+	/**
+	 * muestra los datos de las vacas y da la posibilidad de realizar cambios
+	 * @return
+	 */
  
+	
     private Component completarPanel5() {
     	JPanel modificaciones = new Modificaciones();
 		return modificaciones;
 	}
-	private Component completarPanel4() {
+    
+    /**
+     * muestra todos los datos de las estaciones
+     * @return
+     */
+    private Component completarPanel4() {
 		JPanel estacion = new PanelEstaciones();
 		return estacion;
 	}
+	/**
+	 * Muestra todos los datos de las vacas
+	 * @return
+	 */
 	private Component completarPanel3() {
     	JPanel panelIndividualizado = new PanelIndividualizado();
 		return panelIndividualizado;
 	}
+	
+	/**
+	 * Recibe los datos de posicion de las vacas y los muestra en un mapa
+	 * @return
+	 */
 	private Component completarPanel2() {
     	SwingFXWebView posicion = new SwingFXWebView();
 		Double coordenadaY =  42.907140535552294;
@@ -76,82 +111,14 @@ public class InterfazUsuario extends JFrame implements ActionListener{
     	posicion.Geolocalizar(coordenadaY, coordenadaX);
     	return posicion;
 	}
+	
+	/**
+	 * primer panel de la aplicacion, dibuja el graficos de la regresion lineal de los datos recopilados
+	 * @return
+	 */
 	private Component completarPanel1() {
-    	panelGenerico=new JPanel(new GridLayout(2,2));
-    	panelGenerico.add(Grafico1());        
-    	panelGenerico.add(Grafico2());
-    	panelGenerico.add(Grafico3());
-    	panelGenerico.add(Grafico4());    	
+    	panelGenerico=new PanelGraficos(); 
 		return panelGenerico;
 	}
-	private Component Grafico4() {List<Double> scores = new ArrayList<>();
-    Random random = new Random();
-    int maxDataPoints = 40;
-    int maxScore = 10;
-    JDBC dbconnection = new JDBC();
-    dbconnection.getHumedad();
-    for (int i = 0; i < maxDataPoints; i++) {
-        scores.add((double) random.nextDouble() * maxScore);
-//        scores.add((double) i);
-    }
-	GraphPanel grafico4 = new GraphPanel(scores);
-	return grafico4;
-	}
-	private Component Grafico3() {
-		List<Double> scores = new ArrayList<>();
-        Random random = new Random();
-        int maxDataPoints = 40;
-        int maxScore = 10;
-        for (int i = 0; i < maxDataPoints; i++) {
-            scores.add((double) random.nextDouble() * maxScore);
-//            scores.add((double) i);
-        }
-		GraphPanel grafico3 = new GraphPanel(scores);
-		return grafico3;
-	}
-	private Component Grafico2() {
-
-        Component miGraficador = new Graficador(5, 2, 1);
-        JPanel panel = new JPanel();
-        panel.add(miGraficador);
-        panel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
-		return panel;
-	}
-	private Component Grafico1() {
-    	 List<Double> Temperatures = new ArrayList<>();
-    	
- 		JDBC dbConnection = new JDBC ();
- 		/*
- 		try {
-			Temperatures = dbConnection.readResultTemperatures();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
- 		*/
- 		GraphPanel grafico1 = new GraphPanel(Temperatures);
- 		
-		grafico1.add(new JLabel("Temperaturas"), BorderLayout.NORTH);
-		return grafico1;
-	}
-	private void inicializarComponentes() {
-        // creamos los componentes
-        texto = new JLabel();
-        caja = new JTextField();
-        boton = new JButton();
-        // configuramos los componentes
-        texto.setText("Inserte Nombre");    // colocamos un texto a la etiqueta
-        texto.setBounds(50, 50, 100, 25);   // colocamos posicion y tamanio al texto (x, y, ancho, alto)
-        caja.setBounds(150, 50, 100, 25);   // colocamos posicion y tamanio a la caja (x, y, ancho, alto)
-        boton.setText("Mostrar Mensaje");   // colocamos un texto al boton
-        boton.setBounds(50, 100, 200, 30);  // colocamos posicion y tamanio al boton (x, y, ancho, alto)
-        boton.addActionListener(this);      // hacemos que el boton tenga una accion y esa accion estara en esta clase
-        // adicionamos los componentes a la ventana
-    }
- 
-    public void actionPerformed(ActionEvent e) {
-        String nombre = caja.getText();                                 // obtenemos el contenido de la caja de texto
-        JOptionPane.showMessageDialog(this, "Hola " + nombre + ".");    // mostramos un mensaje (frame, mensaje)
-    }
 
 }

@@ -4,7 +4,11 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+/**
+ * clase para crear DatosEstacion e introducirlos en la db
+ * @author gorka
+ *
+ */
   public class DatosEstacion{
 	  int sensorID;
 	  int estacionID;

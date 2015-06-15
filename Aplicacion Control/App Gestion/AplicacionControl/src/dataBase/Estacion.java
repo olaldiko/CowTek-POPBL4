@@ -2,21 +2,37 @@ package dataBase;
 
 import java.sql.Date;
 
-
+/**
+ * clase para crear estaciones e introducirlos en la db
+ * @author gorka
+ *
+ */
 public class Estacion{
 	int estacionID;
 	String nombre;
 	String descripcion;
+	Double latitud ;
+	Double longitud ;
 	
 	public Estacion(String nombre, String descripcion){
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
 	
-	public Estacion(int estacionID, String nombre, String descripcion) {
+	public Estacion(int estacionID, String nombre, String descripcion, Double latitud, Double longitud) {
 		this.estacionID = estacionID;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
+		this.latitud = latitud;
+		this.longitud = longitud;
+	}
+
+	public Double getLatitud() {
+		return latitud;
+	}
+
+	public void setLatitud(Double latitud) {
+		this.latitud = latitud;
 	}
 
 	public int introducirEnBD(){
@@ -62,5 +78,13 @@ public class Estacion{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	public Double getLongitud() {
+		return longitud;
+	}
+
+	public void setLongitud(Double longitud) {
+		this.longitud = longitud;
+	}
+
 
 }

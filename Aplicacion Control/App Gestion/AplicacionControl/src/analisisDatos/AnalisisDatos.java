@@ -7,19 +7,26 @@ import java.util.List;
 import dataBase.ConsumoVaca;
 import dataBase.DatosVistaVaca;
 import dataBase.JDBC;
-
+/**
+ * analiza los datos de produccion e funcion del consumo, temperatura y humedad
+ * @author gorka
+ *
+ */
 public class AnalisisDatos {
 	
 	AnalisisIngesta aIng;
 	AnalisisTemperatura aTemp;
 	AnalisisHumedad aHum;
 	
+	/**
+	 * analiza los tres factores: consumo temperatura y humedad
+	 */
 	public void analizarTodo() {
 		JDBC dbConnection = new JDBC ();
 		List<DatosVistaVaca> produccionVacas = dbConnection.getVistaProduccionVaca();
 		List<DatosVistaVaca> consumoVacas = dbConnection.getVistaConsumoVaca();
-		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempVaca();
-		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumVaca();
+		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempAmb();
+		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumAmb();
 		
 		aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
 		System.out.println("Ingesta: a = " + aIng.getA() + "; b = " + aIng.getB() + ";");
@@ -31,6 +38,12 @@ public class AnalisisDatos {
 		System.out.println("Humedad: " + aHum.getEcuacion());
 	}
 	
+	/**
+	 * Obtiene los datos
+	 * @param entrada entrada
+	 * @param salida salida
+	 * @return datos
+	 */
 	public ArrayList<Dato> sacarDatos(ArrayList<DatosVistaVaca> entrada, ArrayList<DatosVistaVaca> salida) {
 
 		ArrayList<Dato> datosVaca = new ArrayList<Dato>();

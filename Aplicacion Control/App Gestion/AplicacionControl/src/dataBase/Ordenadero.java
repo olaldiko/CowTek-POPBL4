@@ -2,6 +2,13 @@ package dataBase;
 
 import java.sql.Date;
 
+/**
+ * Clase para crear ordeñaderos e introducirlos en la db
+ * 
+ * @author gorka
+ *
+ */
+
 
 public class Ordenadero{
 	int ordenaderoID;

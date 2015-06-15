@@ -1,5 +1,9 @@
 package interfaz;
-
+/**
+ * aplicacion para inicializar la aplicacion
+ * @author gorka
+ *
+ */
 public class Principal {
 
 	

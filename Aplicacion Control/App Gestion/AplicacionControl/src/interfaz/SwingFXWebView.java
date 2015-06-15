@@ -3,11 +3,17 @@ package interfaz;
 import com.sun.javafx.application.PlatformImpl;
 import com.sun.prism.image.Coords;
 
+import dataBase.DatosVaca;
+import dataBase.DatosVistaVaca;
+import dataBase.Estacion;
+import dataBase.JDBC;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -25,8 +31,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
   
 /** 
+ * Panel para poder mostrar una pagina web dentro de la aplicacion
  * SwingFXWebView 
  */  
+
 public class SwingFXWebView extends JPanel {  
      
 	private Double  coordenadaX;
@@ -93,8 +101,25 @@ public class SwingFXWebView extends JPanel {
                 // Set up the embedded browser:
                 browser = new WebView();
                 webEngine = browser.getEngine();
-                webEngine.load("http://cowtek.mooo.com/gmap.htm?q=Felisa%20veintiuno@"+coordenadaY+","+coordenadaX+"&q=My%20Place@53.5,-2.5");
                 
+                JDBC dbConnection = new JDBC();
+                List<DatosVaca> ubicacion=dbConnection.getDatosVacas();
+                float latitud = 0;
+                float longitud = 0;
+                
+                String url = "http://cowtek.mooo.com/gmap.htm?";
+                for (int i=0;i<ubicacion.size(); i++){
+                	if (ubicacion.get(i).getUnidadID()==4){
+                		latitud = ubicacion.get(i).getValor();
+                		longitud = ubicacion.get(i+1).getValor();
+                    	url = url+"q="+ubicacion.get(i).getVacaID()+"@"+latitud ;
+                    	url = url + ","+longitud+"&";
+                	}
+                }
+                
+               // webEngine.load("http://cowtek.mooo.com/gmap.htm?q=Felisa%20veintiuno@"+coordenadaY+","+coordenadaX+"&q=My%20Place@53.5,-2.5");
+                System.out.println(url);
+                webEngine.load(url);
                 ObservableList<Node> children = root.getChildren();
                 children.add(browser);                     
                  
