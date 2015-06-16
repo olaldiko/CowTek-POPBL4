@@ -21,6 +21,7 @@ public class AnalisisDatos {
 		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempVaca();
 		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumVaca();
 		
+<<<<<<< HEAD
 		aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
 		System.out.println("Ingesta: a = " + aIng.getA() + "; b = " + aIng.getB() + ";");
 		
@@ -28,6 +29,15 @@ public class AnalisisDatos {
 		System.out.println("Temperatura: " + aTemp.getEcuacion());
 		
 		aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<DatosVistaVaca>) humedadVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+=======
+		AnalisisIngesta aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		System.out.println("Ingesta: a = " + aIng.getA() + "; b = " + aIng.getB() + ";");
+		
+		AnalisisTemperatura aTemp = new AnalisisTemperatura(sacarDatosEst((ArrayList<DatosVistaVaca>) temperaturaVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		System.out.println("Temperatura: " + aTemp.getEcuacion());
+		
+		AnalisisHumedad aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<DatosVistaVaca>) humedadVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+>>>>>>> origin/Estadistica
 		System.out.println("Humedad: " + aHum.getEcuacion());
 	}
 	
@@ -85,6 +95,7 @@ public class AnalisisDatos {
 		}
 		return datosVaca;
 	}
+<<<<<<< HEAD
 
 	public AnalisisIngesta getaIng() {
 		return aIng;
@@ -109,5 +120,7 @@ public class AnalisisDatos {
 	public void setaHum(AnalisisHumedad aHum) {
 		this.aHum = aHum;
 	}
+=======
+>>>>>>> origin/Estadistica
 	
 }
