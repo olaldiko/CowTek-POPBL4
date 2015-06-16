@@ -1,16 +1,6 @@
 package interfaz;
 
-import com.sun.javafx.application.PlatformImpl;
-import com.sun.prism.image.Coords;
-
-import dataBase.DatosVaca;
-import dataBase.DatosVistaVaca;
-import dataBase.Estacion;
-import dataBase.JDBC;
-
 import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -26,9 +16,12 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+
+import com.sun.javafx.application.PlatformImpl;
+
+import dataBase.DatosVaca;
+import dataBase.JDBC;
   
 /** 
  * Panel para poder mostrar una pagina web dentro de la aplicacion

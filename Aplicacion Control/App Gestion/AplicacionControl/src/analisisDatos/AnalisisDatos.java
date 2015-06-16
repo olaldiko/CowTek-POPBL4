@@ -5,8 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 import dataBase.ConsumoVaca;
-import dataBase.DatosVistaVaca;
+import dataBase.VistaDatos;
 import dataBase.JDBC;
+import dataBase.VistaDatos;
 /**
  * analiza los datos de produccion e funcion del consumo, temperatura y humedad
  * @author gorka
@@ -21,20 +22,22 @@ public class AnalisisDatos {
 	/**
 	 * analiza los tres factores: consumo temperatura y humedad
 	 */
+	
 	public void analizarTodo() {
 		JDBC dbConnection = new JDBC ();
-		List<DatosVistaVaca> produccionVacas = dbConnection.getVistaProduccionVaca();
-		List<DatosVistaVaca> consumoVacas = dbConnection.getVistaConsumoVaca();
-		List<DatosVistaVaca> temperaturaVacas = dbConnection.getVistaTempAmb();
-		List<DatosVistaVaca> humedadVacas = dbConnection.getVistaHumAmb();
+		List<VistaDatos> produccionVacas = dbConnection.getVistaProduccionVaca();
+		List<VistaDatos> consumoVacas = dbConnection.getVistaConsumoVaca();
+		List<VistaDatos> temperaturaVacas = dbConnection.getVistaTempAmb();
+		List<VistaDatos> humedadVacas = dbConnection.getVistaHumAmb();
 		
-		aIng = new AnalisisIngesta(sacarDatos((ArrayList<DatosVistaVaca>) consumoVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		
+		aIng = new AnalisisIngesta(sacarDatos((ArrayList<VistaDatos>) consumoVacas, (ArrayList<VistaDatos>) produccionVacas));
 		System.out.println("Ingesta: a = " + aIng.getA() + "; b = " + aIng.getB() + ";");
-		
-		aTemp = new AnalisisTemperatura(sacarDatosEst((ArrayList<DatosVistaVaca>) temperaturaVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+
+		aTemp = new AnalisisTemperatura(sacarDatosEst((ArrayList<VistaDatos>) temperaturaVacas, (ArrayList<VistaDatos>) produccionVacas));
 		System.out.println("Temperatura: " + aTemp.getEcuacion());
 		
-		aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<DatosVistaVaca>) humedadVacas, (ArrayList<DatosVistaVaca>) produccionVacas));
+		aHum = new AnalisisHumedad(sacarDatosEst((ArrayList<VistaDatos>) humedadVacas, (ArrayList<VistaDatos>) produccionVacas));
 		System.out.println("Humedad: " + aHum.getEcuacion());
 	}
 	
@@ -44,7 +47,7 @@ public class AnalisisDatos {
 	 * @param salida salida
 	 * @return datos
 	 */
-	public ArrayList<Dato> sacarDatos(ArrayList<DatosVistaVaca> entrada, ArrayList<DatosVistaVaca> salida) {
+	public ArrayList<Dato> sacarDatos(ArrayList<VistaDatos> entrada, ArrayList<VistaDatos> salida) {
 
 		ArrayList<Dato> datosVaca = new ArrayList<Dato>();
 		
@@ -55,7 +58,7 @@ public class AnalisisDatos {
 			
 				for(int z = 0; z < entrada.size(); z++) {
 					
-					if (salida.get(i).getVacaID() == entrada.get(z).getVacaID()) {
+					if (salida.get(i).getElementoID() == entrada.get(z).getElementoID()) {
 						
 						long diff = salida.get(i).getFechaHora().getTime() - entrada.get(z).getFechaHora().getTime();
 						diff = Math.abs(diff);
@@ -74,7 +77,7 @@ public class AnalisisDatos {
 		return datosVaca;
 	}
 	
-	public ArrayList<Dato> sacarDatosEst(ArrayList<DatosVistaVaca> entrada, ArrayList<DatosVistaVaca> salida) {
+	public ArrayList<Dato> sacarDatosEst(ArrayList<VistaDatos> entrada, ArrayList<VistaDatos> salida) {
 
 		ArrayList<Dato> datosVaca = new ArrayList<Dato>();
 		
