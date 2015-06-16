@@ -24,7 +24,7 @@ public class TrazadorTablaVacas extends DefaultTableCellRenderer {
 		case 2: super.setHorizontalAlignment(LEFT);break;
 		case 3: super.setHorizontalAlignment(CENTER);break;
 		case 4: super.setHorizontalAlignment(RIGHT);break;
-		case 5: return new JLabel("", new ImageIcon(((Boolean)valor)?"images/female.png":"images/male.png"),CENTER);
+		case 5: 
 				
 		}
 		

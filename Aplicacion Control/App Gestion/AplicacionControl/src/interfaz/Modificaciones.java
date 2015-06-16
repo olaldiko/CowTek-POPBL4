@@ -103,19 +103,14 @@ public class Modificaciones extends JPanel implements ActionListener {
         boton2 = new JButton("Borrar");
         boton2.addActionListener(this);
         boton2.setActionCommand("borrar");
-        boton3 = new JButton("Modificar");
-        boton3.addActionListener(this);
-        boton3.setActionCommand("modificar");
         
        //  panel.setPreferredSize(new Dimension(200,100));
         boton1.setPreferredSize(new Dimension(100, 30));
         boton2.setPreferredSize(new Dimension(100, 30));
-        boton3.setPreferredSize(new Dimension(100, 30));
         
         
         panel.add(boton1);
         panel.add(boton2);
-        panel.add(boton3);
         
         
 		return panel;
@@ -200,9 +195,6 @@ public class Modificaciones extends JPanel implements ActionListener {
 				tabla.fireTableDataChanged();	
 				System.out.println("se ha introducido correctamente");
 			}
-			break;
-		case "modificar" :
-			System.out.println("modificar");
 			break;
 		}
 	}

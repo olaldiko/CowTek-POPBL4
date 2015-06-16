@@ -680,10 +680,10 @@ public class JDBC{
 	 * @return vista de vacas
 	 */
 	
-	public List<DatosVistaVaca> getVistaUbicacionVaca() {
+	public List<VistaDatos> getVistaUbicacionVaca() {
 		
 		String sql = "SELECT * FROM ubicacionVaca_v";
-		List<DatosVistaVaca> vacas = new ArrayList<>();
+		List<VistaDatos> vacas = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -697,7 +697,7 @@ public class JDBC{
 				float valor = result.getFloat("Valor");
 				String unidad = result.getString ("Unidad");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new VistaDatos(vacaID, fechaHora, valor , unidad));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -711,10 +711,10 @@ public class JDBC{
 	 * obtener la vista de las temperaturas corporales de las vacas
 	 * @return temperaturas corporales
 	 */
-	public List<DatosVistaVaca> getVistaTempCorpVaca() {
+	public List<VistaDatos> getVistaTempCorpVaca() {
 		
 		String sql = "SELECT * FROM tempCorpVaca_v";
-		List<DatosVistaVaca> vacas = new ArrayList<>();
+		List<VistaDatos> vacas = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -728,7 +728,7 @@ public class JDBC{
 				Date fechaHora = result.getDate("fechahora");
 				float valor = result.getFloat("valor");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , "ºC"));
+				vacas.add(new VistaDatos(vacaID, fechaHora, valor , "ºC"));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -742,10 +742,10 @@ public class JDBC{
 	 * obtener la vista de las temperatura ambietal
 	 * @return vista de temperaturas
 	 */
-	public List<DatosVistaVaca> getVistaTempAmb() {
+	public List<VistaDatos> getVistaTempAmb() {
 		
 		String sql = "SELECT * FROM tempAmb_v";
-		List<DatosVistaVaca> vacas = new ArrayList<>();
+		List<VistaDatos> vacas = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -754,12 +754,12 @@ public class JDBC{
 
 			while (result.next()){			
 
-				int vacaID	 = result.getInt("EstacionID");
+				int estacionID	 = result.getInt("EstacionID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Valor");
 				String unidad = result.getString ("nombre");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new VistaDatos(estacionID, fechaHora, valor , unidad));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -773,10 +773,10 @@ public class JDBC{
 	 * obtener la vista de la humedad ambiental
 	 * @return vistas humedad
 	 */
-	public List<DatosVistaVaca> getVistaHumAmb() {
+	public List<VistaDatos> getVistaHumAmb() {
 		
 		String sql = "SELECT * FROM humAmb_v";
-		List<DatosVistaVaca> vacas = new ArrayList<>();
+		List<VistaDatos> vacas = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -785,12 +785,12 @@ public class JDBC{
 	
 			while (result.next()){			
 	
-				int vacaID	 = result.getInt("EstacionID");
+				int estacionID	 = result.getInt("EstacionID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Valor");
 				String unidad = result.getString ("nombre");
 				
-				vacas.add(new DatosVistaVaca(vacaID, fechaHora, valor , unidad));
+				vacas.add(new VistaDatos(estacionID, fechaHora, valor , unidad));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -804,10 +804,10 @@ public class JDBC{
 	 * Obtener la vista del consumo de pienso de las vacas
 	 * @return vistas consumos de vacas
 	 */
-	public List<DatosVistaVaca> getVistaConsumoVaca() {
+	public List<VistaDatos> getVistaConsumoVaca() {
 		
 		String sql = "SELECT * FROM consumoVaca";
-		List<DatosVistaVaca> consumo = new ArrayList<>();
+		List<VistaDatos> consumo = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -820,7 +820,7 @@ public class JDBC{
 				Date fechaHora = result.getDate("fechahora");
 				float valor = result.getFloat("Cantidad");
 				
-				consumo.add(new DatosVistaVaca(vacaID, fechaHora, valor , "Kg"));
+				consumo.add(new VistaDatos(vacaID, fechaHora, valor , "Kg"));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -834,10 +834,10 @@ public class JDBC{
 	 * obtener la vista de la produccion de las vacas
 	 * @return vista producciones de vacas
 	 */
-	public List<DatosVistaVaca> getVistaProduccionVaca() {
+	public List<VistaDatos> getVistaProduccionVaca() {
 		
 		String sql = "SELECT * FROM produccionVaca";
-		List<DatosVistaVaca> produccion = new ArrayList<>();
+		List<VistaDatos> produccion = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -851,7 +851,7 @@ public class JDBC{
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Cantidad");
 				
-				produccion.add(new DatosVistaVaca(vacaID, fechaHora, valor , "L"));
+				produccion.add(new VistaDatos(vacaID, fechaHora, valor , "L"));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -863,14 +863,14 @@ public class JDBC{
 	}
 	
 	
-public List<DatosVistaVaca> getVistaVacas() {
+public List<VistaDatos> getVistaDatos() {
 		
 		String sql = "SELECT 	v.VacaID, v.Nombre, d.Valor, u.nombre, d.Valor, u.nombre"
 				+ "FROM 	vaca v, datosVaca d, unidad u"
 				+ "WHERE	v.VacaID = d.VacaID"
 				+ "AND		d.UnidadID = u.UnidadID"
 				+ "ORDER BY v.VacaID;";
-		List<DatosVistaVaca> produccion = new ArrayList<>();
+		List<VistaDatos> produccion = new ArrayList<>();
 		
 		try {
 			conn=getConnection();
@@ -880,12 +880,11 @@ public List<DatosVistaVaca> getVistaVacas() {
 			while (result.next()){			
 	
 				int vacaID	 = result.getInt("VacaID");
-				//////////////////////////////////////String nombre = result.get
 				int ordenaderoID = result.getInt("OrdenaderoID");
 				Date fechaHora = result.getDate("FechaHora");
 				float valor = result.getFloat("Cantidad");
 				
-				produccion.add(new DatosVistaVaca(vacaID, fechaHora, valor , "L"));
+				produccion.add(new VistaDatos(vacaID, fechaHora, valor , "L"));
 			}
 			conn.close();
 		} catch (SQLException e) {
@@ -938,50 +937,4 @@ public List<DatosVistaVaca> getVistaVacas() {
 	
 		return vacaID;
 	}
-
-	/*public void addRandomTemperature() throws SQLException {
-	int i = 10, value=50;
-	String sql;
-
-	conn=getConnection();
-	
-	sql = "DELETE	FROM	sensor " +
-			"WHERE	(SensorID <= 100)";
-	ejecutarUpdate(sql);
-	
-	for (i=0; i<100; i++){
-		value = (int)Math.floor(25+Math.random()*(38-25+1));
-		System.out.println(value);
-		
-		sql = "INSERT INTO sensor (SensorID, Valor) " +
-			 "VALUES ("+i+", "+value+")";
-		
-		
-		ejecutarUpdate(sql);			
-		
-	}
-	conn.close();
-}
-*/
-
-	/*public List<Double> readResultTemperatures() throws SQLException{
-		
-		conn=getConnection();
-		
-		List<Double> Temperatures = new ArrayList<>();
-		String sql ="SELECT * FROM sensor";
-		try {
-			getStatements();
-			ResultSet result = stmt.executeQuery(sql);
-			while (result.next()){
-				Temperatures.add((double)result.getInt("Valor"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		conn.close();
-		return Temperatures;
-		
-	}*/
 }

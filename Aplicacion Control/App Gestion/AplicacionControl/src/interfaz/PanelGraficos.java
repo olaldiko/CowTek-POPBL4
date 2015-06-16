@@ -11,8 +11,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import analisisDatos.AnalisisDatos;
-import dataBase.DatosVistaVaca;
+import dataBase.VistaDatos;
 import dataBase.JDBC;
+import dataBase.VistaDatos;
 
 /**
  * dibuja los graficos de regresion lineal con los datos de la BD y los plotea
@@ -39,7 +40,7 @@ public class PanelGraficos extends JPanel{
 
 	private Component Grafico4() {List<Double> scores = new ArrayList<>();
     JDBC dbconnection = new JDBC();
-    List<DatosVistaVaca> vacas = dbconnection.getVistaTempAmb();
+    List<VistaDatos> vacas = dbconnection.getVistaTempAmb();
     if ((vacas.size()-144)<0){
 
         for (int i = 0; i < vacas.size(); i++) {
